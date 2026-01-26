@@ -13,15 +13,18 @@ export async function fetchWordsFromGoogleSheets(): Promise<Word[]> {
     const csvText = await response.text();
     const lines = csvText.split('\n');
 
-    // Skip header row, filter empty lines, create Word objects
-    const words: Word[] = lines
-      .slice(1) // Skip header
-      .map(line => line.trim())
-      .filter(line => line.length > 0)
-      .map((text, index) => ({
-        id: `gs-${index}-${text}`,
-        text,
-      }));
+    // Skip header row, filter empty lines, deduplicate, create Word objects
+    const uniqueTexts = [...new Set(
+      lines
+        .slice(1) // Skip header
+        .map(line => line.trim())
+        .filter(line => line.length > 0)
+    )];
+
+    const words: Word[] = uniqueTexts.map((text, index) => ({
+      id: `gs-${index}-${text}`,
+      text,
+    }));
 
     return words;
   } catch (error) {

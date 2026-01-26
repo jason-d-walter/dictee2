@@ -68,9 +68,10 @@ export function shuffleArray<T>(array: T[]): T[] {
 }
 
 export function getRandomWords(words: { text: string }[], count: number, exclude?: string): string[] {
-  const filtered = words.filter(w => w.text !== exclude);
-  const shuffled = shuffleArray(filtered);
-  return shuffled.slice(0, count).map(w => w.text);
+  // Get unique word texts, excluding the specified word
+  const uniqueTexts = [...new Set(words.map(w => w.text))].filter(text => text !== exclude);
+  const shuffled = shuffleArray(uniqueTexts);
+  return shuffled.slice(0, count);
 }
 
 export function normalizeForComparison(text: string): string {
