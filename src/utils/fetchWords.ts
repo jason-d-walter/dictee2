@@ -21,8 +21,8 @@ export async function fetchWordsFromGoogleSheets(): Promise<Word[]> {
         .filter(line => line.length > 0)
     )];
 
-    const words: Word[] = uniqueTexts.map((text, index) => ({
-      id: `gs-${index}-${text}`,
+    const words: Word[] = uniqueTexts.map((text) => ({
+      id: text, // Use word text as ID (unique after deduplication)
       text,
     }));
 
