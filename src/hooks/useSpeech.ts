@@ -1,33 +1,60 @@
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 
 interface UseSpeechReturn {
   speak: (text: string) => void;
+  speakAudio: (audioPath: string) => void;
   speaking: boolean;
-  supported: boolean;
+  stop: () => void;
 }
 
 export function useSpeech(): UseSpeechReturn {
   const [speaking, setSpeaking] = useState(false);
-  const [supported, setSupported] = useState(true);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
-  useEffect(() => {
-    if (typeof window === 'undefined' || !window.speechSynthesis) {
-      setSupported(false);
+  const stop = useCallback(() => {
+    // Stop any playing audio
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
+    // Stop Web Speech API
+    if (window.speechSynthesis) {
+      window.speechSynthesis.cancel();
+    }
+    setSpeaking(false);
   }, []);
 
+  const speakAudio = useCallback((audioPath: string) => {
+    stop();
+
+    const audio = new Audio(audioPath);
+    audioRef.current = audio;
+
+    audio.onplay = () => setSpeaking(true);
+    audio.onended = () => setSpeaking(false);
+    audio.onerror = () => {
+      setSpeaking(false);
+      console.warn(`Failed to play audio: ${audioPath}`);
+    };
+
+    audio.play().catch(err => {
+      console.warn('Audio playback failed:', err);
+      setSpeaking(false);
+    });
+  }, [stop]);
+
   const speak = useCallback((text: string) => {
+    // Fallback to Web Speech API
     if (!window.speechSynthesis) {
       console.warn('Speech synthesis not supported');
       return;
     }
 
-    // Cancel any ongoing speech
-    window.speechSynthesis.cancel();
+    stop();
 
     const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'fr-FR';
-    utterance.rate = 0.8; // Slower for kids
+    utterance.rate = 0.8;
     utterance.pitch = 1.0;
     utterance.volume = 1.0;
 
@@ -48,7 +75,7 @@ export function useSpeech(): UseSpeechReturn {
     utterance.onerror = () => setSpeaking(false);
 
     window.speechSynthesis.speak(utterance);
-  }, []);
+  }, [stop]);
 
-  return { speak, speaking, supported };
+  return { speak, speakAudio, speaking, stop };
 }

@@ -1,5 +1,4 @@
 import { Word, WordProgress } from '../../types';
-import { GOOGLE_SHEETS_EDIT_URL } from '../../utils/fetchWords';
 
 interface WordListViewProps {
   words: Word[];
@@ -100,21 +99,10 @@ export default function WordListView({
           >
             🔄 Actualiser les mots
           </button>
-
-          <a
-            href={GOOGLE_SHEETS_EDIT_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full py-3 text-lg font-bold bg-green-500 text-white rounded-xl hover:bg-green-600 transition-colors text-center"
-          >
-            ✏️ Modifier dans Google Sheets
-          </a>
         </div>
 
         <p className="text-white/60 text-sm text-center mt-4">
-          Les mots sont chargés depuis Google Sheets.
-          <br />
-          Modifiez-les là-bas puis actualisez ici.
+          Les mots sont chargés depuis le fichier words_of_week.txt
         </p>
       </div>
     </div>

@@ -12,6 +12,13 @@ interface ModeSelectorProps {
 
 const MODES: { id: GameMode; emoji: string; title: string; description: string; color: string }[] = [
   {
+    id: 'exploration',
+    emoji: '🔍',
+    title: 'Exploration',
+    description: 'Découvre les mots avec images et phrases!',
+    color: 'from-amber-500 to-orange-500',
+  },
+  {
     id: 'audio-match',
     emoji: '🎧',
     title: "L'Audio-Match",

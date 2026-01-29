@@ -24,11 +24,19 @@ export default function DicteeFantome({
   onComplete,
   onBack,
 }: DicteeFantomeProps) {
-  const { speak } = useSpeech();
+  const { speak, speakAudio } = useSpeech();
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  const playWord = () => {
+    if (word.audioWord) {
+      speakAudio(word.audioWord);
+    } else {
+      speak(word.text);
+    }
+  };
 
   useEffect(() => {
     setAnswer('');
@@ -36,7 +44,7 @@ export default function DicteeFantome({
     setIsCorrect(false);
 
     // Auto-play the word
-    const timer = setTimeout(() => speak(word.text), 500);
+    const timer = setTimeout(() => playWord(), 500);
 
     // Focus input
     if (inputRef.current) {
@@ -44,7 +52,7 @@ export default function DicteeFantome({
     }
 
     return () => clearTimeout(timer);
-  }, [word, speak]);
+  }, [word]);
 
   const handleAccentCharacter = (char: string) => {
     setAnswer(prev => prev + char);
@@ -104,7 +112,7 @@ export default function DicteeFantome({
         </div>
 
         {/* Speak button */}
-        <SpeakButton word={word.text} size="large" />
+        <SpeakButton word={word.text} audioPath={word.audioWord} size="large" />
 
         {/* Input area */}
         <form onSubmit={handleSubmit} className="w-full max-w-md px-4">

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Word } from '../types';
-import { fetchWordsFromGoogleSheets } from '../utils/fetchWords';
+import { fetchWords as fetchWordsFromFile } from '../utils/fetchWords';
 
 interface UseWordListReturn {
   words: Word[];
@@ -14,11 +14,11 @@ export function useWordList(): UseWordListReturn {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchWords = async () => {
+  const loadWords = async () => {
     setLoading(true);
     setError(null);
     try {
-      const fetchedWords = await fetchWordsFromGoogleSheets();
+      const fetchedWords = await fetchWordsFromFile();
       setWords(fetchedWords);
     } catch (err) {
       setError('Failed to load words');
@@ -29,8 +29,8 @@ export function useWordList(): UseWordListReturn {
   };
 
   useEffect(() => {
-    fetchWords();
+    loadWords();
   }, []);
 
-  return { words, loading, error, refetch: fetchWords };
+  return { words, loading, error, refetch: loadWords };
 }

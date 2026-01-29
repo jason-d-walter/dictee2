@@ -1,38 +1,42 @@
-import { Word } from '../types';
+import { Word, WordManifest } from '../types';
 
-const GOOGLE_SHEETS_CSV_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQz9TGMjgnv1ORLuTHmDjS68nkGIdeiCIhQU-dLOhh7m8PuUyCuBAdXsj0i5UyQeUTKaVeEIWCJ35oc/pub?gid=0&single=true&output=csv';
-
-export async function fetchWordsFromGoogleSheets(): Promise<Word[]> {
+/**
+ * Fetches words from the generated manifest file.
+ * Falls back to plain text file if manifest doesn't exist.
+ */
+export async function fetchWords(): Promise<Word[]> {
+  // Try to load the generated manifest first
   try {
-    const response = await fetch(GOOGLE_SHEETS_CSV_URL);
+    const manifestResponse = await fetch('/manifest.json');
+    if (manifestResponse.ok) {
+      const manifest: WordManifest = await manifestResponse.json();
+      return manifest.words;
+    }
+  } catch (error) {
+    console.log('Manifest not found, falling back to text file');
+  }
+
+  // Fallback: load plain text file (for development or if script hasn't run)
+  try {
+    const response = await fetch('/words_of_week.txt');
     if (!response.ok) {
       throw new Error('Failed to fetch words');
     }
 
-    const csvText = await response.text();
-    const lines = csvText.split('\n');
-
-    // Skip header row, filter empty lines, deduplicate, create Word objects
+    const text = await response.text();
     const uniqueTexts = [...new Set(
-      lines
-        .slice(1) // Skip header
+      text
+        .split('\n')
         .map(line => line.trim())
         .filter(line => line.length > 0)
     )];
 
-    const words: Word[] = uniqueTexts.map((text) => ({
-      id: text, // Use word text as ID (unique after deduplication)
+    return uniqueTexts.map((text) => ({
+      id: text,
       text,
     }));
-
-    return words;
   } catch (error) {
-    console.error('Error fetching words from Google Sheets:', error);
+    console.error('Error fetching words:', error);
     return [];
   }
 }
-
-// URL for editing the Google Sheet (opens in browser)
-export const GOOGLE_SHEETS_EDIT_URL =
-  'https://docs.google.com/spreadsheets/d/e/2PACX-1vQz9TGMjgnv1ORLuTHmDjS68nkGIdeiCIhQU-dLOhh7m8PuUyCuBAdXsj0i5UyQeUTKaVeEIWCJ35oc/pubhtml';
