@@ -24,10 +24,18 @@ export default function AudioMatch({
   onComplete,
   onBack,
 }: AudioMatchProps) {
-  const { speak } = useSpeech();
+  const { speak, speakAudio } = useSpeech();
   const [options, setOptions] = useState<string[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
+
+  const playWord = () => {
+    if (word.audioWord) {
+      speakAudio(word.audioWord);
+    } else {
+      speak(word.text);
+    }
+  };
 
   useEffect(() => {
     // Generate 3 options: correct word + 2 random distractors
@@ -38,9 +46,9 @@ export default function AudioMatch({
     setShowResult(false);
 
     // Auto-play the word
-    const timer = setTimeout(() => speak(word.text), 500);
+    const timer = setTimeout(() => playWord(), 500);
     return () => clearTimeout(timer);
-  }, [word, allWords, speak]);
+  }, [word, allWords]);
 
   const handleSelect = (option: string) => {
     if (showResult) return;
@@ -113,7 +121,7 @@ export default function AudioMatch({
         </div>
 
         {/* Speak button */}
-        <SpeakButton word={word.text} size="large" />
+        <SpeakButton word={word.text} audioPath={word.audioWord} size="large" />
 
         {/* Options */}
         <div className="w-full max-w-md space-y-4 px-4">

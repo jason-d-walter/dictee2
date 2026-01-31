@@ -2,21 +2,20 @@ import { useSpeech } from '../../hooks/useSpeech';
 
 interface SpeakButtonProps {
   word: string;
+  audioPath?: string;  // Pre-generated audio file path
   size?: 'small' | 'medium' | 'large';
-  autoPlay?: boolean;
 }
 
-export default function SpeakButton({ word, size = 'medium', autoPlay }: SpeakButtonProps) {
-  const { speak, speaking } = useSpeech();
+export default function SpeakButton({ word, audioPath, size = 'medium' }: SpeakButtonProps) {
+  const { speak, speakAudio, speaking } = useSpeech();
 
   const handleClick = () => {
-    speak(word);
+    if (audioPath) {
+      speakAudio(audioPath);
+    } else {
+      speak(word);
+    }
   };
-
-  // Auto-play on mount if requested
-  if (autoPlay) {
-    // Use effect in parent component instead
-  }
 
   const sizeClasses = {
     small: 'w-12 h-12 text-xl',

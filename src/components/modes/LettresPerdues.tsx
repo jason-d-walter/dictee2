@@ -31,13 +31,21 @@ export default function LettresPerdues({
   onComplete,
   onBack,
 }: LettresPerduesProps) {
-  const { speak } = useSpeech();
+  const { speak, speakAudio } = useSpeech();
   const [puzzle, setPuzzle] = useState<ReturnType<typeof generateMissingLetters> | null>(null);
   const [slots, setSlots] = useState<LetterSlot[]>([]);
   const [availableLetters, setAvailableLetters] = useState<string[]>([]);
   const [selectedLetter, setSelectedLetter] = useState<number | null>(null);
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
+
+  const playWord = () => {
+    if (word.audioWord) {
+      speakAudio(word.audioWord);
+    } else {
+      speak(word.text);
+    }
+  };
 
   useEffect(() => {
     const numMissing = word.text.length > 4 ? 2 : 1;
@@ -66,7 +74,7 @@ export default function LettresPerdues({
     setIsCorrect(false);
 
     // Auto-play the word
-    const timer = setTimeout(() => speak(word.text), 500);
+    const timer = setTimeout(() => playWord(), 500);
     return () => clearTimeout(timer);
   }, [word, speak]);
 
@@ -179,7 +187,7 @@ export default function LettresPerdues({
         </div>
 
         {/* Speak button */}
-        <SpeakButton word={word.text} size="medium" />
+        <SpeakButton word={word.text} audioPath={word.audioWord} size="medium" />
 
         {/* Word display with slots */}
         <div className="flex flex-wrap justify-center gap-2 p-4">

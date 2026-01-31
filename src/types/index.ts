@@ -1,6 +1,10 @@
 export interface Word {
   id: string;
   text: string;
+  sentence?: string;
+  audioWord?: string;    // Path to word audio file
+  audioSentence?: string; // Path to sentence audio file
+  image?: string;         // Path to image file
 }
 
 export interface WordProgress {
@@ -27,10 +31,9 @@ export interface WordResult {
   attempts: number;
 }
 
-export type GameMode = 'audio-match' | 'lettres-perdues' | 'dictee-fantome';
+export type GameMode = 'audio-match' | 'lettres-perdues' | 'dictee-fantome' | 'exploration';
 
-export interface WordListData {
+export interface WordManifest {
+  generatedAt: string;
   words: Word[];
-  createdAt: number;
-  updatedAt: number;
 }

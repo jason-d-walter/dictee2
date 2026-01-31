@@ -7,6 +7,7 @@ import GameSummary from './components/layout/GameSummary';
 import AudioMatch from './components/modes/AudioMatch';
 import LettresPerdues from './components/modes/LettresPerdues';
 import DicteeFantome from './components/modes/DicteeFantome';
+import Exploration from './components/modes/Exploration';
 import WordListView from './components/admin/WordListView';
 
 const SESSION_SIZE = 10;
@@ -35,7 +36,11 @@ function App() {
     if (!session) return;
 
     const currentWord = session.words[session.currentIndex];
-    recordAttempt(currentWord.id, correct);
+
+    // Don't record progress for exploration mode
+    if (session.mode !== 'exploration') {
+      recordAttempt(currentWord.id, correct);
+    }
 
     const newResults = [...session.results, { wordId: currentWord.id, correct, attempts: 1 }];
     const newStars = correct ? session.stars + 1 : session.stars;
@@ -109,6 +114,8 @@ function App() {
         return <LettresPerdues {...gameProps} />;
       case 'dictee-fantome':
         return <DicteeFantome {...gameProps} />;
+      case 'exploration':
+        return <Exploration {...gameProps} />;
     }
   }
 
