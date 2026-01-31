@@ -16,6 +16,8 @@ Usage:
 import os
 import json
 import base64
+import argparse
+import time
 import requests
 from pathlib import Path
 from datetime import datetime
@@ -58,6 +60,10 @@ MANIFEST_FILE = PUBLIC_DIR / "manifest.json"
 # Ensure directories exist
 AUDIO_DIR.mkdir(parents=True, exist_ok=True)
 IMAGES_DIR.mkdir(parents=True, exist_ok=True)
+
+# Rate limiting for image generation
+last_image_time = 0
+image_rate_limit = 60  # seconds between image requests (default: 1 per minute)
 
 def read_words() -> list[str]:
     """Read words from the words file."""
@@ -198,7 +204,16 @@ def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool
 
 def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     """Generate an image with a fallback strategy if the first attempt is blocked."""
-    
+    global last_image_time
+
+    # Rate limiting
+    if image_rate_limit > 0:
+        elapsed = time.time() - last_image_time
+        if elapsed < image_rate_limit:
+            wait_time = image_rate_limit - elapsed
+            print(f"    Rate limit: waiting {wait_time:.0f}s before image generation...")
+            time.sleep(wait_time)
+
     # Use 'ALLOW_ALL' for person_generation to permit images of children
     image_config = {
         "number_of_images": 1,
@@ -216,9 +231,10 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     for attempt, prompt in enumerate(prompts_to_try):
         try:
             print(f"    Image attempt {attempt + 1}...")
+            last_image_time = time.time()  # Update before request
             response = client.models.generate_images(
-                model=image_model, 
-                prompt=prompt, 
+                model=image_model,
+                prompt=prompt,
                 config=image_config
             )
 
@@ -326,9 +342,25 @@ def process_word(word: str, existing_data: dict | None = None) -> dict:
 
 def main():
     """Main function to generate all assets."""
+    global image_rate_limit
+
+    # Parse command line arguments
+    parser = argparse.ArgumentParser(description="Generate assets for the Dictée app")
+    parser.add_argument(
+        "--image-rate-limit",
+        type=int,
+        default=60,
+        help="Seconds between image generation requests (default: 60, set to 0 to disable)"
+    )
+    args = parser.parse_args()
+
+    image_rate_limit = args.image_rate_limit
+
     print("=" * 50)
     print("Dictée Asset Generator (Incremental)")
     print("=" * 50)
+    if image_rate_limit > 0:
+        print(f"Image rate limit: {image_rate_limit}s between requests")
 
     # Load existing manifest
     existing_manifest = load_existing_manifest()
