@@ -209,8 +209,8 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
 
     # Attempt 1: The original creative prompt
     prompts_to_try = [
-        f"A whimsical, child-friendly cartoon illustration of: {sentence}. Bright colors, simple shapes. The image should be representative of the sentence and not include the sentence text. Image only.",
-        f"A simple, cheerful drawing of the object: {word}. High quality 2D art. The image should be representative of the word and not include the word text. Image only." # Fallback prompt
+        f"A whimsical, child-friendly cartoon illustration representing: {sentence}. Bright colors, simple shapes. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography.",
+        f"A simple, cheerful drawing of: {word}. High quality 2D cartoon art. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):
