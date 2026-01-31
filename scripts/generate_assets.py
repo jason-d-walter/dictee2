@@ -78,6 +78,51 @@ def read_words() -> list[str]:
     return unique_words
 
 
+def load_existing_manifest() -> dict:
+    """Load existing manifest and return a dict keyed by word text."""
+    if not MANIFEST_FILE.exists():
+        return {}
+
+    try:
+        with open(MANIFEST_FILE, "r", encoding="utf-8") as f:
+            manifest = json.load(f)
+        return {w["text"]: w for w in manifest.get("words", [])}
+    except (json.JSONDecodeError, KeyError) as e:
+        print(f"Warning: Could not parse existing manifest: {e}")
+        return {}
+
+
+def check_existing_assets(word: str, existing_data: dict | None) -> dict:
+    """
+    Check which assets already exist for a word.
+    Returns a dict with what needs to be generated.
+    """
+    needs = {
+        "sentence": True,
+        "audioWord": True,
+        "audioSentence": True,
+        "image": True,
+    }
+
+    # Check files on disk
+    word_audio_path = AUDIO_DIR / f"{word}_word.wav"
+    sentence_audio_path = AUDIO_DIR / f"{word}_sentence.wav"
+    image_path = IMAGES_DIR / f"{word}.png"
+
+    if word_audio_path.exists():
+        needs["audioWord"] = False
+    if sentence_audio_path.exists():
+        needs["audioSentence"] = False
+    if image_path.exists():
+        needs["image"] = False
+
+    # Check manifest for sentence (can't verify from file)
+    if existing_data and existing_data.get("sentence"):
+        needs["sentence"] = False
+
+    return needs
+
+
 def generate_sentence(word: str) -> str:
     """Generate a kid-friendly French sentence using the word."""
     the_prompt = f"""Create a simple, kid-friendly French sentence using the word "{word}".
@@ -193,51 +238,88 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     print(f"  CRITICAL: All image generation attempts failed for '{word}'.")
     return False
     
-def process_word(word: str) -> dict:
-    """Process a single word and generate all assets."""
+def process_word(word: str, existing_data: dict | None = None) -> dict:
+    """Process a single word and generate only missing assets."""
     print(f"\nProcessing: {word}")
 
-    result = {
-        "id": word,
-        "text": word,
-    }
+    # Check what already exists
+    needs = check_existing_assets(word, existing_data)
 
-    # Generate sentence
-    print(f"  Generating sentence...")
-    try:
-        sentence = generate_sentence(word)
-        result["sentence"] = sentence
-        print(f"  Sentence: {sentence}")
-    except Exception as e:
-        print(f"  Error generating sentence: {e}")
-        result["sentence"] = f"Le mot est {word}."  # Fallback
+    # Start with existing data or create new
+    if existing_data:
+        result = existing_data.copy()
+        print(f"  Found existing data, checking for missing assets...")
+    else:
+        result = {
+            "id": word,
+            "text": word,
+        }
 
-    # Generate word audio
+    # Track what we're skipping vs generating
+    skipped = []
+    generated = []
+
+    # Generate sentence (only if needed)
+    if needs["sentence"]:
+        print(f"  Generating sentence...")
+        try:
+            sentence = generate_sentence(word)
+            result["sentence"] = sentence
+            print(f"  Sentence: {sentence}")
+            generated.append("sentence")
+        except Exception as e:
+            print(f"  Error generating sentence: {e}")
+            result["sentence"] = f"Le mot est {word}."  # Fallback
+    else:
+        skipped.append("sentence")
+        print(f"  Sentence exists: {result.get('sentence', 'N/A')}")
+
+    # Generate word audio (only if needed)
     word_audio_path = AUDIO_DIR / f"{word}_word.wav"
-    print(f"  Generating word audio...")
-    if generate_audio_tts(word, word_audio_path, slow=True):
+    if needs["audioWord"]:
+        print(f"  Generating word audio...")
+        if generate_audio_tts(word, word_audio_path, slow=True):
+            result["audioWord"] = f"/audio/{word}_word.wav"
+            generated.append("audioWord")
+        else:
+            print(f"  Failed to generate word audio")
+    else:
         result["audioWord"] = f"/audio/{word}_word.wav"
-        print(f"  Word audio saved: {word_audio_path.name}")
-    else:
-        print(f"  Failed to generate word audio")
+        skipped.append("audioWord")
 
-    # Generate sentence audio
+    # Generate sentence audio (only if needed)
     sentence_audio_path = AUDIO_DIR / f"{word}_sentence.wav"
-    print(f"  Generating sentence audio...")
-    if generate_audio_tts(result.get("sentence", word), sentence_audio_path):
+    if needs["audioSentence"]:
+        print(f"  Generating sentence audio...")
+        if generate_audio_tts(result.get("sentence", word), sentence_audio_path):
+            result["audioSentence"] = f"/audio/{word}_sentence.wav"
+            generated.append("audioSentence")
+        else:
+            print(f"  Failed to generate sentence audio")
+    else:
         result["audioSentence"] = f"/audio/{word}_sentence.wav"
-        print(f"  Sentence audio saved: {sentence_audio_path.name}")
-    else:
-        print(f"  Failed to generate sentence audio")
+        skipped.append("audioSentence")
 
-    # Generate image
+    # Generate image (only if needed)
     image_path = IMAGES_DIR / f"{word}.png"
-    print(f"  Generating image...")
-    if generate_image(result.get("sentence", word), word, image_path):
-        result["image"] = f"/images/{word}.png"
-        print(f"  Image saved: {image_path.name}")
+    if needs["image"]:
+        print(f"  Generating image...")
+        if generate_image(result.get("sentence", word), word, image_path):
+            result["image"] = f"/images/{word}.png"
+            generated.append("image")
+        else:
+            print(f"  Failed to generate image (continuing without it)")
     else:
-        print(f"  Failed to generate image (continuing without it)")
+        result["image"] = f"/images/{word}.png"
+        skipped.append("image")
+
+    # Summary
+    if skipped:
+        print(f"  Skipped (already exist): {', '.join(skipped)}")
+    if generated:
+        print(f"  Generated: {', '.join(generated)}")
+    if not generated:
+        print(f"  All assets already exist!")
 
     return result
 
@@ -245,20 +327,43 @@ def process_word(word: str) -> dict:
 def main():
     """Main function to generate all assets."""
     print("=" * 50)
-    print("Dictée Asset Generator")
+    print("Dictée Asset Generator (Incremental)")
     print("=" * 50)
+
+    # Load existing manifest
+    existing_manifest = load_existing_manifest()
+    if existing_manifest:
+        print(f"\nFound existing manifest with {len(existing_manifest)} words")
+    else:
+        print("\nNo existing manifest found, generating all assets")
 
     # Read words
     words = read_words()
-    print(f"\nFound {len(words)} words to process:")
+    print(f"\nFound {len(words)} words in words_of_week.txt:")
     for word in words:
-        print(f"  - {word}")
+        status = "✓ exists" if word in existing_manifest else "○ new"
+        print(f"  - {word} ({status})")
 
-    # Process each word
+    # Process each word (with existing data if available)
     results = []
+    new_count = 0
+    updated_count = 0
+    skipped_count = 0
+
     for word in words:
-        result = process_word(word)
+        existing_data = existing_manifest.get(word)
+        result = process_word(word, existing_data)
         results.append(result)
+
+        # Track stats
+        needs = check_existing_assets(word, existing_data)
+        if any(needs.values()):
+            if existing_data:
+                updated_count += 1
+            else:
+                new_count += 1
+        else:
+            skipped_count += 1
 
     # Generate manifest
     manifest = {
@@ -271,7 +376,11 @@ def main():
 
     print("\n" + "=" * 50)
     print(f"Generated manifest: {MANIFEST_FILE}")
-    print(f"Total words processed: {len(results)}")
+    print(f"Summary:")
+    print(f"  - New words: {new_count}")
+    print(f"  - Updated words: {updated_count}")
+    print(f"  - Skipped (complete): {skipped_count}")
+    print(f"  - Total in manifest: {len(results)}")
     print("=" * 50)
 
 
