@@ -9,7 +9,7 @@ This script reads words from words_of_week.txt and generates:
 
 Usage:
     pip install -r requirements.txt
-    export GOOGLE_API_KEY=your_api_key
+    export GOOGLE_PROJECT_NAME=project_name
     python generate_assets.py
 """
 

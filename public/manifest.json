@@ -1,381 +1,125 @@
 {
-  "generatedAt": "2026-01-31T11:58:02.774141",
+  "generatedAt": "2026-02-06T19:50:22.235860",
   "words": [
     {
-      "id": "aimer",
-      "text": "aimer",
-      "sentence": "Il faut aimer jouer dehors !",
-      "audioWord": "/audio/aimer_word.wav",
-      "audioSentence": "/audio/aimer_sentence.wav",
-      "image": "/images/aimer.png"
+      "id": "aidez",
+      "text": "aidez",
+      "sentence": "Aidez-moi à trouver le trésor !",
+      "audioWord": "/audio/aidez_word.wav",
+      "audioSentence": "/audio/aidez_sentence.wav",
+      "image": "/images/aidez.png"
     },
     {
-      "id": "aller",
-      "text": "aller",
-      "sentence": "J'aime aller au parc.",
-      "audioWord": "/audio/aller_word.wav",
-      "audioSentence": "/audio/aller_sentence.wav",
-      "image": "/images/aller.png"
+      "id": "aimez",
+      "text": "aimez",
+      "sentence": "Aimez-vous les dragons ?",
+      "audioWord": "/audio/aimez_word.wav",
+      "audioSentence": "/audio/aimez_sentence.wav",
+      "image": "/images/aimez.png"
     },
     {
-      "id": "apporter",
-      "text": "apporter",
-      "sentence": "Nous allons apporter des bonbons !",
-      "audioWord": "/audio/apporter_word.wav",
-      "audioSentence": "/audio/apporter_sentence.wav",
-      "image": "/images/apporter.png"
+      "id": "allez",
+      "text": "allez",
+      "sentence": "Allez, on joue !",
+      "audioWord": "/audio/allez_word.wav",
+      "audioSentence": "/audio/allez_sentence.wav",
+      "image": "/images/allez.png"
     },
     {
-      "id": "berger",
-      "text": "berger",
-      "sentence": "Un berger joue avec son chien.",
-      "audioWord": "/audio/berger_word.wav",
-      "audioSentence": "/audio/berger_sentence.wav",
-      "image": "/images/berger.png"
+      "id": "assez",
+      "text": "assez",
+      "sentence": "J'ai assez de bonbons !",
+      "audioWord": "/audio/assez_word.wav",
+      "audioSentence": "/audio/assez_sentence.wav",
+      "image": "/images/assez.png"
     },
     {
-      "id": "boire",
-      "text": "boire",
-      "sentence": "Le chien aime boire l'eau.",
-      "audioWord": "/audio/boire_word.wav",
-      "audioSentence": "/audio/boire_sentence.wav",
-      "image": "/images/boire.png"
+      "id": "avez",
+      "text": "avez",
+      "sentence": "Avez-vous un secret ?",
+      "audioWord": "/audio/avez_word.wav",
+      "audioSentence": "/audio/avez_sentence.wav",
+      "image": "/images/avez.png"
     },
     {
-      "id": "bois",
-      "text": "bois",
-      "sentence": "Je bois de l'eau, glou glou !",
-      "audioWord": "/audio/bois_word.wav",
-      "audioSentence": "/audio/bois_sentence.wav",
-      "image": "/images/bois.png"
+      "id": "buvez",
+      "text": "buvez",
+      "sentence": "Buvez du jus, super-héros !",
+      "audioWord": "/audio/buvez_word.wav",
+      "audioSentence": "/audio/buvez_sentence.wav",
+      "image": "/images/buvez.png"
     },
     {
-      "id": "coller",
-      "text": "coller",
-      "sentence": "J'aime coller des autocollants.",
-      "audioWord": "/audio/coller_word.wav",
-      "audioSentence": "/audio/coller_sentence.wav",
-      "image": "/images/coller.png"
+      "id": "courez",
+      "text": "courez",
+      "sentence": "Courez après le ballon !",
+      "audioWord": "/audio/courez_word.wav",
+      "audioSentence": "/audio/courez_sentence.wav",
+      "image": "/images/courez.png"
     },
     {
-      "id": "couler",
-      "text": "couler",
-      "sentence": "La glace coule sur ma main !",
-      "audioWord": "/audio/couler_word.wav",
-      "audioSentence": "/audio/couler_sentence.wav",
-      "image": "/images/couler.png"
+      "id": "écoutez",
+      "text": "écoutez",
+      "sentence": "Écoutez un secret !",
+      "audioWord": "/audio/écoutez_word.wav",
+      "audioSentence": "/audio/écoutez_sentence.wav",
+      "image": "/images/écoutez.png"
     },
     {
-      "id": "crier",
-      "text": "crier",
-      "sentence": "Le chat aime crier.",
-      "audioWord": "/audio/crier_word.wav",
-      "audioSentence": "/audio/crier_sentence.wav",
-      "image": "/images/crier.png"
+      "id": "fêtez",
+      "text": "fêtez",
+      "sentence": "Fêtez la musique !",
+      "audioWord": "/audio/fêtez_word.wav",
+      "audioSentence": "/audio/fêtez_sentence.wav",
+      "image": "/images/fêtez.png"
     },
     {
-      "id": "croix",
-      "text": "croix",
-      "sentence": "La croix montre le trésor.",
-      "audioWord": "/audio/croix_word.wav",
-      "audioSentence": "/audio/croix_sentence.wav",
-      "image": "/images/croix.png"
+      "id": "levez",
+      "text": "levez",
+      "sentence": "Levez les bras comme un oiseau !",
+      "audioWord": "/audio/levez_word.wav",
+      "audioSentence": "/audio/levez_sentence.wav",
+      "image": "/images/levez.png"
     },
     {
-      "id": "doigt",
-      "text": "doigt",
-      "sentence": "Mon doigt danse !",
-      "audioWord": "/audio/doigt_word.wav",
-      "audioSentence": "/audio/doigt_sentence.wav",
-      "image": "/images/doigt.png"
+      "id": "nez",
+      "text": "nez",
+      "sentence": "Le clown a un nez rouge.",
+      "audioWord": "/audio/nez_word.wav",
+      "audioSentence": "/audio/nez_sentence.wav",
+      "image": "/images/nez.png"
     },
     {
-      "id": "donner",
-      "text": "donner",
-      "sentence": "Tu peux donner un câlin.",
-      "audioWord": "/audio/donner_word.wav",
-      "audioSentence": "/audio/donner_sentence.wav",
-      "image": "/images/donner.png"
+      "id": "parlez",
+      "text": "parlez",
+      "sentence": "Parlez avec le robot !",
+      "audioWord": "/audio/parlez_word.wav",
+      "audioSentence": "/audio/parlez_sentence.wav",
+      "image": "/images/parlez.png"
     },
     {
-      "id": "droit",
-      "text": "droit",
-      "sentence": "Le singe saute tout droit !",
-      "audioWord": "/audio/droit_word.wav",
-      "audioSentence": "/audio/droit_sentence.wav",
-      "image": "/images/droit.png"
+      "id": "tirez",
+      "text": "tirez",
+      "sentence": "Tirez la ficelle magique !",
+      "audioWord": "/audio/tirez_word.wav",
+      "audioSentence": "/audio/tirez_sentence.wav",
+      "image": "/images/tirez.png"
     },
     {
-      "id": "écouter",
-      "text": "écouter",
-      "sentence": "J'aime écouter la musique.",
-      "audioWord": "/audio/écouter_word.wav",
-      "audioSentence": "/audio/écouter_sentence.wav",
-      "image": "/images/écouter.png"
+      "id": "venez",
+      "text": "venez",
+      "sentence": "Venez chercher le trésor !",
+      "audioWord": "/audio/venez_word.wav",
+      "audioSentence": "/audio/venez_sentence.wav",
+      "image": "/images/venez.png"
     },
     {
-      "id": "espoir",
-      "text": "espoir",
-      "sentence": "J'ai de l'espoir pour un bonbon !",
-      "audioWord": "/audio/espoir_word.wav",
-      "audioSentence": "/audio/espoir_sentence.wav",
-      "image": "/images/espoir.png"
-    },
-    {
-      "id": "étoile",
-      "text": "étoile",
-      "sentence": "Une étoile brille dans le ciel.",
-      "audioWord": "/audio/étoile_word.wav",
-      "audioSentence": "/audio/étoile_sentence.wav",
-      "image": "/images/étoile.png"
-    },
-    {
-      "id": "fermer",
-      "text": "fermer",
-      "sentence": "Je vais fermer la boîte magique !",
-      "audioWord": "/audio/fermer_word.wav",
-      "audioSentence": "/audio/fermer_sentence.wav",
-      "image": "/images/fermer.png"
-    },
-    {
-      "id": "filtrer",
-      "text": "filtrer",
-      "sentence": "Regarde l'eau filtrer !",
-      "audioWord": "/audio/filtrer_word.wav",
-      "audioSentence": "/audio/filtrer_sentence.wav",
-      "image": "/images/filtrer.png"
-    },
-    {
-      "id": "foire",
-      "text": "foire",
-      "sentence": "La foire est amusante !",
-      "audioWord": "/audio/foire_word.wav",
-      "audioSentence": "/audio/foire_sentence.wav",
-      "image": "/images/foire.png"
-    },
-    {
-      "id": "fois",
-      "text": "fois",
-      "sentence": "Une fois, le clown saute!",
-      "audioWord": "/audio/fois_word.wav",
-      "audioSentence": "/audio/fois_sentence.wav",
-      "image": "/images/fois.png"
-    },
-    {
-      "id": "gloire",
-      "text": "gloire",
-      "sentence": "La petite fleur a sa gloire.",
-      "audioWord": "/audio/gloire_word.wav",
-      "audioSentence": "/audio/gloire_sentence.wav",
-      "image": "/images/gloire.png"
-    },
-    {
-      "id": "grivois",
-      "text": "grivois",
-      "sentence": "Le singe est un peu grivois.",
-      "audioWord": "/audio/grivois_word.wav",
-      "audioSentence": "/audio/grivois_sentence.wav",
-      "image": "/images/grivois.png"
-    },
-    {
-      "id": "jouer",
-      "text": "jouer",
-      "sentence": "J'aime jouer au parc.",
-      "audioWord": "/audio/jouer_word.wav",
-      "audioSentence": "/audio/jouer_sentence.wav",
-      "image": "/images/jouer.png"
-    },
-    {
-      "id": "laver",
-      "text": "laver",
-      "sentence": "J'aime laver mon nounours.",
-      "audioWord": "/audio/laver_word.wav",
-      "audioSentence": "/audio/laver_sentence.wav",
-      "image": "/images/laver.png"
-    },
-    {
-      "id": "léger",
-      "text": "léger",
-      "sentence": "Regarde, ce papillon est léger !",
-      "audioWord": "/audio/léger_word.wav",
-      "audioSentence": "/audio/léger_sentence.wav",
-      "image": "/images/léger.png"
-    },
-    {
-      "id": "lever",
-      "text": "lever",
-      "sentence": "Je veux lever ma main !",
-      "audioWord": "/audio/lever_word.wav",
-      "audioSentence": "/audio/lever_sentence.wav",
-      "image": "/images/lever.png"
-    },
-    {
-      "id": "loi",
-      "text": "loi",
-      "sentence": "La loi des pirates est rigolote !",
-      "audioWord": "/audio/loi_word.wav",
-      "audioSentence": "/audio/loi_sentence.wav",
-      "image": "/images/loi.png"
-    },
-    {
-      "id": "miroir",
-      "text": "miroir",
-      "sentence": "Je fais une grimace dans le miroir.",
-      "audioWord": "/audio/miroir_word.wav",
-      "audioSentence": "/audio/miroir_sentence.wav",
-      "image": "/images/miroir.png"
-    },
-    {
-      "id": "moi",
-      "text": "moi",
-      "sentence": "Tu joues avec moi ?",
-      "audioWord": "/audio/moi_word.wav",
-      "audioSentence": "/audio/moi_sentence.wav",
-      "image": "/images/moi.png"
-    },
-    {
-      "id": "mois",
-      "text": "mois",
-      "sentence": "Dans un mois, c'est Noël !",
-      "audioWord": "/audio/mois_word.wav",
-      "audioSentence": "/audio/mois_sentence.wav",
-      "image": "/images/mois.png"
-    },
-    {
-      "id": "nager",
-      "text": "nager",
-      "sentence": "Les canards aiment nager !",
-      "audioWord": "/audio/nager_word.wav",
-      "audioSentence": "/audio/nager_sentence.wav",
-      "image": "/images/nager.png"
-    },
-    {
-      "id": "noix",
-      "text": "noix",
-      "sentence": "L'écureuil cherche une noix.",
-      "audioWord": "/audio/noix_word.wav",
-      "audioSentence": "/audio/noix_sentence.wav",
-      "image": "/images/noix.png"
-    },
-    {
-      "id": "oiseau",
-      "text": "oiseau",
-      "sentence": "Un oiseau vole très haut !",
-      "audioWord": "/audio/oiseau_word.wav",
-      "audioSentence": "/audio/oiseau_sentence.wav",
-      "image": "/images/oiseau.png"
-    },
-    {
-      "id": "parler",
-      "text": "parler",
-      "sentence": "Le singe aime parler.",
-      "audioWord": "/audio/parler_word.wav",
-      "audioSentence": "/audio/parler_sentence.wav",
-      "image": "/images/parler.png"
-    },
-    {
-      "id": "peser",
-      "text": "peser",
-      "sentence": "Le singe aime peser la banane.",
-      "audioWord": "/audio/peser_word.wav",
-      "audioSentence": "/audio/peser_sentence.wav",
-      "image": "/images/peser.png"
-    },
-    {
-      "id": "pleurer",
-      "text": "pleurer",
-      "sentence": "La banane peut pleurer parfois.",
-      "audioWord": "/audio/pleurer_word.wav",
-      "audioSentence": "/audio/pleurer_sentence.wav",
-      "image": "/images/pleurer.png"
-    },
-    {
-      "id": "poire",
-      "text": "poire",
-      "sentence": "Une poire, c'est trop bon !",
-      "audioWord": "/audio/poire_word.wav",
-      "audioSentence": "/audio/poire_sentence.wav",
-      "image": "/images/poire.png"
-    },
-    {
-      "id": "regarder",
-      "text": "regarder",
-      "sentence": "J'aime regarder les papillons.",
-      "audioWord": "/audio/regarder_word.wav",
-      "audioSentence": "/audio/regarder_sentence.wav",
-      "image": "/images/regarder.png"
-    },
-    {
-      "id": "roi",
-      "text": "roi",
-      "sentence": "Le roi a une grande couronne.",
-      "audioWord": "/audio/roi_word.wav",
-      "audioSentence": "/audio/roi_sentence.wav",
-      "image": "/images/roi.png"
-    },
-    {
-      "id": "rouler",
-      "text": "rouler",
-      "sentence": "J'aime rouler en vélo.",
-      "audioWord": "/audio/rouler_word.wav",
-      "audioSentence": "/audio/rouler_sentence.wav",
-      "image": "/images/rouler.png"
-    },
-    {
-      "id": "sauter",
-      "text": "sauter",
-      "sentence": "Le petit chat aime sauter.",
-      "audioWord": "/audio/sauter_word.wav",
-      "audioSentence": "/audio/sauter_sentence.wav",
-      "image": "/images/sauter.png"
-    },
-    {
-      "id": "soi",
-      "text": "soi",
-      "sentence": "Chacun a un secret pour soi.",
-      "audioWord": "/audio/soi_word.wav",
-      "audioSentence": "/audio/soi_sentence.wav",
-      "image": "/images/soi.png"
-    },
-    {
-      "id": "souper",
-      "text": "souper",
-      "sentence": "J'adore mon souper!",
-      "audioWord": "/audio/souper_word.wav",
-      "audioSentence": "/audio/souper_sentence.wav",
-      "image": "/images/souper.png"
-    },
-    {
-      "id": "tiroir",
-      "text": "tiroir",
-      "sentence": "Ouvre le tiroir ! Il y a un secret.",
-      "audioWord": "/audio/tiroir_word.wav",
-      "audioSentence": "/audio/tiroir_sentence.wav",
-      "image": "/images/tiroir.png"
-    },
-    {
-      "id": "toi",
-      "text": "toi",
-      "sentence": "Joue avec moi, toi ?",
-      "audioWord": "/audio/toi_word.wav",
-      "audioSentence": "/audio/toi_sentence.wav",
-      "image": "/images/toi.png"
-    },
-    {
-      "id": "toit",
-      "text": "toit",
-      "sentence": "Un dragon est sur le toit !",
-      "audioWord": "/audio/toit_word.wav",
-      "audioSentence": "/audio/toit_sentence.wav",
-      "image": "/images/toit.png"
-    },
-    {
-      "id": "voiture",
-      "text": "voiture",
-      "sentence": "La voiture fait \"vroum\" !",
-      "audioWord": "/audio/voiture_word.wav",
-      "audioSentence": "/audio/voiture_sentence.wav",
-      "image": "/images/voiture.png"
+      "id": "voulez",
+      "text": "voulez",
+      "sentence": "Vous voulez un bonbon ?",
+      "audioWord": "/audio/voulez_word.wav",
+      "audioSentence": "/audio/voulez_sentence.wav",
+      "image": "/images/voulez.png"
     }
   ]
 }
