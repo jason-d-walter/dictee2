@@ -19,8 +19,9 @@ import base64
 import argparse
 import time
 import requests
+import yaml
 from pathlib import Path
-from datetime import datetime
+from datetime import datetime, date
 from dotenv import load_dotenv
 
 from google import genai
@@ -56,6 +57,7 @@ AUDIO_DIR = PUBLIC_DIR / "audio"
 IMAGES_DIR = PUBLIC_DIR / "images"
 WORDS_FILE = PUBLIC_DIR / "words_of_week.txt"
 MANIFEST_FILE = PUBLIC_DIR / "manifest.json"
+METADATA_FILE = PUBLIC_DIR / "metadata.yaml"
 
 # Ensure directories exist
 AUDIO_DIR.mkdir(parents=True, exist_ok=True)
@@ -340,6 +342,22 @@ def process_word(word: str, existing_data: dict | None = None) -> dict:
     return result
 
 
+def generate_metadata(sounds: str) -> None:
+    """Generate metadata.yaml with dictée information."""
+    metadata = {
+        "dictee": {
+            "name": WORDS_FILE.name,
+            "sounds": sounds,
+            "date_of_generation": date.today().isoformat(),
+        }
+    }
+
+    with open(METADATA_FILE, "w", encoding="utf-8") as f:
+        yaml.dump(metadata, f, default_flow_style=False, allow_unicode=True)
+
+    print(f"\nGenerated metadata: {METADATA_FILE}")
+
+
 def main():
     """Main function to generate all assets."""
     global image_rate_limit
@@ -359,6 +377,12 @@ def main():
     print("=" * 50)
     print("Dictée Asset Generator (Incremental)")
     print("=" * 50)
+
+    # Prompt for the sound theme
+    sounds = input("Enter the sound theme for this week's words (e.g., ez): ").strip()
+    if not sounds:
+        print("Warning: No sound theme provided, using 'unknown'")
+        sounds = "unknown"
     if image_rate_limit > 0:
         print(f"Image rate limit: {image_rate_limit}s between requests")
 
@@ -405,6 +429,9 @@ def main():
 
     with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
+
+    # Generate metadata.yaml
+    generate_metadata(sounds)
 
     print("\n" + "=" * 50)
     print(f"Generated manifest: {MANIFEST_FILE}")

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { GameMode, GameSession } from './types';
 import { useWordList } from './hooks/useWordList';
 import { useProgress } from './hooks/useProgress';
+import { useMetadata } from './hooks/useMetadata';
 import ModeSelector from './components/layout/ModeSelector';
 import GameSummary from './components/layout/GameSummary';
 import AudioMatch from './components/modes/AudioMatch';
@@ -17,6 +18,7 @@ function App() {
   const [session, setSession] = useState<GameSession | null>(null);
   const { words, loading, error, refetch } = useWordList();
   const { progress, recordAttempt, getWordsForPractice } = useProgress();
+  const metadata = useMetadata();
 
   const startGame = (mode: GameMode) => {
     const practiceWords = getWordsForPractice(words, SESSION_SIZE);
@@ -129,6 +131,7 @@ function App() {
       error={error}
       progress={progress}
       words={words}
+      metadata={metadata}
     />
   );
 }

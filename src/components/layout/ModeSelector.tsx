@@ -1,4 +1,4 @@
-import { GameMode, Word, WordProgress } from '../../types';
+import { GameMode, Word, WordProgress, DicteeMetadata } from '../../types';
 
 interface ModeSelectorProps {
   onSelectMode: (mode: GameMode) => void;
@@ -8,6 +8,7 @@ interface ModeSelectorProps {
   error: string | null;
   progress: Record<string, WordProgress>;
   words: Word[];
+  metadata: DicteeMetadata | null;
 }
 
 const MODES: { id: GameMode; emoji: string; title: string; description: string; color: string }[] = [
@@ -49,6 +50,7 @@ export default function ModeSelector({
   error,
   progress,
   words,
+  metadata,
 }: ModeSelectorProps) {
   const masteredCount = words.filter(w => progress[w.id]?.mastered).length;
 
@@ -74,6 +76,18 @@ export default function ModeSelector({
             <span className="text-2xl">⭐ </span>
             <span className="font-bold">{masteredCount}</span> maîtrisés
           </div>
+        </div>
+      )}
+
+      {/* Metadata: sounds theme and date */}
+      {metadata?.dictee && (
+        <div className="bg-white/10 rounded-2xl p-3 mx-auto mb-6 max-w-sm text-center text-white/70 text-sm">
+          <p>
+            Son de la semaine : <span className="font-bold text-white">«{metadata.dictee.sounds}»</span>
+          </p>
+          <p>
+            Mis à jour : <span className="font-bold text-white">{metadata.dictee.date_of_generation}</span>
+          </p>
         </div>
       )}
 

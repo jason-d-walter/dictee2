@@ -37,3 +37,11 @@ export interface WordManifest {
   generatedAt: string;
   words: Word[];
 }
+
+export interface DicteeMetadata {
+  dictee: {
+    name: string;
+    sounds: string;
+    date_of_generation: string;
+  };
+}
