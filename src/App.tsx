@@ -16,9 +16,12 @@ const SESSION_SIZE = 10;
 function App() {
   const [showWordList, setShowWordList] = useState(false);
   const [session, setSession] = useState<GameSession | null>(null);
-  const { words, loading, error, refetch } = useWordList();
+  const { weeks, selectedWeek, selectWeek, loading: metadataLoading } = useMetadata();
+  const weekPath = selectedWeek ? (selectedWeek.path ?? selectedWeek.sounds) : undefined;
+  const { words, loading: wordsLoading, error, refetch } = useWordList(weekPath);
   const { progress, recordAttempt, getWordsForPractice } = useProgress();
-  const metadata = useMetadata();
+
+  const loading = metadataLoading || wordsLoading;
 
   const startGame = (mode: GameMode) => {
     const practiceWords = getWordsForPractice(words, SESSION_SIZE);
@@ -131,7 +134,9 @@ function App() {
       error={error}
       progress={progress}
       words={words}
-      metadata={metadata}
+      weeks={weeks}
+      selectedWeek={selectedWeek}
+      onSelectWeek={selectWeek}
     />
   );
 }

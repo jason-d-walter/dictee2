@@ -1,4 +1,14 @@
 dictee:
-  name: words_of_week.txt
-  sounds: ez
-  date_of_generation: '2026-02-08'
+  - sounds: ez
+    path: ez
+    week_start: '2026-02-09'
+    week_end: '2026-02-12'
+    date_of_generation: '2026-02-08'
+    source: words_of_week.txt
+  - sounds: er-oi
+    path: er-oi
+    week_start: '2026-02-02'
+    week_end: '2026-02-07'
+    date_of_generation: '2026-02-01'
+    source: words_of_week.txt
+

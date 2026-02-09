@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { Word } from '../types';
 import { fetchWords as fetchWordsFromFile } from '../utils/fetchWords';
 
@@ -9,16 +9,16 @@ interface UseWordListReturn {
   refetch: () => void;
 }
 
-export function useWordList(): UseWordListReturn {
+export function useWordList(weekPath?: string): UseWordListReturn {
   const [words, setWords] = useState<Word[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
-  const loadWords = async () => {
+  const loadWords = useCallback(async () => {
     setLoading(true);
     setError(null);
     try {
-      const fetchedWords = await fetchWordsFromFile();
+      const fetchedWords = await fetchWordsFromFile(weekPath);
       setWords(fetchedWords);
     } catch (err) {
       setError('Failed to load words');
@@ -26,11 +26,11 @@ export function useWordList(): UseWordListReturn {
     } finally {
       setLoading(false);
     }
-  };
+  }, [weekPath]);
 
   useEffect(() => {
     loadWords();
-  }, []);
+  }, [loadWords]);
 
   return { words, loading, error, refetch: loadWords };
 }

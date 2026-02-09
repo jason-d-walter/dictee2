@@ -38,10 +38,15 @@ export interface WordManifest {
   words: Word[];
 }
 
+export interface WeekEntry {
+  sounds: string;
+  path?: string;
+  week_start: string;
+  week_end: string;
+  date_of_generation: string;
+  source: string;
+}
+
 export interface DicteeMetadata {
-  dictee: {
-    name: string;
-    sounds: string;
-    date_of_generation: string;
-  };
+  dictee: WeekEntry[];
 }

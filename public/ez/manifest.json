@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-02-06T19:50:22.235860",
+  "words": [
+    {
+      "id": "aidez",
+      "text": "aidez",
+      "sentence": "Aidez-moi à trouver le trésor !",
+      "audioWord": "/ez/audio/aidez_word.wav",
+      "audioSentence": "/ez/audio/aidez_sentence.wav",
+      "image": "/ez/images/aidez.png"
+    },
+    {
+      "id": "aimez",
+      "text": "aimez",
+      "sentence": "Aimez-vous les dragons ?",
+      "audioWord": "/ez/audio/aimez_word.wav",
+      "audioSentence": "/ez/audio/aimez_sentence.wav",
+      "image": "/ez/images/aimez.png"
+    },
+    {
+      "id": "allez",
+      "text": "allez",
+      "sentence": "Allez, on joue !",
+      "audioWord": "/ez/audio/allez_word.wav",
+      "audioSentence": "/ez/audio/allez_sentence.wav",
+      "image": "/ez/images/allez.png"
+    },
+    {
+      "id": "assez",
+      "text": "assez",
+      "sentence": "J'ai assez de bonbons !",
+      "audioWord": "/ez/audio/assez_word.wav",
+      "audioSentence": "/ez/audio/assez_sentence.wav",
+      "image": "/ez/images/assez.png"
+    },
+    {
+      "id": "avez",
+      "text": "avez",
+      "sentence": "Avez-vous un secret ?",
+      "audioWord": "/ez/audio/avez_word.wav",
+      "audioSentence": "/ez/audio/avez_sentence.wav",
+      "image": "/ez/images/avez.png"
+    },
+    {
+      "id": "buvez",
+      "text": "buvez",
+      "sentence": "Buvez du jus, super-héros !",
+      "audioWord": "/ez/audio/buvez_word.wav",
+      "audioSentence": "/ez/audio/buvez_sentence.wav",
+      "image": "/ez/images/buvez.png"
+    },
+    {
+      "id": "courez",
+      "text": "courez",
+      "sentence": "Courez après le ballon !",
+      "audioWord": "/ez/audio/courez_word.wav",
+      "audioSentence": "/ez/audio/courez_sentence.wav",
+      "image": "/ez/images/courez.png"
+    },
+    {
+      "id": "écoutez",
+      "text": "écoutez",
+      "sentence": "Écoutez un secret !",
+      "audioWord": "/ez/audio/écoutez_word.wav",
+      "audioSentence": "/ez/audio/écoutez_sentence.wav",
+      "image": "/ez/images/écoutez.png"
+    },
+    {
+      "id": "fêtez",
+      "text": "fêtez",
+      "sentence": "Fêtez la musique !",
+      "audioWord": "/ez/audio/fêtez_word.wav",
+      "audioSentence": "/ez/audio/fêtez_sentence.wav",
+      "image": "/ez/images/fêtez.png"
+    },
+    {
+      "id": "levez",
+      "text": "levez",
+      "sentence": "Levez les bras comme un oiseau !",
+      "audioWord": "/ez/audio/levez_word.wav",
+      "audioSentence": "/ez/audio/levez_sentence.wav",
+      "image": "/ez/images/levez.png"
+    },
+    {
+      "id": "nez",
+      "text": "nez",
+      "sentence": "Le clown a un nez rouge.",
+      "audioWord": "/ez/audio/nez_word.wav",
+      "audioSentence": "/ez/audio/nez_sentence.wav",
+      "image": "/ez/images/nez.png"
+    },
+    {
+      "id": "parlez",
+      "text": "parlez",
+      "sentence": "Parlez avec le robot !",
+      "audioWord": "/ez/audio/parlez_word.wav",
+      "audioSentence": "/ez/audio/parlez_sentence.wav",
+      "image": "/ez/images/parlez.png"
+    },
+    {
+      "id": "tirez",
+      "text": "tirez",
+      "sentence": "Tirez la ficelle magique !",
+      "audioWord": "/ez/audio/tirez_word.wav",
+      "audioSentence": "/ez/audio/tirez_sentence.wav",
+      "image": "/ez/images/tirez.png"
+    },
+    {
+      "id": "venez",
+      "text": "venez",
+      "sentence": "Venez chercher le trésor !",
+      "audioWord": "/ez/audio/venez_word.wav",
+      "audioSentence": "/ez/audio/venez_sentence.wav",
+      "image": "/ez/images/venez.png"
+    },
+    {
+      "id": "voulez",
+      "text": "voulez",
+      "sentence": "Vous voulez un bonbon ?",
+      "audioWord": "/ez/audio/voulez_word.wav",
+      "audioSentence": "/ez/audio/voulez_sentence.wav",
+      "image": "/ez/images/voulez.png"
+    }
+  ]
+}

@@ -4,10 +4,12 @@ import { Word, WordManifest } from '../types';
  * Fetches words from the generated manifest file.
  * Falls back to plain text file if manifest doesn't exist.
  */
-export async function fetchWords(): Promise<Word[]> {
+export async function fetchWords(weekPath?: string): Promise<Word[]> {
+  const base = weekPath ? `/${weekPath}` : '';
+
   // Try to load the generated manifest first
   try {
-    const manifestResponse = await fetch('/manifest.json');
+    const manifestResponse = await fetch(`${base}/manifest.json`);
     if (manifestResponse.ok) {
       const manifest: WordManifest = await manifestResponse.json();
       return manifest.words;
@@ -18,7 +20,7 @@ export async function fetchWords(): Promise<Word[]> {
 
   // Fallback: load plain text file (for development or if script hasn't run)
   try {
-    const response = await fetch('/words_of_week.txt');
+    const response = await fetch(`${base}/words_of_week.txt`);
     if (!response.ok) {
       throw new Error('Failed to fetch words');
     }
