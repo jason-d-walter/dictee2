@@ -162,20 +162,29 @@ Return ONLY the French sentence, nothing else."""
 
 import wave
 
-def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool:
+def generate_audio_tts(text: str, output_path: Path, slow: bool = False, is_word: bool = False) -> bool:
     """Safe version that saves raw PCM as a playable WAV file."""
-    
-    # Natural language steering for speed
-    prompt = f"Dites d'une voix féminine {'lentement' if slow else ''} : {text}"
 
-    minimal_config = {
-        "response_modalities": ["AUDIO"],
-        "speech_config": {
-            "voice_config": {
-                "prebuilt_voice_config": {"voice_name": "Aoede"}
-            }
-        }
-    }
+    # For single words, wrap in French context to force French pronunciation.
+    # Without this, words that exist in both English and French (e.g. "gland" = acorn)
+    # get English phonetics even with language_code="fr-FR".
+    # Sentences already have enough French context and don't need wrapping.
+    if is_word:
+        prompt = f"Le mot : {text}."
+    else:
+        prompt = text
+
+    minimal_config = types.GenerateContentConfig(
+        response_modalities=["AUDIO"],
+        speech_config=types.SpeechConfig(
+            language_code="fr-FR",
+            voice_config=types.VoiceConfig(
+                prebuilt_voice_config=types.PrebuiltVoiceConfig(
+                    voice_name="Aoede",
+                )
+            ),
+        ),
+    )
 
     try:
         response = client.models.generate_content(
@@ -296,7 +305,7 @@ def process_word(word: str, existing_data: dict | None = None) -> dict:
     word_audio_path = AUDIO_DIR / f"{word}_word.wav"
     if needs["audioWord"]:
         print(f"  Generating word audio...")
-        if generate_audio_tts(word, word_audio_path, slow=True):
+        if generate_audio_tts(word, word_audio_path, slow=True, is_word=True):
             result["audioWord"] = f"/audio/{word}_word.wav"
             generated.append("audioWord")
         else:
