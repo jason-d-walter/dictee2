@@ -1,0 +1,381 @@
+{
+  "generatedAt": "2026-02-14T09:24:55.887908",
+  "words": [
+    {
+      "id": "amie",
+      "text": "amie",
+      "sentence": "Mon amie mange du chocolat.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/amie_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/amie_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/amie.png"
+    },
+    {
+      "id": "vite",
+      "text": "vite",
+      "sentence": "Le lapin court vite.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/vite_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/vite_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/vite.png"
+    },
+    {
+      "id": "rire",
+      "text": "rire",
+      "sentence": "Le clown fait rire.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/rire_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/rire_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/rire.png"
+    },
+    {
+      "id": "dire",
+      "text": "dire",
+      "sentence": "J'aime dire des blagues.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/dire_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/dire_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/dire.png"
+    },
+    {
+      "id": "tire",
+      "text": "tire",
+      "sentence": "Le chat tire la ficelle.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/tire_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/tire_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/tire.png"
+    },
+    {
+      "id": "lire",
+      "text": "lire",
+      "sentence": "On va lire un livre !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/lire_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/lire_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/lire.png"
+    },
+    {
+      "id": "rose",
+      "text": "rose",
+      "sentence": "Regarde la belle rose !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/rose_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/rose_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/rose.png"
+    },
+    {
+      "id": "âge",
+      "text": "âge",
+      "sentence": "Mon âge est un chiffre magique !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/âge_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/âge_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/âge.png"
+    },
+    {
+      "id": "balle",
+      "text": "balle",
+      "sentence": "Mon chat joue avec la balle.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/balle_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/balle_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/balle.png"
+    },
+    {
+      "id": "presque",
+      "text": "presque",
+      "sentence": "Il est presque l'heure de jouer !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/presque_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/presque_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/presque.png"
+    },
+    {
+      "id": "amuse",
+      "text": "amuse",
+      "sentence": "Le clown m'amuse beaucoup !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/amuse_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/amuse_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/amuse.png"
+    },
+    {
+      "id": "plage",
+      "text": "plage",
+      "sentence": "Je fais un château de sable à la plage.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/plage_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/plage_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/plage.png"
+    },
+    {
+      "id": "adore",
+      "text": "adore",
+      "sentence": "J'adore la glace !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/adore_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/adore_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/adore.png"
+    },
+    {
+      "id": "pire",
+      "text": "pire",
+      "sentence": "C'est le pire bruit!",
+      "audioWord": "/consonnes_doubles-e_muet/audio/pire_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/pire_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/pire.png"
+    },
+    {
+      "id": "piste",
+      "text": "piste",
+      "sentence": "Je glisse sur la piste.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/piste_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/piste_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/piste.png"
+    },
+    {
+      "id": "robe",
+      "text": "robe",
+      "sentence": "La fée a une belle robe.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/robe_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/robe_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/robe.png"
+    },
+    {
+      "id": "rime",
+      "text": "rime",
+      "sentence": "Cette rime est vraiment amusante !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/rime_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/rime_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/rime.png"
+    },
+    {
+      "id": "cerise",
+      "text": "cerise",
+      "sentence": "Miam, la cerise est bonne !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/cerise_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/cerise_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/cerise.png"
+    },
+    {
+      "id": "arbre",
+      "text": "arbre",
+      "sentence": "Je grimpe à l'arbre.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/arbre_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/arbre_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/arbre.png"
+    },
+    {
+      "id": "orage",
+      "text": "orage",
+      "sentence": "L'orage fait danser les arbres.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/orage_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/orage_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/orage.png"
+    },
+    {
+      "id": "cube",
+      "text": "cube",
+      "sentence": "Mon cube est magique !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/cube_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/cube_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/cube.png"
+    },
+    {
+      "id": "vie",
+      "text": "vie",
+      "sentence": "Ma vie est super !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/vie_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/vie_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/vie.png"
+    },
+    {
+      "id": "jupe",
+      "text": "jupe",
+      "sentence": "La jupe tourne.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/jupe_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/jupe_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/jupe.png"
+    },
+    {
+      "id": "facile",
+      "text": "facile",
+      "sentence": "La magie est facile !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/facile_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/facile_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/facile.png"
+    },
+    {
+      "id": "casse",
+      "text": "casse",
+      "sentence": "Le clown casse le ballon.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/casse_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/casse_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/casse.png"
+    },
+    {
+      "id": "botte",
+      "text": "botte",
+      "sentence": "Le chien porte une botte.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/botte_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/botte_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/botte.png"
+    },
+    {
+      "id": "griffe",
+      "text": "griffe",
+      "sentence": "Le chat joue avec sa petite griffe.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/griffe_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/griffe_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/griffe.png"
+    },
+    {
+      "id": "ville",
+      "text": "ville",
+      "sentence": "Je dessine une grande ville.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/ville_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/ville_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/ville.png"
+    },
+    {
+      "id": "fesse",
+      "text": "fesse",
+      "sentence": "Le lapin bouge sa fesse.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/fesse_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/fesse_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/fesse.png"
+    },
+    {
+      "id": "appelé",
+      "text": "appelé",
+      "sentence": "Ce drôle d'oiseau est appelé Piou-piou!",
+      "audioWord": "/consonnes_doubles-e_muet/audio/appelé_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/appelé_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/appelé.png"
+    },
+    {
+      "id": "personne",
+      "text": "personne",
+      "sentence": "Personne ne sait le secret!",
+      "audioWord": "/consonnes_doubles-e_muet/audio/personne_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/personne_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/personne.png"
+    },
+    {
+      "id": "bosse",
+      "text": "bosse",
+      "sentence": "Le clown a une bosse rouge sur le nez.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/bosse_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/bosse_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/bosse.png"
+    },
+    {
+      "id": "mettre",
+      "text": "mettre",
+      "sentence": "Je mets mon chapeau magique.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/mettre_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/mettre_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/mettre.png"
+    },
+    {
+      "id": "flamme",
+      "text": "flamme",
+      "sentence": "La flamme danse.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/flamme_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/flamme_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/flamme.png"
+    },
+    {
+      "id": "coffre",
+      "text": "coffre",
+      "sentence": "J'ouvre le coffre secret.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/coffre_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/coffre_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/coffre.png"
+    },
+    {
+      "id": "flotte",
+      "text": "flotte",
+      "sentence": "Mon bateau flotte sur l'eau !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/flotte_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/flotte_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/flotte.png"
+    },
+    {
+      "id": "chiotte",
+      "text": "chiotte",
+      "sentence": "Oups, il faut aller aux chiottes !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/chiotte_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/chiotte_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/chiotte.png"
+    },
+    {
+      "id": "hutte",
+      "text": "hutte",
+      "sentence": "Nous jouons dans une hutte.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/hutte_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/hutte_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/hutte.png"
+    },
+    {
+      "id": "homme",
+      "text": "homme",
+      "sentence": "L'homme a un grand chapeau.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/homme_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/homme_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/homme.png"
+    },
+    {
+      "id": "comme",
+      "text": "comme",
+      "sentence": "Je joue comme un super-héros !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/comme_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/comme_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/comme.png"
+    },
+    {
+      "id": "classe",
+      "text": "classe",
+      "sentence": "C'est trop classe !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/classe_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/classe_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/classe.png"
+    },
+    {
+      "id": "dessine",
+      "text": "dessine",
+      "sentence": "Je dessine un soleil.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/dessine_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/dessine_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/dessine.png"
+    },
+    {
+      "id": "efface",
+      "text": "efface",
+      "sentence": "Tu effaces le méchant monstre.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/efface_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/efface_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/efface.png"
+    },
+    {
+      "id": "offre",
+      "text": "offre",
+      "sentence": "Le singe offre une banane.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/offre_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/offre_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/offre.png"
+    },
+    {
+      "id": "pomme",
+      "text": "pomme",
+      "sentence": "Miam, une pomme !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/pomme_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/pomme_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/pomme.png"
+    },
+    {
+      "id": "carotte",
+      "text": "carotte",
+      "sentence": "Le lapin mange la carotte.",
+      "audioWord": "/consonnes_doubles-e_muet/audio/carotte_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/carotte_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/carotte.png"
+    },
+    {
+      "id": "glisse",
+      "text": "glisse",
+      "sentence": "Je glisse sur le toboggan !",
+      "audioWord": "/consonnes_doubles-e_muet/audio/glisse_word.wav",
+      "audioSentence": "/consonnes_doubles-e_muet/audio/glisse_sentence.wav",
+      "image": "/consonnes_doubles-e_muet/images/glisse.png"
+    }
+  ]
+}
