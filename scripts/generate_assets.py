@@ -164,6 +164,7 @@ def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool
     minimal_config = {
         "response_modalities": ["AUDIO"],
         "speech_config": {
+            "language_code" : "fr-FR",
             "voice_config": {
                 "prebuilt_voice_config": {"voice_name": "Aoede"}
             }
@@ -219,8 +220,8 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
 
     # Attempt 1: The original creative prompt
     prompts_to_try = [
-        f"A whimsical, child-friendly cartoon illustration representing: {sentence}. Bright colors, simple shapes. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography.",
-        f"A simple, cheerful drawing of: {word}. High quality 2D cartoon art. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography."
+        f"A whimsical, child-friendly cartoon illustration for a French children's spelling lesson. Illustrate this French sentence: {sentence}. Bright colors, simple shapes. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography.",
+        f"A simple, cheerful drawing for a French children's spelling lesson. Illustrate the French word \"{word}\" using its French meaning. High quality 2D cartoon art. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):
@@ -386,7 +387,7 @@ def main():
     parser.add_argument(
         "--sounds",
         required=True,
-        help="Sound theme for this week's words (e.g., ez, ou)"
+        help="Sound theme for this week's words (se.g., ez, ou)"
     )
     parser.add_argument(
         "--week-start",
