@@ -99,7 +99,7 @@ export default function Exploration({
               <img
                 src={word.image}
                 alt={word.text}
-                className={`w-full h-48 object-cover transition-opacity duration-300 ${
+                className={`w-full object-contain transition-opacity duration-300 ${
                   imageLoaded ? 'opacity-100' : 'opacity-0'
                 }`}
                 onLoad={() => setImageLoaded(true)}

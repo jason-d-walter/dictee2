@@ -219,9 +219,12 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     }
 
     # Attempt 1: The original creative prompt
+    # NOTE: "no text" instructions are reinforced at both the beginning and end
+    # of the prompt, and we avoid mentioning "spelling lesson" which primes the
+    # model to include letters/words. Style is described as "wordless picture book".
     prompts_to_try = [
-        f"A whimsical, child-friendly cartoon illustration for a French children's spelling lesson. Illustrate this French sentence: {sentence}. Bright colors, simple shapes. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography.",
-        f"A simple, cheerful drawing for a French children's spelling lesson. Illustrate the French word \"{word}\" using its French meaning. High quality 2D cartoon art. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography."
+        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A whimsical, child-friendly cartoon in the style of a wordless picture book. Illustrate this scene: {sentence}. Bright colors, simple shapes, flat 2D vector art. The image must contain only drawings, no typography of any kind.",
+        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A simple, cheerful cartoon drawing depicting the concept of \"{word}\" (French). High quality 2D flat vector art, bright colors. The image must contain only drawings, no typography of any kind."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):
