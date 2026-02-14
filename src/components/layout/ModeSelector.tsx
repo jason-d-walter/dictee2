@@ -1,4 +1,4 @@
-import { GameMode, Word, WordProgress, DicteeMetadata } from '../../types';
+import { GameMode, Word, WordProgress, WeekEntry } from '../../types';
 
 interface ModeSelectorProps {
   onSelectMode: (mode: GameMode) => void;
@@ -8,7 +8,18 @@ interface ModeSelectorProps {
   error: string | null;
   progress: Record<string, WordProgress>;
   words: Word[];
-  metadata: DicteeMetadata | null;
+  weeks: WeekEntry[];
+  selectedWeek: WeekEntry | null;
+  onSelectWeek: (week: WeekEntry) => void;
+}
+
+function formatWeekLabel(week: WeekEntry): string {
+  const start = new Date(week.week_start + 'T00:00:00');
+  const end = new Date(week.week_end + 'T00:00:00');
+  const startDay = start.getDate();
+  const endDay = end.getDate();
+  const month = end.toLocaleDateString('fr-FR', { month: 'short' });
+  return `${startDay}-${endDay} ${month} : \u00AB${week.sounds}\u00BB`;
 }
 
 const MODES: { id: GameMode; emoji: string; title: string; description: string; color: string }[] = [
@@ -50,9 +61,22 @@ export default function ModeSelector({
   error,
   progress,
   words,
-  metadata,
+  weeks,
+  selectedWeek,
+  onSelectWeek,
 }: ModeSelectorProps) {
   const masteredCount = words.filter(w => progress[w.id]?.mastered).length;
+
+  const handleWeekChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const idx = parseInt(e.target.value, 10);
+    if (weeks[idx]) {
+      onSelectWeek(weeks[idx]);
+    }
+  };
+
+  const selectedIndex = selectedWeek
+    ? weeks.findIndex(w => w.week_start === selectedWeek.week_start && w.sounds === selectedWeek.sounds)
+    : 0;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-4 flex flex-col">
@@ -79,15 +103,20 @@ export default function ModeSelector({
         </div>
       )}
 
-      {/* Metadata: sounds theme and date */}
-      {metadata?.dictee && (
-        <div className="bg-white/10 rounded-2xl p-3 mx-auto mb-6 max-w-sm text-center text-white/70 text-sm">
-          <p>
-            Son de la semaine : <span className="font-bold text-white">«{metadata.dictee.sounds}»</span>
-          </p>
-          <p>
-            Mis à jour : <span className="font-bold text-white">{metadata.dictee.date_of_generation}</span>
-          </p>
+      {/* Week selector */}
+      {weeks.length > 0 && (
+        <div className="bg-white/10 rounded-2xl p-3 mx-auto mb-6 max-w-sm text-center">
+          <select
+            value={selectedIndex}
+            onChange={handleWeekChange}
+            className="bg-white/20 text-white border border-white/30 rounded-lg px-3 py-2 text-sm w-full appearance-none cursor-pointer focus:outline-none focus:ring-2 focus:ring-white/50"
+          >
+            {weeks.map((week, idx) => (
+              <option key={`${week.week_start}-${week.sounds}`} value={idx} className="text-gray-900">
+                {formatWeekLabel(week)}
+              </option>
+            ))}
+          </select>
         </div>
       )}
 

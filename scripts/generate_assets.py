@@ -10,7 +10,7 @@ This script reads words from words_of_week.txt and generates:
 Usage:
     pip install -r requirements.txt
     export GOOGLE_PROJECT_NAME=project_name
-    python generate_assets.py
+    python generate_assets.py --sounds ez --week-start 2026-02-09 --week-end 2026-02-12
 """
 
 import os
@@ -44,35 +44,28 @@ speech_model= "gemini-2.5-flash-tts"
 # 1. Setup the Client for Vertex AI
 # Ensure you have 'GOOGLE_CLOUD_PROJECT' set in your environment
 client = genai.Client(
-    vertexai=True, 
+    vertexai=True,
     project=GOOGLE_PROJECT_NAME,
     location="us-central1"
-) 
+)
 
-# Paths
+# Paths (base paths, week_path applied dynamically)
 SCRIPT_DIR = Path(__file__).parent
 PROJECT_DIR = SCRIPT_DIR.parent
 PUBLIC_DIR = PROJECT_DIR / "public"
-AUDIO_DIR = PUBLIC_DIR / "audio"
-IMAGES_DIR = PUBLIC_DIR / "images"
-WORDS_FILE = PUBLIC_DIR / "words_of_week.txt"
-MANIFEST_FILE = PUBLIC_DIR / "manifest.json"
 METADATA_FILE = PUBLIC_DIR / "metadata.yaml"
-
-# Ensure directories exist
-AUDIO_DIR.mkdir(parents=True, exist_ok=True)
-IMAGES_DIR.mkdir(parents=True, exist_ok=True)
 
 # Rate limiting for image generation
 last_image_time = 0
 image_rate_limit = 60  # seconds between image requests (default: 1 per minute)
 
-def read_words() -> list[str]:
-    """Read words from the words file."""
-    if not WORDS_FILE.exists():
-        raise FileNotFoundError(f"Words file not found: {WORDS_FILE}")
 
-    with open(WORDS_FILE, "r", encoding="utf-8") as f:
+def read_words(words_file: Path) -> list[str]:
+    """Read words from the words file."""
+    if not words_file.exists():
+        raise FileNotFoundError(f"Words file not found: {words_file}")
+
+    with open(words_file, "r", encoding="utf-8") as f:
         words = [line.strip() for line in f if line.strip()]
 
     # Remove duplicates while preserving order
@@ -86,13 +79,13 @@ def read_words() -> list[str]:
     return unique_words
 
 
-def load_existing_manifest() -> dict:
+def load_existing_manifest(manifest_file: Path) -> dict:
     """Load existing manifest and return a dict keyed by word text."""
-    if not MANIFEST_FILE.exists():
+    if not manifest_file.exists():
         return {}
 
     try:
-        with open(MANIFEST_FILE, "r", encoding="utf-8") as f:
+        with open(manifest_file, "r", encoding="utf-8") as f:
             manifest = json.load(f)
         return {w["text"]: w for w in manifest.get("words", [])}
     except (json.JSONDecodeError, KeyError) as e:
@@ -100,7 +93,7 @@ def load_existing_manifest() -> dict:
         return {}
 
 
-def check_existing_assets(word: str, existing_data: dict | None) -> dict:
+def check_existing_assets(word: str, existing_data: dict | None, audio_dir: Path, images_dir: Path) -> dict:
     """
     Check which assets already exist for a word.
     Returns a dict with what needs to be generated.
@@ -113,9 +106,9 @@ def check_existing_assets(word: str, existing_data: dict | None) -> dict:
     }
 
     # Check files on disk
-    word_audio_path = AUDIO_DIR / f"{word}_word.wav"
-    sentence_audio_path = AUDIO_DIR / f"{word}_sentence.wav"
-    image_path = IMAGES_DIR / f"{word}.png"
+    word_audio_path = audio_dir / f"{word}_word.wav"
+    sentence_audio_path = audio_dir / f"{word}_sentence.wav"
+    image_path = images_dir / f"{word}.png"
 
     if word_audio_path.exists():
         needs["audioWord"] = False
@@ -142,7 +135,7 @@ Requirements:
 - Keep it short (5-10 words maximum)
 - The word "{word}" must appear in the sentence exactly as written
 - Avoid using the 'passé composé' if possible; stick to the 'présent de l'indicatif'.
-    
+
 Return ONLY the French sentence, nothing else."""
 
     text_response = client.models.generate_content(
@@ -164,13 +157,14 @@ import wave
 
 def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool:
     """Safe version that saves raw PCM as a playable WAV file."""
-    
+
     # Natural language steering for speed
     prompt = f"Dites d'une voix féminine {'lentement' if slow else ''} : {text}"
 
     minimal_config = {
         "response_modalities": ["AUDIO"],
         "speech_config": {
+            "language_code" : "fr-FR",
             "voice_config": {
                 "prebuilt_voice_config": {"voice_name": "Aoede"}
             }
@@ -183,23 +177,23 @@ def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool
             contents=prompt,
             config=minimal_config
         )
-        
+
         # Get raw bytes
         pcm_data = response.candidates[0].content.parts[0].inline_data.data
-        
+
         # Gemini TTS defaults: 24kHz, Mono, 16-bit PCM
         # We must save this as a .wav for afplay to understand it
-        wav_path = output_path.with_suffix('.wav') 
-        
+        wav_path = output_path.with_suffix('.wav')
+
         with wave.open(str(wav_path), "wb") as wf:
             wf.setnchannels(1)          # Mono
             wf.setsampwidth(2)          # 16-bit (2 bytes)
             wf.setframerate(24000)      # 24kHz is standard for Gemini-TTS
             wf.writeframes(pcm_data)
-        
+
         print(f"  Audio saved as WAV: {wav_path.name}")
         return True
-        
+
     except Exception as e:
         print(f"  Audio error: {e}")
         return False
@@ -219,15 +213,18 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     # Use 'ALLOW_ALL' for person_generation to permit images of children
     image_config = {
         "number_of_images": 1,
-        "person_generation": "ALLOW_ALL", 
+        "person_generation": "ALLOW_ALL",
         "aspect_ratio": "1:1",
         "safety_filter_level": "BLOCK_ONLY_HIGH" # Least restrictive setting
     }
 
     # Attempt 1: The original creative prompt
+    # NOTE: "no text" instructions are reinforced at both the beginning and end
+    # of the prompt, and we avoid mentioning "spelling lesson" which primes the
+    # model to include letters/words. Style is described as "wordless picture book".
     prompts_to_try = [
-        f"A whimsical, child-friendly cartoon illustration representing: {sentence}. Bright colors, simple shapes. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography.",
-        f"A simple, cheerful drawing of: {word}. High quality 2D cartoon art. IMPORTANT: Do not include any text, letters, words, or writing in the image. Pure illustration only, no typography."
+        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A whimsical, child-friendly cartoon in the style of a wordless picture book. Illustrate this scene: {sentence}. Bright colors, simple shapes, flat 2D vector art. The image must contain only drawings, no typography of any kind.",
+        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A simple, cheerful cartoon drawing depicting the concept of \"{word}\" (French). High quality 2D flat vector art, bright colors. The image must contain only drawings, no typography of any kind."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):
@@ -255,13 +252,13 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     # Level 3 Fallback: If both fail, you could copy a local 'placeholder.png' here
     print(f"  CRITICAL: All image generation attempts failed for '{word}'.")
     return False
-    
-def process_word(word: str, existing_data: dict | None = None) -> dict:
+
+def process_word(word: str, week_path: str, existing_data: dict | None, audio_dir: Path, images_dir: Path) -> dict:
     """Process a single word and generate only missing assets."""
     print(f"\nProcessing: {word}")
 
     # Check what already exists
-    needs = check_existing_assets(word, existing_data)
+    needs = check_existing_assets(word, existing_data, audio_dir, images_dir)
 
     # Start with existing data or create new
     if existing_data:
@@ -293,42 +290,42 @@ def process_word(word: str, existing_data: dict | None = None) -> dict:
         print(f"  Sentence exists: {result.get('sentence', 'N/A')}")
 
     # Generate word audio (only if needed)
-    word_audio_path = AUDIO_DIR / f"{word}_word.wav"
+    word_audio_path = audio_dir / f"{word}_word.wav"
     if needs["audioWord"]:
         print(f"  Generating word audio...")
         if generate_audio_tts(word, word_audio_path, slow=True):
-            result["audioWord"] = f"/audio/{word}_word.wav"
+            result["audioWord"] = f"/{week_path}/audio/{word}_word.wav"
             generated.append("audioWord")
         else:
             print(f"  Failed to generate word audio")
     else:
-        result["audioWord"] = f"/audio/{word}_word.wav"
+        result["audioWord"] = f"/{week_path}/audio/{word}_word.wav"
         skipped.append("audioWord")
 
     # Generate sentence audio (only if needed)
-    sentence_audio_path = AUDIO_DIR / f"{word}_sentence.wav"
+    sentence_audio_path = audio_dir / f"{word}_sentence.wav"
     if needs["audioSentence"]:
         print(f"  Generating sentence audio...")
         if generate_audio_tts(result.get("sentence", word), sentence_audio_path):
-            result["audioSentence"] = f"/audio/{word}_sentence.wav"
+            result["audioSentence"] = f"/{week_path}/audio/{word}_sentence.wav"
             generated.append("audioSentence")
         else:
             print(f"  Failed to generate sentence audio")
     else:
-        result["audioSentence"] = f"/audio/{word}_sentence.wav"
+        result["audioSentence"] = f"/{week_path}/audio/{word}_sentence.wav"
         skipped.append("audioSentence")
 
     # Generate image (only if needed)
-    image_path = IMAGES_DIR / f"{word}.png"
+    image_path = images_dir / f"{word}.png"
     if needs["image"]:
         print(f"  Generating image...")
         if generate_image(result.get("sentence", word), word, image_path):
-            result["image"] = f"/images/{word}.png"
+            result["image"] = f"/{week_path}/images/{word}.png"
             generated.append("image")
         else:
             print(f"  Failed to generate image (continuing without it)")
     else:
-        result["image"] = f"/images/{word}.png"
+        result["image"] = f"/{week_path}/images/{word}.png"
         skipped.append("image")
 
     # Summary
@@ -342,20 +339,46 @@ def process_word(word: str, existing_data: dict | None = None) -> dict:
     return result
 
 
-def generate_metadata(sounds: str) -> None:
-    """Generate metadata.yaml with dictée information."""
-    metadata = {
-        "dictee": {
-            "name": WORDS_FILE.name,
-            "sounds": sounds,
-            "date_of_generation": date.today().isoformat(),
-        }
+def update_metadata(sounds: str, week_path: str, week_start: str, week_end: str) -> None:
+    """Append or update an entry in metadata.yaml."""
+    # Load existing metadata
+    if METADATA_FILE.exists():
+        with open(METADATA_FILE, "r", encoding="utf-8") as f:
+            raw = yaml.safe_load(f) or {}
+    else:
+        raw = {}
+
+    weeks = raw.get("dictee", [])
+    if not isinstance(weeks, list):
+        # Backward compat: convert old single-object format
+        weeks = [weeks] if weeks else []
+
+    entry = {
+        "sounds": sounds,
+        "path": week_path,
+        "week_start": week_start,
+        "week_end": week_end,
+        "date_of_generation": date.today().isoformat(),
+        "source": "words_of_week.txt",
     }
 
-    with open(METADATA_FILE, "w", encoding="utf-8") as f:
-        yaml.dump(metadata, f, default_flow_style=False, allow_unicode=True)
+    # Replace existing entry with same sounds+week_start, or append
+    replaced = False
+    for i, existing in enumerate(weeks):
+        if existing.get("sounds") == sounds and existing.get("week_start") == week_start:
+            weeks[i] = entry
+            replaced = True
+            break
 
-    print(f"\nGenerated metadata: {METADATA_FILE}")
+    if not replaced:
+        weeks.append(entry)
+
+    raw["dictee"] = weeks
+
+    with open(METADATA_FILE, "w", encoding="utf-8") as f:
+        yaml.dump(raw, f, default_flow_style=False, allow_unicode=True)
+
+    print(f"\n{'Updated' if replaced else 'Added'} metadata entry in: {METADATA_FILE}")
 
 
 def main():
@@ -365,6 +388,26 @@ def main():
     # Parse command line arguments
     parser = argparse.ArgumentParser(description="Generate assets for the Dictée app")
     parser.add_argument(
+        "--sounds",
+        required=True,
+        help="Sound theme for this week's words (se.g., ez, ou)"
+    )
+    parser.add_argument(
+        "--week-start",
+        required=True,
+        help="Start date of the week (YYYY-MM-DD)"
+    )
+    parser.add_argument(
+        "--week-end",
+        required=True,
+        help="End date of the week (YYYY-MM-DD)"
+    )
+    parser.add_argument(
+        "--path",
+        default=None,
+        help="Subdirectory name (defaults to --sounds value)"
+    )
+    parser.add_argument(
         "--image-rate-limit",
         type=int,
         default=60,
@@ -373,29 +416,41 @@ def main():
     args = parser.parse_args()
 
     image_rate_limit = args.image_rate_limit
+    sounds = args.sounds
+    week_path = args.path or sounds
+    week_start = args.week_start
+    week_end = args.week_end
+
+    # Compute output paths
+    week_dir = PUBLIC_DIR / week_path
+    audio_dir = week_dir / "audio"
+    images_dir = week_dir / "images"
+    words_file = week_dir / "words_of_week.txt"
+    manifest_file = week_dir / "manifest.json"
+
+    # Ensure directories exist
+    audio_dir.mkdir(parents=True, exist_ok=True)
+    images_dir.mkdir(parents=True, exist_ok=True)
 
     print("=" * 50)
     print("Dictée Asset Generator (Incremental)")
     print("=" * 50)
-
-    # Prompt for the sound theme
-    sounds = input("Enter the sound theme for this week's words (e.g., ez): ").strip()
-    if not sounds:
-        print("Warning: No sound theme provided, using 'unknown'")
-        sounds = "unknown"
+    print(f"Sound theme: {sounds}")
+    print(f"Week path: {week_path}")
+    print(f"Week: {week_start} to {week_end}")
     if image_rate_limit > 0:
         print(f"Image rate limit: {image_rate_limit}s between requests")
 
     # Load existing manifest
-    existing_manifest = load_existing_manifest()
+    existing_manifest = load_existing_manifest(manifest_file)
     if existing_manifest:
         print(f"\nFound existing manifest with {len(existing_manifest)} words")
     else:
         print("\nNo existing manifest found, generating all assets")
 
     # Read words
-    words = read_words()
-    print(f"\nFound {len(words)} words in words_of_week.txt:")
+    words = read_words(words_file)
+    print(f"\nFound {len(words)} words in {words_file.name}:")
     for word in words:
         status = "✓ exists" if word in existing_manifest else "○ new"
         print(f"  - {word} ({status})")
@@ -408,11 +463,11 @@ def main():
 
     for word in words:
         existing_data = existing_manifest.get(word)
-        result = process_word(word, existing_data)
+        result = process_word(word, week_path, existing_data, audio_dir, images_dir)
         results.append(result)
 
         # Track stats
-        needs = check_existing_assets(word, existing_data)
+        needs = check_existing_assets(word, existing_data, audio_dir, images_dir)
         if any(needs.values()):
             if existing_data:
                 updated_count += 1
@@ -427,14 +482,14 @@ def main():
         "words": results
     }
 
-    with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
+    with open(manifest_file, "w", encoding="utf-8") as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
-    # Generate metadata.yaml
-    generate_metadata(sounds)
+    # Update metadata.yaml (append/update, not overwrite)
+    update_metadata(sounds, week_path, week_start, week_end)
 
     print("\n" + "=" * 50)
-    print(f"Generated manifest: {MANIFEST_FILE}")
+    print(f"Generated manifest: {manifest_file}")
     print(f"Summary:")
     print(f"  - New words: {new_count}")
     print(f"  - Updated words: {updated_count}")

@@ -1,0 +1,381 @@
+{
+  "generatedAt": "2026-01-31T11:58:02.774141",
+  "words": [
+    {
+      "id": "aimer",
+      "text": "aimer",
+      "sentence": "Il faut aimer jouer dehors !",
+      "audioWord": "/er-oi/audio/aimer_word.wav",
+      "audioSentence": "/er-oi/audio/aimer_sentence.wav",
+      "image": "/er-oi/images/aimer.png"
+    },
+    {
+      "id": "aller",
+      "text": "aller",
+      "sentence": "J'aime aller au parc.",
+      "audioWord": "/er-oi/audio/aller_word.wav",
+      "audioSentence": "/er-oi/audio/aller_sentence.wav",
+      "image": "/er-oi/images/aller.png"
+    },
+    {
+      "id": "apporter",
+      "text": "apporter",
+      "sentence": "Nous allons apporter des bonbons !",
+      "audioWord": "/er-oi/audio/apporter_word.wav",
+      "audioSentence": "/er-oi/audio/apporter_sentence.wav",
+      "image": "/er-oi/images/apporter.png"
+    },
+    {
+      "id": "berger",
+      "text": "berger",
+      "sentence": "Un berger joue avec son chien.",
+      "audioWord": "/er-oi/audio/berger_word.wav",
+      "audioSentence": "/er-oi/audio/berger_sentence.wav",
+      "image": "/er-oi/images/berger.png"
+    },
+    {
+      "id": "boire",
+      "text": "boire",
+      "sentence": "Le chien aime boire l'eau.",
+      "audioWord": "/er-oi/audio/boire_word.wav",
+      "audioSentence": "/er-oi/audio/boire_sentence.wav",
+      "image": "/er-oi/images/boire.png"
+    },
+    {
+      "id": "bois",
+      "text": "bois",
+      "sentence": "Je bois de l'eau, glou glou !",
+      "audioWord": "/er-oi/audio/bois_word.wav",
+      "audioSentence": "/er-oi/audio/bois_sentence.wav",
+      "image": "/er-oi/images/bois.png"
+    },
+    {
+      "id": "coller",
+      "text": "coller",
+      "sentence": "J'aime coller des autocollants.",
+      "audioWord": "/er-oi/audio/coller_word.wav",
+      "audioSentence": "/er-oi/audio/coller_sentence.wav",
+      "image": "/er-oi/images/coller.png"
+    },
+    {
+      "id": "couler",
+      "text": "couler",
+      "sentence": "La glace coule sur ma main !",
+      "audioWord": "/er-oi/audio/couler_word.wav",
+      "audioSentence": "/er-oi/audio/couler_sentence.wav",
+      "image": "/er-oi/images/couler.png"
+    },
+    {
+      "id": "crier",
+      "text": "crier",
+      "sentence": "Le chat aime crier.",
+      "audioWord": "/er-oi/audio/crier_word.wav",
+      "audioSentence": "/er-oi/audio/crier_sentence.wav",
+      "image": "/er-oi/images/crier.png"
+    },
+    {
+      "id": "croix",
+      "text": "croix",
+      "sentence": "La croix montre le trésor.",
+      "audioWord": "/er-oi/audio/croix_word.wav",
+      "audioSentence": "/er-oi/audio/croix_sentence.wav",
+      "image": "/er-oi/images/croix.png"
+    },
+    {
+      "id": "doigt",
+      "text": "doigt",
+      "sentence": "Mon doigt danse !",
+      "audioWord": "/er-oi/audio/doigt_word.wav",
+      "audioSentence": "/er-oi/audio/doigt_sentence.wav",
+      "image": "/er-oi/images/doigt.png"
+    },
+    {
+      "id": "donner",
+      "text": "donner",
+      "sentence": "Tu peux donner un câlin.",
+      "audioWord": "/er-oi/audio/donner_word.wav",
+      "audioSentence": "/er-oi/audio/donner_sentence.wav",
+      "image": "/er-oi/images/donner.png"
+    },
+    {
+      "id": "droit",
+      "text": "droit",
+      "sentence": "Le singe saute tout droit !",
+      "audioWord": "/er-oi/audio/droit_word.wav",
+      "audioSentence": "/er-oi/audio/droit_sentence.wav",
+      "image": "/er-oi/images/droit.png"
+    },
+    {
+      "id": "écouter",
+      "text": "écouter",
+      "sentence": "J'aime écouter la musique.",
+      "audioWord": "/er-oi/audio/écouter_word.wav",
+      "audioSentence": "/er-oi/audio/écouter_sentence.wav",
+      "image": "/er-oi/images/écouter.png"
+    },
+    {
+      "id": "espoir",
+      "text": "espoir",
+      "sentence": "J'ai de l'espoir pour un bonbon !",
+      "audioWord": "/er-oi/audio/espoir_word.wav",
+      "audioSentence": "/er-oi/audio/espoir_sentence.wav",
+      "image": "/er-oi/images/espoir.png"
+    },
+    {
+      "id": "étoile",
+      "text": "étoile",
+      "sentence": "Une étoile brille dans le ciel.",
+      "audioWord": "/er-oi/audio/étoile_word.wav",
+      "audioSentence": "/er-oi/audio/étoile_sentence.wav",
+      "image": "/er-oi/images/étoile.png"
+    },
+    {
+      "id": "fermer",
+      "text": "fermer",
+      "sentence": "Je vais fermer la boîte magique !",
+      "audioWord": "/er-oi/audio/fermer_word.wav",
+      "audioSentence": "/er-oi/audio/fermer_sentence.wav",
+      "image": "/er-oi/images/fermer.png"
+    },
+    {
+      "id": "filtrer",
+      "text": "filtrer",
+      "sentence": "Regarde l'eau filtrer !",
+      "audioWord": "/er-oi/audio/filtrer_word.wav",
+      "audioSentence": "/er-oi/audio/filtrer_sentence.wav",
+      "image": "/er-oi/images/filtrer.png"
+    },
+    {
+      "id": "foire",
+      "text": "foire",
+      "sentence": "La foire est amusante !",
+      "audioWord": "/er-oi/audio/foire_word.wav",
+      "audioSentence": "/er-oi/audio/foire_sentence.wav",
+      "image": "/er-oi/images/foire.png"
+    },
+    {
+      "id": "fois",
+      "text": "fois",
+      "sentence": "Une fois, le clown saute!",
+      "audioWord": "/er-oi/audio/fois_word.wav",
+      "audioSentence": "/er-oi/audio/fois_sentence.wav",
+      "image": "/er-oi/images/fois.png"
+    },
+    {
+      "id": "gloire",
+      "text": "gloire",
+      "sentence": "La petite fleur a sa gloire.",
+      "audioWord": "/er-oi/audio/gloire_word.wav",
+      "audioSentence": "/er-oi/audio/gloire_sentence.wav",
+      "image": "/er-oi/images/gloire.png"
+    },
+    {
+      "id": "grivois",
+      "text": "grivois",
+      "sentence": "Le singe est un peu grivois.",
+      "audioWord": "/er-oi/audio/grivois_word.wav",
+      "audioSentence": "/er-oi/audio/grivois_sentence.wav",
+      "image": "/er-oi/images/grivois.png"
+    },
+    {
+      "id": "jouer",
+      "text": "jouer",
+      "sentence": "J'aime jouer au parc.",
+      "audioWord": "/er-oi/audio/jouer_word.wav",
+      "audioSentence": "/er-oi/audio/jouer_sentence.wav",
+      "image": "/er-oi/images/jouer.png"
+    },
+    {
+      "id": "laver",
+      "text": "laver",
+      "sentence": "J'aime laver mon nounours.",
+      "audioWord": "/er-oi/audio/laver_word.wav",
+      "audioSentence": "/er-oi/audio/laver_sentence.wav",
+      "image": "/er-oi/images/laver.png"
+    },
+    {
+      "id": "léger",
+      "text": "léger",
+      "sentence": "Regarde, ce papillon est léger !",
+      "audioWord": "/er-oi/audio/léger_word.wav",
+      "audioSentence": "/er-oi/audio/léger_sentence.wav",
+      "image": "/er-oi/images/léger.png"
+    },
+    {
+      "id": "lever",
+      "text": "lever",
+      "sentence": "Je veux lever ma main !",
+      "audioWord": "/er-oi/audio/lever_word.wav",
+      "audioSentence": "/er-oi/audio/lever_sentence.wav",
+      "image": "/er-oi/images/lever.png"
+    },
+    {
+      "id": "loi",
+      "text": "loi",
+      "sentence": "La loi des pirates est rigolote !",
+      "audioWord": "/er-oi/audio/loi_word.wav",
+      "audioSentence": "/er-oi/audio/loi_sentence.wav",
+      "image": "/er-oi/images/loi.png"
+    },
+    {
+      "id": "miroir",
+      "text": "miroir",
+      "sentence": "Je fais une grimace dans le miroir.",
+      "audioWord": "/er-oi/audio/miroir_word.wav",
+      "audioSentence": "/er-oi/audio/miroir_sentence.wav",
+      "image": "/er-oi/images/miroir.png"
+    },
+    {
+      "id": "moi",
+      "text": "moi",
+      "sentence": "Tu joues avec moi ?",
+      "audioWord": "/er-oi/audio/moi_word.wav",
+      "audioSentence": "/er-oi/audio/moi_sentence.wav",
+      "image": "/er-oi/images/moi.png"
+    },
+    {
+      "id": "mois",
+      "text": "mois",
+      "sentence": "Dans un mois, c'est Noël !",
+      "audioWord": "/er-oi/audio/mois_word.wav",
+      "audioSentence": "/er-oi/audio/mois_sentence.wav",
+      "image": "/er-oi/images/mois.png"
+    },
+    {
+      "id": "nager",
+      "text": "nager",
+      "sentence": "Les canards aiment nager !",
+      "audioWord": "/er-oi/audio/nager_word.wav",
+      "audioSentence": "/er-oi/audio/nager_sentence.wav",
+      "image": "/er-oi/images/nager.png"
+    },
+    {
+      "id": "noix",
+      "text": "noix",
+      "sentence": "L'écureuil cherche une noix.",
+      "audioWord": "/er-oi/audio/noix_word.wav",
+      "audioSentence": "/er-oi/audio/noix_sentence.wav",
+      "image": "/er-oi/images/noix.png"
+    },
+    {
+      "id": "oiseau",
+      "text": "oiseau",
+      "sentence": "Un oiseau vole très haut !",
+      "audioWord": "/er-oi/audio/oiseau_word.wav",
+      "audioSentence": "/er-oi/audio/oiseau_sentence.wav",
+      "image": "/er-oi/images/oiseau.png"
+    },
+    {
+      "id": "parler",
+      "text": "parler",
+      "sentence": "Le singe aime parler.",
+      "audioWord": "/er-oi/audio/parler_word.wav",
+      "audioSentence": "/er-oi/audio/parler_sentence.wav",
+      "image": "/er-oi/images/parler.png"
+    },
+    {
+      "id": "peser",
+      "text": "peser",
+      "sentence": "Le singe aime peser la banane.",
+      "audioWord": "/er-oi/audio/peser_word.wav",
+      "audioSentence": "/er-oi/audio/peser_sentence.wav",
+      "image": "/er-oi/images/peser.png"
+    },
+    {
+      "id": "pleurer",
+      "text": "pleurer",
+      "sentence": "La banane peut pleurer parfois.",
+      "audioWord": "/er-oi/audio/pleurer_word.wav",
+      "audioSentence": "/er-oi/audio/pleurer_sentence.wav",
+      "image": "/er-oi/images/pleurer.png"
+    },
+    {
+      "id": "poire",
+      "text": "poire",
+      "sentence": "Une poire, c'est trop bon !",
+      "audioWord": "/er-oi/audio/poire_word.wav",
+      "audioSentence": "/er-oi/audio/poire_sentence.wav",
+      "image": "/er-oi/images/poire.png"
+    },
+    {
+      "id": "regarder",
+      "text": "regarder",
+      "sentence": "J'aime regarder les papillons.",
+      "audioWord": "/er-oi/audio/regarder_word.wav",
+      "audioSentence": "/er-oi/audio/regarder_sentence.wav",
+      "image": "/er-oi/images/regarder.png"
+    },
+    {
+      "id": "roi",
+      "text": "roi",
+      "sentence": "Le roi a une grande couronne.",
+      "audioWord": "/er-oi/audio/roi_word.wav",
+      "audioSentence": "/er-oi/audio/roi_sentence.wav",
+      "image": "/er-oi/images/roi.png"
+    },
+    {
+      "id": "rouler",
+      "text": "rouler",
+      "sentence": "J'aime rouler en vélo.",
+      "audioWord": "/er-oi/audio/rouler_word.wav",
+      "audioSentence": "/er-oi/audio/rouler_sentence.wav",
+      "image": "/er-oi/images/rouler.png"
+    },
+    {
+      "id": "sauter",
+      "text": "sauter",
+      "sentence": "Le petit chat aime sauter.",
+      "audioWord": "/er-oi/audio/sauter_word.wav",
+      "audioSentence": "/er-oi/audio/sauter_sentence.wav",
+      "image": "/er-oi/images/sauter.png"
+    },
+    {
+      "id": "soi",
+      "text": "soi",
+      "sentence": "Chacun a un secret pour soi.",
+      "audioWord": "/er-oi/audio/soi_word.wav",
+      "audioSentence": "/er-oi/audio/soi_sentence.wav",
+      "image": "/er-oi/images/soi.png"
+    },
+    {
+      "id": "souper",
+      "text": "souper",
+      "sentence": "J'adore mon souper!",
+      "audioWord": "/er-oi/audio/souper_word.wav",
+      "audioSentence": "/er-oi/audio/souper_sentence.wav",
+      "image": "/er-oi/images/souper.png"
+    },
+    {
+      "id": "tiroir",
+      "text": "tiroir",
+      "sentence": "Ouvre le tiroir ! Il y a un secret.",
+      "audioWord": "/er-oi/audio/tiroir_word.wav",
+      "audioSentence": "/er-oi/audio/tiroir_sentence.wav",
+      "image": "/er-oi/images/tiroir.png"
+    },
+    {
+      "id": "toi",
+      "text": "toi",
+      "sentence": "Joue avec moi, toi ?",
+      "audioWord": "/er-oi/audio/toi_word.wav",
+      "audioSentence": "/er-oi/audio/toi_sentence.wav",
+      "image": "/er-oi/images/toi.png"
+    },
+    {
+      "id": "toit",
+      "text": "toit",
+      "sentence": "Un dragon est sur le toit !",
+      "audioWord": "/er-oi/audio/toit_word.wav",
+      "audioSentence": "/er-oi/audio/toit_sentence.wav",
+      "image": "/er-oi/images/toit.png"
+    },
+    {
+      "id": "voiture",
+      "text": "voiture",
+      "sentence": "La voiture fait \"vroum\" !",
+      "audioWord": "/er-oi/audio/voiture_word.wav",
+      "audioSentence": "/er-oi/audio/voiture_sentence.wav",
+      "image": "/er-oi/images/voiture.png"
+    }
+  ]
+}
