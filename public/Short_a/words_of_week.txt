@@ -1,0 +1,15 @@
+cat
+bat
+hat
+mat
+rat
+sat
+fan
+man
+pan
+ran
+cap
+map
+tap
+bag
+tag

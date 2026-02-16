@@ -17,10 +17,21 @@ const SESSION_SIZE = 10;
 function App() {
   const [showWordList, setShowWordList] = useState(false);
   const [session, setSession] = useState<GameSession | null>(null);
+  const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>('fr');
   const { weeks, selectedWeek, selectWeek, loading: metadataLoading } = useMetadata();
   const weekPath = selectedWeek ? (selectedWeek.path ?? selectedWeek.sounds) : undefined;
   const { words, loading: wordsLoading, error, refetch } = useWordList(weekPath);
   const { progress, recordAttempt, getWordsForPractice } = useProgress();
+
+  const filteredWeeks = weeks.filter(w => (w.language ?? 'fr') === selectedLanguage);
+
+  const handleSelectLanguage = (lang: SupportedLanguage) => {
+    setSelectedLanguage(lang);
+    const firstWeek = weeks.find(w => (w.language ?? 'fr') === lang);
+    if (firstWeek) {
+      selectWeek(firstWeek);
+    }
+  };
 
   const language: SupportedLanguage = selectedWeek?.language ?? 'fr';
 
@@ -139,9 +150,11 @@ function App() {
         error={error}
         progress={progress}
         words={words}
-        weeks={weeks}
+        weeks={filteredWeeks}
         selectedWeek={selectedWeek}
         onSelectWeek={selectWeek}
+        selectedLanguage={selectedLanguage}
+        onSelectLanguage={handleSelectLanguage}
       />
     );
   }

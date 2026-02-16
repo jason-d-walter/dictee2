@@ -1,0 +1,151 @@
+Group,Word
+Short a,cat
+Short a,bat
+Short a,hat
+Short a,mat
+Short a,rat
+Short a,sat
+Short a,fan
+Short a,man
+Short a,pan
+Short a,ran
+Short a,cap
+Short a,map
+Short a,tap
+Short a,bag
+Short a,tag
+Short i,pig
+Short i,big
+Short i,dig
+Short i,wig
+Short i,fin
+Short i,pin
+Short i,win
+Short i,bin
+Short i,sit
+Short i,hit
+Short i,fit
+Short i,lip
+Short i,tip
+Short i,zip
+Short i,kid
+Short o,dog
+Short o,log
+Short o,jog
+Short o,fog
+Short o,hot
+Short o,pot
+Short o,cot
+Short o,dot
+Short o,not
+Short o,top
+Short o,hop
+Short o,mop
+Short o,pop
+Short o,box
+Short o,fox
+Short e,bed
+Short e,red
+Short e,fed
+Short e,led
+Short e,pen
+Short e,hen
+Short e,ten
+Short e,men
+Short e,net
+Short e,wet
+Short e,let
+Short e,pet
+Short e,jet
+Short e,get
+Short e,leg
+Short u,bus
+Short u,sun
+Short u,run
+Short u,fun
+Short u,gun
+Short u,cup
+Short u,pup
+Short u,bug
+Short u,hug
+Short u,jug
+Short u,rug
+Short u,tug
+Short u,mud
+Short u,nut
+Short u,cut
+Digraphs sh ch,ship
+Digraphs sh ch,dish
+Digraphs sh ch,fish
+Digraphs sh ch,wish
+Digraphs sh ch,cash
+Digraphs sh ch,rash
+Digraphs sh ch,shut
+Digraphs sh ch,shop
+Digraphs sh ch,chin
+Digraphs sh ch,chip
+Digraphs sh ch,chop
+Digraphs sh ch,rich
+Digraphs sh ch,much
+Digraphs sh ch,such
+Digraphs sh ch,chat
+Digraphs th wh,this
+Digraphs th wh,that
+Digraphs th wh,them
+Digraphs th wh,then
+Digraphs th wh,thin
+Digraphs th wh,with
+Digraphs th wh,moth
+Digraphs th wh,bath
+Digraphs th wh,path
+Digraphs th wh,whip
+Digraphs th wh,when
+Digraphs th wh,whim
+Digraphs th wh,whiz
+Digraphs th wh,wheel
+Digraphs th wh,whale
+s Blends,spot
+s Blends,stop
+s Blends,step
+s Blends,spin
+s Blends,skin
+s Blends,skip
+s Blends,skunk
+s Blends,slip
+s Blends,slap
+s Blends,slam
+s Blends,snip
+s Blends,snap
+s Blends,snug
+s Blends,swim
+s Blends,swam
+l and r Blends,blue
+l and r Blends,black
+l and r Blends,flag
+l and r Blends,flip
+l and r Blends,glad
+l and r Blends,glass
+l and r Blends,frog
+l and r Blends,from
+l and r Blends,free
+l and r Blends,crab
+l and r Blends,crib
+l and r Blends,crop
+l and r Blends,trap
+l and r Blends,trip
+l and r Blends,truck
+Final Blends,hand
+Final Blends,sand
+Final Blends,band
+Final Blends,land
+Final Blends,bend
+Final Blends,send
+Final Blends,fast
+Final Blends,last
+Final Blends,past
+Final Blends,best
+Final Blends,rest
+Final Blends,vest
+Final Blends,jump
+Final Blends,hump
+Final Blends,bump

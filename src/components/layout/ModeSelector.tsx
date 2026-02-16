@@ -1,4 +1,4 @@
-import { GameMode, Word, WordProgress, WeekEntry } from '../../types';
+import { GameMode, Word, WordProgress, WeekEntry, SupportedLanguage } from '../../types';
 import { useLanguage } from '../../i18n/LanguageContext';
 import { TranslationSet } from '../../i18n/translations';
 
@@ -13,6 +13,8 @@ interface ModeSelectorProps {
   weeks: WeekEntry[];
   selectedWeek: WeekEntry | null;
   onSelectWeek: (week: WeekEntry) => void;
+  selectedLanguage: SupportedLanguage;
+  onSelectLanguage: (lang: SupportedLanguage) => void;
 }
 
 function formatWeekLabel(week: WeekEntry, locale: string): string {
@@ -68,6 +70,8 @@ export default function ModeSelector({
   weeks,
   selectedWeek,
   onSelectWeek,
+  selectedLanguage,
+  onSelectLanguage,
 }: ModeSelectorProps) {
   const { translations: tr } = useLanguage();
   const modes = getModes(tr);
@@ -86,6 +90,16 @@ export default function ModeSelector({
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-violet-600 via-purple-600 to-indigo-700 p-4 flex flex-col">
+      {/* Language toggle */}
+      <div className="flex justify-start pt-2 pb-1">
+        <button
+          onClick={() => onSelectLanguage(selectedLanguage === 'fr' ? 'en' : 'fr')}
+          className="bg-white/20 hover:bg-white/30 text-white font-bold px-3 py-1.5 rounded-lg text-sm transition-colors"
+        >
+          {selectedLanguage === 'fr' ? '🇫🇷 FR' : '🇬🇧 EN'}
+        </button>
+      </div>
+
       {/* Header */}
       <div className="text-center py-6">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
