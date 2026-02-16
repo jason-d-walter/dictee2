@@ -27,3 +27,10 @@ dictee:
   source: words_of_week.txt
   week_end: '2026-02-20'
   week_start: '2026-02-15'
+- date_of_generation: '2026-02-16'
+  language: en
+  path: Short_i
+  sounds: Short_i
+  source: words_of_week.txt
+  week_end: '2026-02-27'
+  week_start: '2026-02-22'
