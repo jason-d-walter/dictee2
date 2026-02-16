@@ -1,5 +1,10 @@
-// Common French letter patterns to target for missing letter mode
-const FRENCH_PATTERNS = ['ou', 'on', 'ch', 'oi', 'an', 'en', 'ai', 'au', 'eau', 'ei', 'eu'];
+import { SupportedLanguage } from '../types';
+
+// Letter patterns to target for missing letter mode, keyed by language
+const LANGUAGE_PATTERNS: Record<SupportedLanguage, string[]> = {
+  fr: ['ou', 'on', 'ch', 'oi', 'an', 'en', 'ai', 'au', 'eau', 'ei', 'eu'],
+  en: ['th', 'sh', 'ch', 'ck', 'ee', 'oo', 'ea', 'ou', 'igh', 'ai', 'oa'],
+};
 
 interface MissingLetterResult {
   displayWord: string;
@@ -7,13 +12,15 @@ interface MissingLetterResult {
   missingIndices: number[];
 }
 
-export function generateMissingLetters(word: string, count: number = 1): MissingLetterResult {
+export function generateMissingLetters(word: string, count: number = 1, language: SupportedLanguage = 'fr'): MissingLetterResult {
   const letters = word.split('');
   const missingIndices: number[] = [];
   const missingLetters: string[] = [];
 
-  // Try to find and remove French patterns first
-  for (const pattern of FRENCH_PATTERNS) {
+  const patterns = LANGUAGE_PATTERNS[language] ?? LANGUAGE_PATTERNS.fr;
+
+  // Try to find and remove language-specific patterns first
+  for (const pattern of patterns) {
     const patternIndex = word.toLowerCase().indexOf(pattern);
     if (patternIndex > 0 && patternIndex < word.length - pattern.length) {
       // Found a pattern not at start or end

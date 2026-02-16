@@ -1,19 +1,36 @@
 dictee:
 - date_of_generation: '2026-02-08'
+  language: fr
   path: ez
   sounds: ez
   source: words_of_week.txt
   week_end: '2026-02-12'
   week_start: '2026-02-09'
 - date_of_generation: '2026-02-01'
+  language: fr
   path: er-oi
   sounds: er-oi
   source: words_of_week.txt
   week_end: '2026-02-07'
   week_start: '2026-02-02'
 - date_of_generation: '2026-02-14'
+  language: fr
   path: consonnes_doubles-e_muet
   sounds: consonnes doubles & e muet
   source: words_of_week.txt
   week_end: '2026-02-20'
   week_start: '2026-02-15'
+- date_of_generation: '2026-02-16'
+  language: en
+  path: Short_a
+  sounds: Short_a
+  source: words_of_week.txt
+  week_end: '2026-02-20'
+  week_start: '2026-02-15'
+- date_of_generation: '2026-02-16'
+  language: en
+  path: Short_i
+  sounds: Short_i
+  source: words_of_week.txt
+  week_end: '2026-02-27'
+  week_start: '2026-02-22'

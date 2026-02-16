@@ -3,7 +3,7 @@
 Generate assets for the Dictée app.
 
 This script reads words from words_of_week.txt and generates:
-- Kid-friendly French sentences using Google Gemini
+- Kid-friendly sentences using Google Gemini
 - Audio files for words and sentences using Google Cloud TTS
 - Images representing the sentences using Google Gemini (Imagen)
 
@@ -11,6 +11,7 @@ Usage:
     pip install -r requirements.txt
     export GOOGLE_PROJECT_NAME=project_name
     python generate_assets.py --sounds ez --week-start 2026-02-09 --week-end 2026-02-12
+    python generate_assets.py --sounds "th words" --week-start 2026-03-01 --week-end 2026-03-05 --language en
 """
 
 import os
@@ -58,6 +59,48 @@ METADATA_FILE = PUBLIC_DIR / "metadata.yaml"
 # Rate limiting for image generation
 last_image_time = 0
 image_rate_limit = 60  # seconds between image requests (default: 1 per minute)
+
+# Language-specific configuration
+LANGUAGE_CONFIG = {
+    "fr": {
+        "sentence_prompt": """Create a simple, kid-friendly French sentence using the word "{word}".
+
+Requirements:
+- The sentence should be appropriate for a 7-year-old child
+- Use simple vocabulary and grammar
+- The sentence should be fun or interesting for a child
+- Keep it short (5-10 words maximum)
+- The word "{word}" must appear in the sentence exactly as written
+- Avoid using the 'passé composé' if possible; stick to the 'présent de l'indicatif'.
+
+Return ONLY the French sentence, nothing else.""",
+        "sentence_fallback": "Le mot est {word}.",
+        "tts_language_code": "fr-FR",
+        "tts_prompt_template": "Dites d'une voix féminine {speed} : {text}",
+        "tts_speed_slow": "lentement",
+        "tts_speed_normal": "",
+        "image_context": "French",
+    },
+    "en": {
+        "sentence_prompt": """Create a simple, kid-friendly English sentence using the word "{word}".
+
+Requirements:
+- The sentence should be appropriate for a 7-year-old child
+- Use simple vocabulary and grammar
+- The sentence should be fun or interesting for a child
+- Keep it short (5-10 words maximum)
+- The word "{word}" must appear in the sentence exactly as written
+- Use simple present tense when possible.
+
+Return ONLY the English sentence, nothing else.""",
+        "sentence_fallback": "The word is {word}.",
+        "tts_language_code": "en-US",
+        "tts_prompt_template": "Say in a female voice {speed}: {text}",
+        "tts_speed_slow": "slowly",
+        "tts_speed_normal": "",
+        "image_context": "English",
+    },
+}
 
 
 def read_words(words_file: Path) -> list[str]:
@@ -124,19 +167,10 @@ def check_existing_assets(word: str, existing_data: dict | None, audio_dir: Path
     return needs
 
 
-def generate_sentence(word: str) -> str:
-    """Generate a kid-friendly French sentence using the word."""
-    the_prompt = f"""Create a simple, kid-friendly French sentence using the word "{word}".
-
-Requirements:
-- The sentence should be appropriate for a 7-year-old child
-- Use simple vocabulary and grammar
-- The sentence should be fun or interesting for a child
-- Keep it short (5-10 words maximum)
-- The word "{word}" must appear in the sentence exactly as written
-- Avoid using the 'passé composé' if possible; stick to the 'présent de l'indicatif'.
-
-Return ONLY the French sentence, nothing else."""
+def generate_sentence(word: str, language: str) -> str:
+    """Generate a kid-friendly sentence using the word."""
+    lang_config = LANGUAGE_CONFIG[language]
+    the_prompt = lang_config["sentence_prompt"].format(word=word)
 
     text_response = client.models.generate_content(
         model=language_model,
@@ -155,16 +189,17 @@ Return ONLY the French sentence, nothing else."""
 
 import wave
 
-def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool:
+def generate_audio_tts(text: str, output_path: Path, language: str, slow: bool = False) -> bool:
     """Safe version that saves raw PCM as a playable WAV file."""
 
-    # Natural language steering for speed
-    prompt = f"Dites d'une voix féminine {'lentement' if slow else ''} : {text}"
+    lang_config = LANGUAGE_CONFIG[language]
+    speed = lang_config["tts_speed_slow"] if slow else lang_config["tts_speed_normal"]
+    prompt = lang_config["tts_prompt_template"].format(speed=speed, text=text)
 
     minimal_config = {
         "response_modalities": ["AUDIO"],
         "speech_config": {
-            "language_code" : "fr-FR",
+            "language_code" : lang_config["tts_language_code"],
             "voice_config": {
                 "prebuilt_voice_config": {"voice_name": "Aoede"}
             }
@@ -198,9 +233,12 @@ def generate_audio_tts(text: str, output_path: Path, slow: bool = False) -> bool
         print(f"  Audio error: {e}")
         return False
 
-def generate_image(sentence: str, word: str, output_path: Path) -> bool:
+def generate_image(sentence: str, word: str, output_path: Path, language: str) -> bool:
     """Generate an image with a fallback strategy if the first attempt is blocked."""
     global last_image_time
+
+    lang_config = LANGUAGE_CONFIG[language]
+    lang_context = lang_config["image_context"]
 
     # Rate limiting
     if image_rate_limit > 0:
@@ -224,7 +262,7 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     # model to include letters/words. Style is described as "wordless picture book".
     prompts_to_try = [
         f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A whimsical, child-friendly cartoon in the style of a wordless picture book. Illustrate this scene: {sentence}. Bright colors, simple shapes, flat 2D vector art. The image must contain only drawings, no typography of any kind.",
-        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A simple, cheerful cartoon drawing depicting the concept of \"{word}\" (French). High quality 2D flat vector art, bright colors. The image must contain only drawings, no typography of any kind."
+        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A simple, cheerful cartoon drawing depicting the concept of \"{word}\" ({lang_context}). High quality 2D flat vector art, bright colors. The image must contain only drawings, no typography of any kind."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):
@@ -253,9 +291,11 @@ def generate_image(sentence: str, word: str, output_path: Path) -> bool:
     print(f"  CRITICAL: All image generation attempts failed for '{word}'.")
     return False
 
-def process_word(word: str, week_path: str, existing_data: dict | None, audio_dir: Path, images_dir: Path) -> dict:
+def process_word(word: str, week_path: str, existing_data: dict | None, audio_dir: Path, images_dir: Path, language: str) -> dict:
     """Process a single word and generate only missing assets."""
     print(f"\nProcessing: {word}")
+
+    lang_config = LANGUAGE_CONFIG[language]
 
     # Check what already exists
     needs = check_existing_assets(word, existing_data, audio_dir, images_dir)
@@ -278,13 +318,13 @@ def process_word(word: str, week_path: str, existing_data: dict | None, audio_di
     if needs["sentence"]:
         print(f"  Generating sentence...")
         try:
-            sentence = generate_sentence(word)
+            sentence = generate_sentence(word, language)
             result["sentence"] = sentence
             print(f"  Sentence: {sentence}")
             generated.append("sentence")
         except Exception as e:
             print(f"  Error generating sentence: {e}")
-            result["sentence"] = f"Le mot est {word}."  # Fallback
+            result["sentence"] = lang_config["sentence_fallback"].format(word=word)
     else:
         skipped.append("sentence")
         print(f"  Sentence exists: {result.get('sentence', 'N/A')}")
@@ -293,7 +333,7 @@ def process_word(word: str, week_path: str, existing_data: dict | None, audio_di
     word_audio_path = audio_dir / f"{word}_word.wav"
     if needs["audioWord"]:
         print(f"  Generating word audio...")
-        if generate_audio_tts(word, word_audio_path, slow=True):
+        if generate_audio_tts(word, word_audio_path, language, slow=True):
             result["audioWord"] = f"/{week_path}/audio/{word}_word.wav"
             generated.append("audioWord")
         else:
@@ -306,7 +346,7 @@ def process_word(word: str, week_path: str, existing_data: dict | None, audio_di
     sentence_audio_path = audio_dir / f"{word}_sentence.wav"
     if needs["audioSentence"]:
         print(f"  Generating sentence audio...")
-        if generate_audio_tts(result.get("sentence", word), sentence_audio_path):
+        if generate_audio_tts(result.get("sentence", word), sentence_audio_path, language):
             result["audioSentence"] = f"/{week_path}/audio/{word}_sentence.wav"
             generated.append("audioSentence")
         else:
@@ -319,7 +359,7 @@ def process_word(word: str, week_path: str, existing_data: dict | None, audio_di
     image_path = images_dir / f"{word}.png"
     if needs["image"]:
         print(f"  Generating image...")
-        if generate_image(result.get("sentence", word), word, image_path):
+        if generate_image(result.get("sentence", word), word, image_path, language):
             result["image"] = f"/{week_path}/images/{word}.png"
             generated.append("image")
         else:
@@ -339,7 +379,7 @@ def process_word(word: str, week_path: str, existing_data: dict | None, audio_di
     return result
 
 
-def update_metadata(sounds: str, week_path: str, week_start: str, week_end: str) -> None:
+def update_metadata(sounds: str, week_path: str, week_start: str, week_end: str, language: str) -> None:
     """Append or update an entry in metadata.yaml."""
     # Load existing metadata
     if METADATA_FILE.exists():
@@ -360,6 +400,7 @@ def update_metadata(sounds: str, week_path: str, week_start: str, week_end: str)
         "week_end": week_end,
         "date_of_generation": date.today().isoformat(),
         "source": "words_of_week.txt",
+        "language": language,
     }
 
     # Replace existing entry with same sounds+week_start, or append
@@ -408,6 +449,12 @@ def main():
         help="Subdirectory name (defaults to --sounds value)"
     )
     parser.add_argument(
+        "--language",
+        default="fr",
+        choices=list(LANGUAGE_CONFIG.keys()),
+        help="Language for sentence/audio generation (default: fr)"
+    )
+    parser.add_argument(
         "--image-rate-limit",
         type=int,
         default=60,
@@ -420,6 +467,7 @@ def main():
     week_path = args.path or sounds
     week_start = args.week_start
     week_end = args.week_end
+    language = args.language
 
     # Compute output paths
     week_dir = PUBLIC_DIR / week_path
@@ -438,6 +486,7 @@ def main():
     print(f"Sound theme: {sounds}")
     print(f"Week path: {week_path}")
     print(f"Week: {week_start} to {week_end}")
+    print(f"Language: {language}")
     if image_rate_limit > 0:
         print(f"Image rate limit: {image_rate_limit}s between requests")
 
@@ -463,7 +512,7 @@ def main():
 
     for word in words:
         existing_data = existing_manifest.get(word)
-        result = process_word(word, week_path, existing_data, audio_dir, images_dir)
+        result = process_word(word, week_path, existing_data, audio_dir, images_dir, language)
         results.append(result)
 
         # Track stats
@@ -486,7 +535,7 @@ def main():
         json.dump(manifest, f, ensure_ascii=False, indent=2)
 
     # Update metadata.yaml (append/update, not overwrite)
-    update_metadata(sounds, week_path, week_start, week_end)
+    update_metadata(sounds, week_path, week_start, week_end, language)
 
     print("\n" + "=" * 50)
     print(f"Generated manifest: {manifest_file}")

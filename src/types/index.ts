@@ -33,6 +33,8 @@ export interface WordResult {
 
 export type GameMode = 'audio-match' | 'lettres-perdues' | 'dictee-fantome' | 'exploration';
 
+export type SupportedLanguage = 'fr' | 'en';
+
 export interface WordManifest {
   generatedAt: string;
   words: Word[];
@@ -45,6 +47,7 @@ export interface WeekEntry {
   week_end: string;
   date_of_generation: string;
   source: string;
+  language?: SupportedLanguage;
 }
 
 export interface DicteeMetadata {

@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-02-16T15:47:12.056102",
+  "words": [
+    {
+      "id": "cat",
+      "text": "cat",
+      "sentence": "My cat loves to play.",
+      "audioWord": "/Short_a/audio/cat_word.wav",
+      "audioSentence": "/Short_a/audio/cat_sentence.wav",
+      "image": "/Short_a/images/cat.png"
+    },
+    {
+      "id": "bat",
+      "text": "bat",
+      "sentence": "A bat loves to hang upside down.",
+      "audioWord": "/Short_a/audio/bat_word.wav",
+      "audioSentence": "/Short_a/audio/bat_sentence.wav",
+      "image": "/Short_a/images/bat.png"
+    },
+    {
+      "id": "hat",
+      "text": "hat",
+      "sentence": "A clown wears a funny hat.",
+      "audioWord": "/Short_a/audio/hat_word.wav",
+      "audioSentence": "/Short_a/audio/hat_sentence.wav",
+      "image": "/Short_a/images/hat.png"
+    },
+    {
+      "id": "mat",
+      "text": "mat",
+      "sentence": "The bear rolls on the mat.",
+      "audioWord": "/Short_a/audio/mat_word.wav",
+      "audioSentence": "/Short_a/audio/mat_sentence.wav",
+      "image": "/Short_a/images/mat.png"
+    },
+    {
+      "id": "rat",
+      "text": "rat",
+      "sentence": "A rat wants a yummy snack.",
+      "audioWord": "/Short_a/audio/rat_word.wav",
+      "audioSentence": "/Short_a/audio/rat_sentence.wav",
+      "image": "/Short_a/images/rat.png"
+    },
+    {
+      "id": "sat",
+      "text": "sat",
+      "sentence": "The funny cat sat on my hat.",
+      "audioWord": "/Short_a/audio/sat_word.wav",
+      "audioSentence": "/Short_a/audio/sat_sentence.wav",
+      "image": "/Short_a/images/sat.png"
+    },
+    {
+      "id": "fan",
+      "text": "fan",
+      "sentence": "My fan spins super fast!",
+      "audioWord": "/Short_a/audio/fan_word.wav",
+      "audioSentence": "/Short_a/audio/fan_sentence.wav",
+      "image": "/Short_a/images/fan.png"
+    },
+    {
+      "id": "man",
+      "text": "man",
+      "sentence": "A funny man tells jokes.",
+      "audioWord": "/Short_a/audio/man_word.wav",
+      "audioSentence": "/Short_a/audio/man_sentence.wav",
+      "image": "/Short_a/images/man.png"
+    },
+    {
+      "id": "pan",
+      "text": "pan",
+      "sentence": "The little pancake hops in the pan.",
+      "audioWord": "/Short_a/audio/pan_word.wav",
+      "audioSentence": "/Short_a/audio/pan_sentence.wav",
+      "image": "/Short_a/images/pan.png"
+    },
+    {
+      "id": "ran",
+      "text": "ran",
+      "sentence": "The puppy ran after the ball.",
+      "audioWord": "/Short_a/audio/ran_word.wav",
+      "audioSentence": "/Short_a/audio/ran_sentence.wav",
+      "image": "/Short_a/images/ran.png"
+    },
+    {
+      "id": "cap",
+      "text": "cap",
+      "sentence": "A silly clown wears a funny cap.",
+      "audioWord": "/Short_a/audio/cap_word.wav",
+      "audioSentence": "/Short_a/audio/cap_sentence.wav",
+      "image": "/Short_a/images/cap.png"
+    },
+    {
+      "id": "map",
+      "text": "map",
+      "sentence": "Let's find the treasure on the map!",
+      "audioWord": "/Short_a/audio/map_word.wav",
+      "audioSentence": "/Short_a/audio/map_sentence.wav",
+      "image": "/Short_a/images/map.png"
+    },
+    {
+      "id": "tap",
+      "text": "tap",
+      "sentence": "Tap the red button now.",
+      "audioWord": "/Short_a/audio/tap_word.wav",
+      "audioSentence": "/Short_a/audio/tap_sentence.wav",
+      "image": "/Short_a/images/tap.png"
+    },
+    {
+      "id": "bag",
+      "text": "bag",
+      "sentence": "My magic bag holds a surprise!",
+      "audioWord": "/Short_a/audio/bag_word.wav",
+      "audioSentence": "/Short_a/audio/bag_sentence.wav",
+      "image": "/Short_a/images/bag.png"
+    },
+    {
+      "id": "tag",
+      "text": "tag",
+      "sentence": "Let's play tag outside!",
+      "audioWord": "/Short_a/audio/tag_word.wav",
+      "audioSentence": "/Short_a/audio/tag_sentence.wav",
+      "image": "/Short_a/images/tag.png"
+    }
+  ]
+}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Word } from '../../types';
 import { useSpeech } from '../../hooks/useSpeech';
+import { useLanguage } from '../../i18n/LanguageContext';
 import StarCounter from '../common/StarCounter';
 
 interface ExplorationProps {
@@ -21,7 +22,8 @@ export default function Exploration({
   onComplete,
   onBack,
 }: ExplorationProps) {
-  const { speak, speakAudio, speaking } = useSpeech();
+  const { language, translations: tr } = useLanguage();
+  const { speak, speakAudio, speaking } = useSpeech(language);
   const [imageLoaded, setImageLoaded] = useState(false);
   const [imageError, setImageError] = useState(false);
 
@@ -53,7 +55,7 @@ export default function Exploration({
           onClick={onBack}
           className="text-white text-xl font-bold bg-white/20 rounded-full px-4 py-2"
         >
-          ← Retour
+          {tr.back}
         </button>
         <StarCounter stars={stars} total={totalWords} />
       </div>
@@ -61,7 +63,7 @@ export default function Exploration({
       {/* Progress */}
       <div className="text-center mb-4">
         <span className="text-white/80 text-lg">
-          Mot {currentIndex + 1} sur {totalWords}
+          {tr.wordNofM(currentIndex + 1, totalWords)}
         </span>
       </div>
 
@@ -70,7 +72,7 @@ export default function Exploration({
         {/* Title */}
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            🔍 Exploration
+            🔍 {tr.explorationTitle}
           </h2>
         </div>
 
@@ -120,7 +122,7 @@ export default function Exploration({
                   "{word.sentence}"
                 </p>
                 <p className="text-orange-500 text-sm mt-2">
-                  {speaking ? '🔊 Lecture...' : '🔈 Tap to listen'}
+                  {speaking ? `🔊 ${tr.listeningLabel}` : `🔈 ${tr.tapToListen}`}
                 </p>
               </button>
             </div>
@@ -129,7 +131,7 @@ export default function Exploration({
           {/* No content fallback */}
           {!word.sentence && !word.image && (
             <p className="text-center text-orange-400 italic">
-              Générez les ressources avec le script Python pour voir plus de contenu!
+              {tr.fallbackHint}
             </p>
           )}
         </div>
@@ -139,7 +141,7 @@ export default function Exploration({
           onClick={handleNext}
           className="px-12 py-4 text-2xl font-bold bg-white text-orange-600 rounded-full shadow-lg hover:scale-105 active:scale-95 transition-transform"
         >
-          {currentIndex < totalWords - 1 ? 'Suivant →' : 'Terminer ✓'}
+          {currentIndex < totalWords - 1 ? tr.next : tr.finish}
         </button>
       </div>
     </div>

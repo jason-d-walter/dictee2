@@ -1,0 +1,125 @@
+{
+  "generatedAt": "2026-02-16T16:20:43.315145",
+  "words": [
+    {
+      "id": "pig",
+      "text": "pig",
+      "sentence": "The pig rolls in mud.",
+      "audioWord": "/Short_i/audio/pig_word.wav",
+      "audioSentence": "/Short_i/audio/pig_sentence.wav",
+      "image": "/Short_i/images/pig.png"
+    },
+    {
+      "id": "big",
+      "text": "big",
+      "sentence": "The big truck goes zoom!",
+      "audioWord": "/Short_i/audio/big_word.wav",
+      "audioSentence": "/Short_i/audio/big_sentence.wav",
+      "image": "/Short_i/images/big.png"
+    },
+    {
+      "id": "dig",
+      "text": "dig",
+      "sentence": "Let's dig for treasure!",
+      "audioWord": "/Short_i/audio/dig_word.wav",
+      "audioSentence": "/Short_i/audio/dig_sentence.wav",
+      "image": "/Short_i/images/dig.png"
+    },
+    {
+      "id": "wig",
+      "text": "wig",
+      "sentence": "The clown has a big, curly wig.",
+      "audioWord": "/Short_i/audio/wig_word.wav",
+      "audioSentence": "/Short_i/audio/wig_sentence.wav",
+      "image": "/Short_i/images/wig.png"
+    },
+    {
+      "id": "fin",
+      "text": "fin",
+      "sentence": "The fish waves its fin.",
+      "audioWord": "/Short_i/audio/fin_word.wav",
+      "audioSentence": "/Short_i/audio/fin_sentence.wav",
+      "image": "/Short_i/images/fin.png"
+    },
+    {
+      "id": "pin",
+      "text": "pin",
+      "sentence": "The ball knocks down the pin!",
+      "audioWord": "/Short_i/audio/pin_word.wav",
+      "audioSentence": "/Short_i/audio/pin_sentence.wav",
+      "image": "/Short_i/images/pin.png"
+    },
+    {
+      "id": "win",
+      "text": "win",
+      "sentence": "I want to win the game!",
+      "audioWord": "/Short_i/audio/win_word.wav",
+      "audioSentence": "/Short_i/audio/win_sentence.wav",
+      "image": "/Short_i/images/win.png"
+    },
+    {
+      "id": "bin",
+      "text": "bin",
+      "sentence": "The hungry bin eats all the paper.",
+      "audioWord": "/Short_i/audio/bin_word.wav",
+      "audioSentence": "/Short_i/audio/bin_sentence.wav",
+      "image": "/Short_i/images/bin.png"
+    },
+    {
+      "id": "sit",
+      "text": "sit",
+      "sentence": "Sit like a frog!",
+      "audioWord": "/Short_i/audio/sit_word.wav",
+      "audioSentence": "/Short_i/audio/sit_sentence.wav",
+      "image": "/Short_i/images/sit.png"
+    },
+    {
+      "id": "hit",
+      "text": "hit",
+      "sentence": "I hit the red ball.",
+      "audioWord": "/Short_i/audio/hit_word.wav",
+      "audioSentence": "/Short_i/audio/hit_sentence.wav",
+      "image": "/Short_i/images/hit.png"
+    },
+    {
+      "id": "fit",
+      "text": "fit",
+      "sentence": "Does this puzzle piece fit?",
+      "audioWord": "/Short_i/audio/fit_word.wav",
+      "audioSentence": "/Short_i/audio/fit_sentence.wav",
+      "image": "/Short_i/images/fit.png"
+    },
+    {
+      "id": "lip",
+      "text": "lip",
+      "sentence": "My lip can make a kiss.",
+      "audioWord": "/Short_i/audio/lip_word.wav",
+      "audioSentence": "/Short_i/audio/lip_sentence.wav",
+      "image": "/Short_i/images/lip.png"
+    },
+    {
+      "id": "tip",
+      "text": "tip",
+      "sentence": "The magic wand has a shiny tip.",
+      "audioWord": "/Short_i/audio/tip_word.wav",
+      "audioSentence": "/Short_i/audio/tip_sentence.wav",
+      "image": "/Short_i/images/tip.png"
+    },
+    {
+      "id": "zip",
+      "text": "zip",
+      "sentence": "Watch the bird zip by!",
+      "audioWord": "/Short_i/audio/zip_word.wav",
+      "audioSentence": "/Short_i/audio/zip_sentence.wav",
+      "image": "/Short_i/images/zip.png"
+    },
+    {
+      "id": "kid",
+      "text": "kid",
+      "sentence": "The kid loves to play!",
+      "audioWord": "/Short_i/audio/kid_word.wav",
+      "audioSentence": "/Short_i/audio/kid_sentence.wav",
+      "image": "/Short_i/images/kid.png"
+    }
+  ]
+}

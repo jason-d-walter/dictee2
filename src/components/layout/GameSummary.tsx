@@ -1,4 +1,5 @@
 import { Word, WordResult } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
 import ConfettiCelebration from '../common/ConfettiCelebration';
 
 interface GameSummaryProps {
@@ -18,6 +19,7 @@ export default function GameSummary({
   onPlayAgain,
   onBackToMenu,
 }: GameSummaryProps) {
+  const { translations: tr } = useLanguage();
   const percentage = Math.round((stars / totalWords) * 100);
   const isPerfect = stars === totalWords;
 
@@ -38,21 +40,21 @@ export default function GameSummary({
             <>
               <span className="text-6xl">🏆</span>
               <h1 className="text-3xl font-bold text-yellow-600 mt-4">
-                PARFAIT!
+                {tr.perfect}
               </h1>
             </>
           ) : percentage >= 70 ? (
             <>
               <span className="text-6xl">🎉</span>
               <h1 className="text-3xl font-bold text-orange-600 mt-4">
-                Bravo!
+                {tr.greatJob}
               </h1>
             </>
           ) : (
             <>
               <span className="text-6xl">💪</span>
               <h1 className="text-3xl font-bold text-purple-600 mt-4">
-                Continue!
+                {tr.keepGoing}
               </h1>
             </>
           )}
@@ -65,12 +67,12 @@ export default function GameSummary({
             <span>{stars}</span>
             <span className="text-2xl text-yellow-500">/ {totalWords}</span>
           </div>
-          <p className="text-yellow-600 mt-2">{percentage}% correct</p>
+          <p className="text-yellow-600 mt-2">{tr.percentCorrect(percentage)}</p>
         </div>
 
         {/* Results list */}
         <div className="text-left mb-6">
-          <h3 className="font-bold text-slate-600 mb-3">Résultats:</h3>
+          <h3 className="font-bold text-slate-600 mb-3">{tr.results}</h3>
           <div className="space-y-2 max-h-40 overflow-y-auto">
             {results.map((result, index) => (
               <div
@@ -96,13 +98,13 @@ export default function GameSummary({
             onClick={onPlayAgain}
             className="w-full py-4 text-xl font-bold bg-gradient-to-r from-green-400 to-emerald-500 text-white rounded-2xl shadow-lg hover:scale-105 transition-transform"
           >
-            🔄 Rejouer
+            🔄 {tr.playAgain}
           </button>
           <button
             onClick={onBackToMenu}
             className="w-full py-4 text-xl font-bold bg-slate-200 text-slate-700 rounded-2xl hover:bg-slate-300 transition-colors"
           >
-            🏠 Menu principal
+            🏠 {tr.mainMenu}
           </button>
         </div>
       </div>

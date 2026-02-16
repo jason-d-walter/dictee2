@@ -1,12 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Word } from '../../types';
+import { Word, SupportedLanguage } from '../../types';
 import { useSpeech } from '../../hooks/useSpeech';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { generateMissingLetters, shuffleArray } from '../../utils/wordUtils';
 import StarCounter from '../common/StarCounter';
 import SpeakButton from '../common/SpeakButton';
 
-// Common French letters to use as distractors
-const DISTRACTOR_LETTERS = ['a', 'e', 'i', 'o', 'u', 'n', 's', 't', 'r', 'l', 'c', 'm', 'p', 'd'];
+// Common letters to use as distractors, keyed by language
+const DISTRACTOR_LETTERS: Record<SupportedLanguage, string[]> = {
+  fr: ['a', 'e', 'i', 'o', 'u', 'n', 's', 't', 'r', 'l', 'c', 'm', 'p', 'd'],
+  en: ['a', 'e', 'i', 'o', 'u', 'n', 's', 't', 'r', 'l', 'c', 'm', 'p', 'd'],
+};
 
 interface LettresPerduesProps {
   word: Word;
@@ -31,7 +35,8 @@ export default function LettresPerdues({
   onComplete,
   onBack,
 }: LettresPerduesProps) {
-  const { speak, speakAudio } = useSpeech();
+  const { language, translations: tr } = useLanguage();
+  const { speak, speakAudio } = useSpeech(language);
   const [puzzle, setPuzzle] = useState<ReturnType<typeof generateMissingLetters> | null>(null);
   const [slots, setSlots] = useState<LetterSlot[]>([]);
   const [availableLetters, setAvailableLetters] = useState<string[]>([]);
@@ -49,7 +54,7 @@ export default function LettresPerdues({
 
   useEffect(() => {
     const numMissing = word.text.length > 4 ? 2 : 1;
-    const generated = generateMissingLetters(word.text, numMissing);
+    const generated = generateMissingLetters(word.text, numMissing, language);
     setPuzzle(generated);
 
     // Initialize empty slots
@@ -61,7 +66,8 @@ export default function LettresPerdues({
     const neededDistractors = Math.max(0, minLetters - correctLetters.length);
 
     // Pick random distractors that aren't already in the correct letters
-    const availableDistractors = DISTRACTOR_LETTERS.filter(
+    const distractorPool = DISTRACTOR_LETTERS[language] ?? DISTRACTOR_LETTERS.fr;
+    const availableDistractors = distractorPool.filter(
       l => !correctLetters.map(c => c.toLowerCase()).includes(l)
     );
     const distractors = shuffleArray(availableDistractors).slice(0, neededDistractors);
@@ -162,7 +168,7 @@ export default function LettresPerdues({
           onClick={onBack}
           className="text-white text-xl font-bold bg-white/20 rounded-full px-4 py-2"
         >
-          ← Retour
+          {tr.back}
         </button>
         <StarCounter stars={stars} total={totalWords} />
       </div>
@@ -170,7 +176,7 @@ export default function LettresPerdues({
       {/* Progress */}
       <div className="text-center mb-4">
         <span className="text-white/80 text-lg">
-          Mot {currentIndex + 1} sur {totalWords}
+          {tr.wordNofM(currentIndex + 1, totalWords)}
         </span>
       </div>
 
@@ -179,10 +185,10 @@ export default function LettresPerdues({
         {/* Instructions */}
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            🧩 Lettres Perdues
+            🧩 {tr.lettresPerduesTitle}
           </h2>
           <p className="text-white/90 text-lg">
-            Place les lettres manquantes!
+            {tr.lettresPerduesInstruction}
           </p>
         </div>
 
@@ -271,7 +277,7 @@ export default function LettresPerdues({
               }
             `}
           >
-            Vérifier ✓
+            {tr.verify}
           </button>
         )}
 
@@ -279,12 +285,12 @@ export default function LettresPerdues({
         {showResult && (
           <div className="text-center">
             {isCorrect ? (
-              <span className="text-4xl">🎉 Parfait!</span>
+              <span className="text-4xl">🎉 {tr.feedbackPerfect}</span>
             ) : (
               <div className="text-center">
-                <span className="text-4xl">😅 Presque!</span>
+                <span className="text-4xl">😅 {tr.feedbackAlmost}</span>
                 <p className="text-white text-xl mt-2">
-                  C'était: <strong>{word.text}</strong>
+                  {tr.correctAnswerWas(word.text)}
                 </p>
               </div>
             )}
