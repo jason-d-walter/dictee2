@@ -1,4 +1,5 @@
 import { useSpeech } from '../../hooks/useSpeech';
+import { useLanguage } from '../../i18n/LanguageContext';
 
 interface SpeakButtonProps {
   word: string;
@@ -7,7 +8,8 @@ interface SpeakButtonProps {
 }
 
 export default function SpeakButton({ word, audioPath, size = 'medium' }: SpeakButtonProps) {
-  const { speak, speakAudio, speaking } = useSpeech();
+  const { language } = useLanguage();
+  const { speak, speakAudio, speaking } = useSpeech(language);
 
   const handleClick = () => {
     if (audioPath) {

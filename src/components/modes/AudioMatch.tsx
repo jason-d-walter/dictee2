@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Word } from '../../types';
 import { useSpeech } from '../../hooks/useSpeech';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { getRandomWords, shuffleArray } from '../../utils/wordUtils';
 import StarCounter from '../common/StarCounter';
 import SpeakButton from '../common/SpeakButton';
@@ -24,7 +25,8 @@ export default function AudioMatch({
   onComplete,
   onBack,
 }: AudioMatchProps) {
-  const { speak, speakAudio } = useSpeech();
+  const { language, translations: tr } = useLanguage();
+  const { speak, speakAudio } = useSpeech(language);
   const [options, setOptions] = useState<string[]>([]);
   const [selected, setSelected] = useState<string | null>(null);
   const [showResult, setShowResult] = useState(false);
@@ -96,7 +98,7 @@ export default function AudioMatch({
           onClick={onBack}
           className="text-white text-xl font-bold bg-white/20 rounded-full px-4 py-2"
         >
-          ← Retour
+          {tr.back}
         </button>
         <StarCounter stars={stars} total={totalWords} />
       </div>
@@ -104,7 +106,7 @@ export default function AudioMatch({
       {/* Progress */}
       <div className="text-center mb-4">
         <span className="text-white/80 text-lg">
-          Mot {currentIndex + 1} sur {totalWords}
+          {tr.wordNofM(currentIndex + 1, totalWords)}
         </span>
       </div>
 
@@ -113,10 +115,10 @@ export default function AudioMatch({
         {/* Instructions */}
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-            🎧 L'Audio-Match
+            🎧 {tr.audioMatchTitle}
           </h2>
           <p className="text-white/90 text-lg">
-            Écoute le mot et tape sur la bonne réponse!
+            {tr.audioMatchInstruction}
           </p>
         </div>
 
@@ -141,9 +143,9 @@ export default function AudioMatch({
         {showResult && (
           <div className="text-center">
             {selected === word.text ? (
-              <span className="text-4xl">🎉 Bravo!</span>
+              <span className="text-4xl">🎉 {tr.feedbackCorrect}</span>
             ) : (
-              <span className="text-4xl">😅 Essaie encore!</span>
+              <span className="text-4xl">😅 {tr.feedbackTryAgain}</span>
             )}
           </div>
         )}

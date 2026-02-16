@@ -18,6 +18,9 @@ export async function fetchMetadata(): Promise<DicteeMetadata | null> {
       return null;
     }
 
+    // Default language to 'fr' for backward compat
+    weeks = weeks.map(w => ({ ...w, language: w.language ?? 'fr' }));
+
     return { dictee: weeks };
   } catch (error) {
     console.error('Error fetching metadata:', error);

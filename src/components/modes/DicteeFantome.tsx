@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Word } from '../../types';
 import { useSpeech } from '../../hooks/useSpeech';
+import { useLanguage } from '../../i18n/LanguageContext';
 import { compareAnswers } from '../../utils/wordUtils';
 import StarCounter from '../common/StarCounter';
 import SpeakButton from '../common/SpeakButton';
@@ -24,7 +25,8 @@ export default function DicteeFantome({
   onComplete,
   onBack,
 }: DicteeFantomeProps) {
-  const { speak, speakAudio } = useSpeech();
+  const { language, translations: tr } = useLanguage();
+  const { speak, speakAudio } = useSpeech(language);
   const [answer, setAnswer] = useState('');
   const [showResult, setShowResult] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
@@ -87,7 +89,7 @@ export default function DicteeFantome({
           onClick={onBack}
           className="text-white text-xl font-bold bg-white/20 rounded-full px-4 py-2"
         >
-          ← Retour
+          {tr.back}
         </button>
         <StarCounter stars={stars} total={totalWords} />
       </div>
@@ -95,7 +97,7 @@ export default function DicteeFantome({
       {/* Progress */}
       <div className="text-center mb-4">
         <span className="text-white/80 text-lg">
-          Mot {currentIndex + 1} sur {totalWords}
+          {tr.wordNofM(currentIndex + 1, totalWords)}
         </span>
       </div>
 
@@ -104,10 +106,10 @@ export default function DicteeFantome({
         {/* Instructions */}
         <div className="text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-white mb-2">
-            👻 La Dictée Fantôme
+            👻 {tr.dicteeFantomeTitle}
           </h2>
           <p className="text-white/90 text-lg">
-            Écoute et écris le mot!
+            {tr.dicteeFantomeInstruction}
           </p>
         </div>
 
@@ -123,7 +125,7 @@ export default function DicteeFantome({
             onChange={e => setAnswer(e.target.value)}
             onKeyDown={handleKeyDown}
             disabled={showResult}
-            placeholder="Écris ici..."
+            placeholder={tr.placeholder}
             autoComplete="off"
             autoCapitalize="off"
             autoCorrect="off"
@@ -173,7 +175,7 @@ export default function DicteeFantome({
               }
             `}
           >
-            Vérifier ✓
+            {tr.verify}
           </button>
         )}
 
@@ -183,13 +185,13 @@ export default function DicteeFantome({
             {isCorrect ? (
               <div>
                 <span className="text-5xl">🎉</span>
-                <p className="text-white text-2xl font-bold mt-2">Bravo!</p>
+                <p className="text-white text-2xl font-bold mt-2">{tr.feedbackBravo}</p>
               </div>
             ) : (
               <div>
                 <span className="text-5xl">😅</span>
                 <p className="text-white text-xl mt-2">
-                  La bonne réponse était:
+                  {tr.correctAnswerLabel}
                 </p>
                 <p className="text-yellow-300 text-3xl font-bold mt-1">
                   {word.text}

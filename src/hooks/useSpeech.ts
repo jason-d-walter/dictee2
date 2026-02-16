@@ -1,4 +1,10 @@
 import { useCallback, useRef, useState } from 'react';
+import { SupportedLanguage } from '../types';
+
+const BCP47_MAP: Record<SupportedLanguage, string> = {
+  fr: 'fr-FR',
+  en: 'en-US',
+};
 
 interface UseSpeechReturn {
   speak: (text: string) => void;
@@ -7,7 +13,7 @@ interface UseSpeechReturn {
   stop: () => void;
 }
 
-export function useSpeech(): UseSpeechReturn {
+export function useSpeech(language: SupportedLanguage = 'fr'): UseSpeechReturn {
   const [speaking, setSpeaking] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -52,22 +58,24 @@ export function useSpeech(): UseSpeechReturn {
 
     stop();
 
+    const bcp47 = BCP47_MAP[language];
     const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'fr-FR';
+    utterance.lang = bcp47;
     utterance.rate = 0.8;
     utterance.pitch = 1.0;
     utterance.volume = 1.0;
 
-    // Try to find a French voice
+    // Try to find a matching voice
+    const langPrefix = language;
     const voices = window.speechSynthesis.getVoices();
-    const frenchVoice = voices.find(
-      voice => voice.lang.startsWith('fr') && voice.localService
+    const matchingVoice = voices.find(
+      voice => voice.lang.startsWith(langPrefix) && voice.localService
     ) || voices.find(
-      voice => voice.lang.startsWith('fr')
+      voice => voice.lang.startsWith(langPrefix)
     );
 
-    if (frenchVoice) {
-      utterance.voice = frenchVoice;
+    if (matchingVoice) {
+      utterance.voice = matchingVoice;
     }
 
     utterance.onstart = () => setSpeaking(true);
@@ -75,7 +83,7 @@ export function useSpeech(): UseSpeechReturn {
     utterance.onerror = () => setSpeaking(false);
 
     window.speechSynthesis.speak(utterance);
-  }, [stop]);
+  }, [stop, language]);
 
   return { speak, speakAudio, speaking, stop };
 }

@@ -1,19 +1,25 @@
+import { SupportedLanguage } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
+
 interface AccentKeyboardProps {
   onCharacter: (char: string) => void;
   disabled?: boolean;
 }
 
-const ACCENT_CHARACTERS = [
-  'é', 'è', 'ê', 'ë',
-  'à', 'â', 'ç',
-  'î', 'ï', 'ô',
-  'û', 'ù',
-];
+const ACCENT_CHARACTERS: Record<SupportedLanguage, string[]> = {
+  fr: ['é', 'è', 'ê', 'ë', 'à', 'â', 'ç', 'î', 'ï', 'ô', 'û', 'ù'],
+  en: [],
+};
 
 export default function AccentKeyboard({ onCharacter, disabled }: AccentKeyboardProps) {
+  const { language } = useLanguage();
+  const chars = ACCENT_CHARACTERS[language] ?? ACCENT_CHARACTERS.fr;
+
+  if (chars.length === 0) return null;
+
   return (
     <div className="flex flex-wrap justify-center gap-2 p-4">
-      {ACCENT_CHARACTERS.map(char => (
+      {chars.map(char => (
         <button
           key={char}
           onClick={() => onCharacter(char)}

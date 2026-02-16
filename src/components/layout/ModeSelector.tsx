@@ -1,4 +1,6 @@
 import { GameMode, Word, WordProgress, WeekEntry } from '../../types';
+import { useLanguage } from '../../i18n/LanguageContext';
+import { TranslationSet } from '../../i18n/translations';
 
 interface ModeSelectorProps {
   onSelectMode: (mode: GameMode) => void;
@@ -13,45 +15,47 @@ interface ModeSelectorProps {
   onSelectWeek: (week: WeekEntry) => void;
 }
 
-function formatWeekLabel(week: WeekEntry): string {
+function formatWeekLabel(week: WeekEntry, locale: string): string {
   const start = new Date(week.week_start + 'T00:00:00');
   const end = new Date(week.week_end + 'T00:00:00');
   const startDay = start.getDate();
   const endDay = end.getDate();
-  const month = end.toLocaleDateString('fr-FR', { month: 'short' });
+  const month = end.toLocaleDateString(locale, { month: 'short' });
   return `${startDay}-${endDay} ${month} : \u00AB${week.sounds}\u00BB`;
 }
 
-const MODES: { id: GameMode; emoji: string; title: string; description: string; color: string }[] = [
-  {
-    id: 'exploration',
-    emoji: '🔍',
-    title: 'Exploration',
-    description: 'Découvre les mots avec images et phrases!',
-    color: 'from-amber-500 to-orange-500',
-  },
-  {
-    id: 'audio-match',
-    emoji: '🎧',
-    title: "L'Audio-Match",
-    description: 'Écoute et choisis le bon mot!',
-    color: 'from-purple-500 to-pink-500',
-  },
-  {
-    id: 'lettres-perdues',
-    emoji: '🧩',
-    title: 'Lettres Perdues',
-    description: 'Place les lettres manquantes!',
-    color: 'from-teal-500 to-emerald-500',
-  },
-  {
-    id: 'dictee-fantome',
-    emoji: '👻',
-    title: 'La Dictée Fantôme',
-    description: 'Écris le mot tout seul!',
-    color: 'from-indigo-500 to-purple-500',
-  },
-];
+function getModes(tr: TranslationSet): { id: GameMode; emoji: string; title: string; description: string; color: string }[] {
+  return [
+    {
+      id: 'exploration',
+      emoji: '🔍',
+      title: tr.modeExplorationTitle,
+      description: tr.modeExplorationDesc,
+      color: 'from-amber-500 to-orange-500',
+    },
+    {
+      id: 'audio-match',
+      emoji: '🎧',
+      title: tr.modeAudioMatchTitle,
+      description: tr.modeAudioMatchDesc,
+      color: 'from-purple-500 to-pink-500',
+    },
+    {
+      id: 'lettres-perdues',
+      emoji: '🧩',
+      title: tr.modeLettresPerduesTitle,
+      description: tr.modeLettresPerduesDesc,
+      color: 'from-teal-500 to-emerald-500',
+    },
+    {
+      id: 'dictee-fantome',
+      emoji: '👻',
+      title: tr.modeDicteeFantomeTitle,
+      description: tr.modeDicteeFantomeDesc,
+      color: 'from-indigo-500 to-purple-500',
+    },
+  ];
+}
 
 export default function ModeSelector({
   onSelectMode,
@@ -65,6 +69,8 @@ export default function ModeSelector({
   selectedWeek,
   onSelectWeek,
 }: ModeSelectorProps) {
+  const { translations: tr } = useLanguage();
+  const modes = getModes(tr);
   const masteredCount = words.filter(w => progress[w.id]?.mastered).length;
 
   const handleWeekChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -83,10 +89,10 @@ export default function ModeSelector({
       {/* Header */}
       <div className="text-center py-6">
         <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-          ✨ Dictée ✨
+          ✨ {tr.appTitle} ✨
         </h1>
         <p className="text-white/80 text-lg">
-          Pratique ton français!
+          {tr.tagline}
         </p>
       </div>
 
@@ -95,10 +101,10 @@ export default function ModeSelector({
         <div className="bg-white/20 rounded-2xl p-4 mx-auto mb-6 max-w-sm">
           <div className="text-center text-white">
             <span className="text-2xl">📚 </span>
-            <span className="font-bold">{words.length}</span> mots
+            <span className="font-bold">{tr.wordCount(words.length)}</span>
             <span className="mx-3">•</span>
             <span className="text-2xl">⭐ </span>
-            <span className="font-bold">{masteredCount}</span> maîtrisés
+            <span className="font-bold">{tr.masteredCount(masteredCount)}</span>
           </div>
         </div>
       )}
@@ -113,7 +119,7 @@ export default function ModeSelector({
           >
             {weeks.map((week, idx) => (
               <option key={`${week.week_start}-${week.sounds}`} value={idx} className="text-gray-900">
-                {formatWeekLabel(week)}
+                {formatWeekLabel(week, tr.dateLocale)}
               </option>
             ))}
           </select>
@@ -126,38 +132,38 @@ export default function ModeSelector({
           <div className="bg-white/20 rounded-3xl p-8 text-center">
             <span className="text-5xl animate-bounce">📖</span>
             <p className="text-white text-xl mt-4">
-              Chargement des mots...
+              {tr.loadingWords}
             </p>
           </div>
         ) : error ? (
           <div className="bg-white/20 rounded-3xl p-8 text-center">
             <span className="text-5xl">😕</span>
             <p className="text-white text-xl mt-4 mb-6">
-              Impossible de charger les mots
+              {tr.errorLoadingWords}
             </p>
             <button
               onClick={onOpenWordList}
               className="bg-white text-purple-700 font-bold text-xl px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition-transform"
             >
-              Réessayer
+              {tr.retry}
             </button>
           </div>
         ) : !hasWords ? (
           <div className="bg-white/20 rounded-3xl p-8 text-center">
             <span className="text-5xl">📝</span>
             <p className="text-white text-xl mt-4 mb-6">
-              Aucun mot trouvé
+              {tr.noWordsFound}
             </p>
             <button
               onClick={onOpenWordList}
               className="bg-white text-purple-700 font-bold text-xl px-8 py-4 rounded-2xl shadow-lg hover:scale-105 transition-transform"
             >
-              Voir les mots
+              {tr.viewWords}
             </button>
           </div>
         ) : (
           <>
-            {MODES.map(mode => (
+            {modes.map(mode => (
               <button
                 key={mode.id}
                 onClick={() => onSelectMode(mode.id)}
@@ -192,7 +198,7 @@ export default function ModeSelector({
           onClick={onOpenWordList}
           className="text-white/60 hover:text-white text-sm underline"
         >
-          📚 Voir les mots
+          📚 {tr.viewWordList}
         </button>
       </div>
     </div>
