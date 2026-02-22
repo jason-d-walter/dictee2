@@ -256,13 +256,9 @@ def generate_image(sentence: str, word: str, output_path: Path, language: str) -
         "safety_filter_level": "BLOCK_ONLY_HIGH" # Least restrictive setting
     }
 
-    # Attempt 1: The original creative prompt
-    # NOTE: "no text" instructions are reinforced at both the beginning and end
-    # of the prompt, and we avoid mentioning "spelling lesson" which primes the
-    # model to include letters/words. Style is described as "wordless picture book".
     prompts_to_try = [
-        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A whimsical, child-friendly cartoon in the style of a wordless picture book. Illustrate this scene: {sentence}. Bright colors, simple shapes, flat 2D vector art. The image must contain only drawings, no typography of any kind.",
-        f"A wordless illustration with absolutely zero text, zero letters, zero numbers, zero writing, zero captions, zero labels, zero signs, zero watermarks anywhere in the image. A simple, cheerful cartoon drawing depicting the concept of \"{word}\" ({lang_context}). High quality 2D flat vector art, bright colors. The image must contain only drawings, no typography of any kind."
+        f"A bright, friendly children’s picture‑book style illustration that shows the idea of `{word}` ({lang_context}) or this situation: {sentence}. Simple characters and objects in flat colors, no detailed backgrounds, like a page from a wordless picture book.",
+        f"A minimal abstract flat‑vector illustration that conveys the feeling of `{word}` ({lang_context}) or this concept: {sentence}. Use simple geometric shapes and bright colors to suggest the idea visually, on a clean, uncluttered background."
     ]
 
     for attempt, prompt in enumerate(prompts_to_try):

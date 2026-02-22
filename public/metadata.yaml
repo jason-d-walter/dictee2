@@ -34,3 +34,10 @@ dictee:
   source: words_of_week.txt
   week_end: '2026-02-27'
   week_start: '2026-02-22'
+- date_of_generation: '2026-02-21'
+  language: fr
+  path: consonnes_muettes-ch
+  sounds: consonnes_muettes-ch
+  source: words_of_week.txt
+  week_end: '2026-02-27'
+  week_start: '2026-02-23'
