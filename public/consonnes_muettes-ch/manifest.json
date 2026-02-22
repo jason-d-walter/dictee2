@@ -1,0 +1,389 @@
+{
+  "generatedAt": "2026-02-21T15:44:51.134965",
+  "words": [
+    {
+      "id": "bras",
+      "text": "bras",
+      "sentence": "Le robot agite ses bras.",
+      "audioWord": "/consonnes_muettes-ch/audio/bras_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/bras_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/bras.png"
+    },
+    {
+      "id": "canard",
+      "text": "canard",
+      "sentence": "Le canard fait coin-coin.",
+      "audioWord": "/consonnes_muettes-ch/audio/canard_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/canard_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/canard.png"
+    },
+    {
+      "id": "cas",
+      "text": "cas",
+      "sentence": "Dans ce cas, le zèbre vole !",
+      "audioWord": "/consonnes_muettes-ch/audio/cas_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/cas_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/cas.png"
+    },
+    {
+      "id": "drap",
+      "text": "drap",
+      "sentence": "Je me cache sous le drap.",
+      "audioWord": "/consonnes_muettes-ch/audio/drap_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/drap_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/drap.png"
+    },
+    {
+      "id": "fort",
+      "text": "fort",
+      "sentence": "Le super-héros est fort.",
+      "audioWord": "/consonnes_muettes-ch/audio/fort_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/fort_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/fort.png"
+    },
+    {
+      "id": "gars",
+      "text": "gars",
+      "sentence": "Regarde le gars, il court vite !",
+      "audioWord": "/consonnes_muettes-ch/audio/gars_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/gars_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/gars.png"
+    },
+    {
+      "id": "gros",
+      "text": "gros",
+      "sentence": "Le monstre est gros et drôle.",
+      "audioWord": "/consonnes_muettes-ch/audio/gros_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/gros_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/gros.png"
+    },
+    {
+      "id": "héros",
+      "text": "héros",
+      "sentence": "Papa est mon héros.",
+      "audioWord": "/consonnes_muettes-ch/audio/héros_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/héros_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/héros.png"
+    },
+    {
+      "id": "jus",
+      "text": "jus",
+      "sentence": "Miam, quel bon jus !",
+      "audioWord": "/consonnes_muettes-ch/audio/jus_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/jus_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/jus.png"
+    },
+    {
+      "id": "léopard",
+      "text": "léopard",
+      "sentence": "Le léopard a des taches.",
+      "audioWord": "/consonnes_muettes-ch/audio/léopard_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/léopard_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/léopard.png"
+    },
+    {
+      "id": "lézard",
+      "text": "lézard",
+      "sentence": "Regarde le petit lézard vert !",
+      "audioWord": "/consonnes_muettes-ch/audio/lézard_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/lézard_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/lézard.png"
+    },
+    {
+      "id": "lit",
+      "text": "lit",
+      "sentence": "Je saute sur mon lit !",
+      "audioWord": "/consonnes_muettes-ch/audio/lit_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/lit_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/lit.png"
+    },
+    {
+      "id": "mort",
+      "text": "mort",
+      "sentence": "Je suis mort de rire !",
+      "audioWord": "/consonnes_muettes-ch/audio/mort_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/mort_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/mort.png"
+    },
+    {
+      "id": "pas",
+      "text": "pas",
+      "sentence": "Le chien ne dort pas !",
+      "audioWord": "/consonnes_muettes-ch/audio/pas_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/pas_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/pas.png"
+    },
+    {
+      "id": "rat",
+      "text": "rat",
+      "sentence": "Un rat danse joyeusement.",
+      "audioWord": "/consonnes_muettes-ch/audio/rat_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/rat_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/rat.png"
+    },
+    {
+      "id": "renard",
+      "text": "renard",
+      "sentence": "Le renard regarde un papillon.",
+      "audioWord": "/consonnes_muettes-ch/audio/renard_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/renard_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/renard.png"
+    },
+    {
+      "id": "ris",
+      "text": "ris",
+      "sentence": "Je ris quand le clown jongle.",
+      "audioWord": "/consonnes_muettes-ch/audio/ris_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/ris_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/ris.png"
+    },
+    {
+      "id": "riz",
+      "text": "riz",
+      "sentence": "Une souris mange du riz.",
+      "audioWord": "/consonnes_muettes-ch/audio/riz_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/riz_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/riz.png"
+    },
+    {
+      "id": "robot",
+      "text": "robot",
+      "sentence": "Le robot danse.",
+      "audioWord": "/consonnes_muettes-ch/audio/robot_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/robot_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/robot.png"
+    },
+    {
+      "id": "sort",
+      "text": "sort",
+      "sentence": "Le magicien sort un lapin.",
+      "audioWord": "/consonnes_muettes-ch/audio/sort_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/sort_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/sort.png"
+    },
+    {
+      "id": "têtard",
+      "text": "têtard",
+      "sentence": "Un têtard nage dans l'eau.",
+      "audioWord": "/consonnes_muettes-ch/audio/têtard_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/têtard_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/têtard.png"
+    },
+    {
+      "id": "tribut",
+      "text": "tribut",
+      "sentence": "Ce dessin est un tribut pour toi !",
+      "audioWord": "/consonnes_muettes-ch/audio/tribut_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/tribut_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/tribut.png"
+    },
+    {
+      "id": "tricot",
+      "text": "tricot",
+      "sentence": "Le chat aime le tricot.",
+      "audioWord": "/consonnes_muettes-ch/audio/tricot_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/tricot_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/tricot.png"
+    },
+    {
+      "id": "trop",
+      "text": "trop",
+      "sentence": "C'est trop drôle !",
+      "audioWord": "/consonnes_muettes-ch/audio/trop_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/trop_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/trop.png"
+    },
+    {
+      "id": "cache",
+      "text": "cache",
+      "sentence": "Le petit singe cache une banane.",
+      "audioWord": "/consonnes_muettes-ch/audio/cache_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/cache_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/cache.png"
+    },
+    {
+      "id": "chalet",
+      "text": "chalet",
+      "sentence": "Un joli chalet a un toboggan !",
+      "audioWord": "/consonnes_muettes-ch/audio/chalet_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chalet_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chalet.png"
+    },
+    {
+      "id": "chameau",
+      "text": "chameau",
+      "sentence": "Le chameau a une bosse.",
+      "audioWord": "/consonnes_muettes-ch/audio/chameau_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chameau_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chameau.png"
+    },
+    {
+      "id": "chapeau",
+      "text": "chapeau",
+      "sentence": "Le magicien a un grand chapeau.",
+      "audioWord": "/consonnes_muettes-ch/audio/chapeau_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chapeau_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chapeau.png"
+    },
+    {
+      "id": "chat",
+      "text": "chat",
+      "sentence": "Le chat mange un poisson.",
+      "audioWord": "/consonnes_muettes-ch/audio/chat_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chat_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chat.png"
+    },
+    {
+      "id": "chaud",
+      "text": "chaud",
+      "sentence": "Regarde, le volcan est chaud !",
+      "audioWord": "/consonnes_muettes-ch/audio/chaud_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chaud_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chaud.png"
+    },
+    {
+      "id": "chauve",
+      "text": "chauve",
+      "sentence": "Le clown chauve fait rire.",
+      "audioWord": "/consonnes_muettes-ch/audio/chauve_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chauve_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chauve.png"
+    },
+    {
+      "id": "chef",
+      "text": "chef",
+      "sentence": "Je suis un petit chef !",
+      "audioWord": "/consonnes_muettes-ch/audio/chef_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chef_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chef.png"
+    },
+    {
+      "id": "cher",
+      "text": "cher",
+      "sentence": "Cher chat, tu es mignon !",
+      "audioWord": "/consonnes_muettes-ch/audio/cher_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/cher_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/cher.png"
+    },
+    {
+      "id": "cheval",
+      "text": "cheval",
+      "sentence": "Le petit cheval saute.",
+      "audioWord": "/consonnes_muettes-ch/audio/cheval_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/cheval_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/cheval.png"
+    },
+    {
+      "id": "chez",
+      "text": "chez",
+      "sentence": "Viens jouer chez moi !",
+      "audioWord": "/consonnes_muettes-ch/audio/chez_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chez_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chez.png"
+    },
+    {
+      "id": "chèvre",
+      "text": "chèvre",
+      "sentence": "La chèvre fait \"Bêêê!\".",
+      "audioWord": "/consonnes_muettes-ch/audio/chèvre_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chèvre_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chèvre.png"
+    },
+    {
+      "id": "chinois",
+      "text": "chinois",
+      "sentence": "Je vois un dragon chinois.",
+      "audioWord": "/consonnes_muettes-ch/audio/chinois_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chinois_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chinois.png"
+    },
+    {
+      "id": "chiot",
+      "text": "chiot",
+      "sentence": "Le chiot joue avec une balle.",
+      "audioWord": "/consonnes_muettes-ch/audio/chiot_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chiot_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chiot.png"
+    },
+    {
+      "id": "chocolat",
+      "text": "chocolat",
+      "sentence": "J'aime le chocolat.",
+      "audioWord": "/consonnes_muettes-ch/audio/chocolat_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chocolat_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chocolat.png"
+    },
+    {
+      "id": "chou",
+      "text": "chou",
+      "sentence": "Le lapin mange le chou.",
+      "audioWord": "/consonnes_muettes-ch/audio/chou_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chou_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chou.png"
+    },
+    {
+      "id": "chute",
+      "text": "chute",
+      "sentence": "Le chat chute du canapé.",
+      "audioWord": "/consonnes_muettes-ch/audio/chute_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/chute_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/chute.png"
+    },
+    {
+      "id": "fiche",
+      "text": "fiche",
+      "sentence": "Ma fiche est magique !",
+      "audioWord": "/consonnes_muettes-ch/audio/fiche_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/fiche_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/fiche.png"
+    },
+    {
+      "id": "machine",
+      "text": "machine",
+      "sentence": "La machine fait un bruit rigolo.",
+      "audioWord": "/consonnes_muettes-ch/audio/machine_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/machine_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/machine.png"
+    },
+    {
+      "id": "mâcher",
+      "text": "mâcher",
+      "sentence": "L'écureuil mâche sa noisette.",
+      "audioWord": "/consonnes_muettes-ch/audio/mâcher_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/mâcher_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/mâcher.png"
+    },
+    {
+      "id": "marche",
+      "text": "marche",
+      "sentence": "Mon robot marche !",
+      "audioWord": "/consonnes_muettes-ch/audio/marche_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/marche_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/marche.png"
+    },
+    {
+      "id": "parachute",
+      "text": "parachute",
+      "sentence": "Je saute avec un parachute !",
+      "audioWord": "/consonnes_muettes-ch/audio/parachute_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/parachute_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/parachute.png"
+    },
+    {
+      "id": "roche",
+      "text": "roche",
+      "sentence": "Cette roche est magique !",
+      "audioWord": "/consonnes_muettes-ch/audio/roche_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/roche_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/roche.png"
+    },
+    {
+      "id": "sache",
+      "text": "sache",
+      "sentence": "Sache que la glace est délicieuse !",
+      "audioWord": "/consonnes_muettes-ch/audio/sache_word.wav",
+      "audioSentence": "/consonnes_muettes-ch/audio/sache_sentence.wav",
+      "image": "/consonnes_muettes-ch/images/sache.png"
+    }
+  ]
+}
