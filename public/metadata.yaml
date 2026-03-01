@@ -41,3 +41,10 @@ dictee:
   source: words_of_week.txt
   week_end: '2026-02-27'
   week_start: '2026-02-23'
+- date_of_generation: '2026-03-01'
+  language: fr
+  path: gn_ph
+  sounds: gn_ph
+  source: words_of_week.txt
+  week_end: '2026-03-06'
+  week_start: '2026-03-01'
