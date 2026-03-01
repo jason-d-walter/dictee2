@@ -1,0 +1,341 @@
+{
+  "generatedAt": "2026-03-01T09:56:29.785216",
+  "words": [
+    {
+      "id": "gnocchi",
+      "text": "gnocchi",
+      "sentence": "Les gnocchi dansent dans l'eau!",
+      "audioWord": "/gn_ph/audio/gnocchi_word.wav",
+      "audioSentence": "/gn_ph/audio/gnocchi_sentence.wav",
+      "image": "/gn_ph/images/gnocchi.png"
+    },
+    {
+      "id": "araignée",
+      "text": "araignée",
+      "sentence": "L'araignée rigolote danse.",
+      "audioWord": "/gn_ph/audio/araignée_word.wav",
+      "audioSentence": "/gn_ph/audio/araignée_sentence.wav",
+      "image": "/gn_ph/images/araignée.png"
+    },
+    {
+      "id": "gnou",
+      "text": "gnou",
+      "sentence": "Le gnou saute !",
+      "audioWord": "/gn_ph/audio/gnou_word.wav",
+      "audioSentence": "/gn_ph/audio/gnou_sentence.wav",
+      "image": "/gn_ph/images/gnou.png"
+    },
+    {
+      "id": "agneau",
+      "text": "agneau",
+      "sentence": "L'agneau joue dans le pré.",
+      "audioWord": "/gn_ph/audio/agneau_word.wav",
+      "audioSentence": "/gn_ph/audio/agneau_sentence.wav",
+      "image": "/gn_ph/images/agneau.png"
+    },
+    {
+      "id": "signe",
+      "text": "signe",
+      "sentence": "C'est un signe magique !",
+      "audioWord": "/gn_ph/audio/signe_word.wav",
+      "audioSentence": "/gn_ph/audio/signe_sentence.wav",
+      "image": "/gn_ph/images/signe.png"
+    },
+    {
+      "id": "baigne",
+      "text": "baigne",
+      "sentence": "Le poisson baigne dans l'eau.",
+      "audioWord": "/gn_ph/audio/baigne_word.wav",
+      "audioSentence": "/gn_ph/audio/baigne_sentence.wav",
+      "image": "/gn_ph/images/baigne.png"
+    },
+    {
+      "id": "beigne",
+      "text": "beigne",
+      "sentence": "Miam, ce beigne est bon !",
+      "audioWord": "/gn_ph/audio/beigne_word.wav",
+      "audioSentence": "/gn_ph/audio/beigne_sentence.wav",
+      "image": "/gn_ph/images/beigne.png"
+    },
+    {
+      "id": "baignoire",
+      "text": "baignoire",
+      "sentence": "J'aime faire des bulles dans la baignoire.",
+      "audioWord": "/gn_ph/audio/baignoire_word.wav",
+      "audioSentence": "/gn_ph/audio/baignoire_sentence.wav",
+      "image": "/gn_ph/images/baignoire.png"
+    },
+    {
+      "id": "châtaigne",
+      "text": "châtaigne",
+      "sentence": "L'écureuil mange la châtaigne.",
+      "audioWord": "/gn_ph/audio/châtaigne_word.wav",
+      "audioSentence": "/gn_ph/audio/châtaigne_sentence.wav",
+      "image": "/gn_ph/images/châtaigne.png"
+    },
+    {
+      "id": "rossignol",
+      "text": "rossignol",
+      "sentence": "Le rossignol chante une jolie chanson.",
+      "audioWord": "/gn_ph/audio/rossignol_word.wav",
+      "audioSentence": "/gn_ph/audio/rossignol_sentence.wav",
+      "image": "/gn_ph/images/rossignol.png"
+    },
+    {
+      "id": "cigogne",
+      "text": "cigogne",
+      "sentence": "La cigogne cherche une grenouille.",
+      "audioWord": "/gn_ph/audio/cigogne_word.wav",
+      "audioSentence": "/gn_ph/audio/cigogne_sentence.wav",
+      "image": "/gn_ph/images/cigogne.png"
+    },
+    {
+      "id": "vigne",
+      "text": "vigne",
+      "sentence": "Un petit oiseau chante dans la vigne.",
+      "audioWord": "/gn_ph/audio/vigne_word.wav",
+      "audioSentence": "/gn_ph/audio/vigne_sentence.wav",
+      "image": "/gn_ph/images/vigne.png"
+    },
+    {
+      "id": "ligne",
+      "text": "ligne",
+      "sentence": "Je suis sur la ligne de départ !",
+      "audioWord": "/gn_ph/audio/ligne_word.wav",
+      "audioSentence": "/gn_ph/audio/ligne_sentence.wav",
+      "image": "/gn_ph/images/ligne.png"
+    },
+    {
+      "id": "peigne",
+      "text": "peigne",
+      "sentence": "Mon peigne magique brille !",
+      "audioWord": "/gn_ph/audio/peigne_word.wav",
+      "audioSentence": "/gn_ph/audio/peigne_sentence.wav",
+      "image": "/gn_ph/images/peigne.png"
+    },
+    {
+      "id": "peignoir",
+      "text": "peignoir",
+      "sentence": "Mon peignoir est comme une cape de super-héros !",
+      "audioWord": "/gn_ph/audio/peignoir_word.wav",
+      "audioSentence": "/gn_ph/audio/peignoir_sentence.wav",
+      "image": "/gn_ph/images/peignoir.png"
+    },
+    {
+      "id": "gnome",
+      "text": "gnome",
+      "sentence": "Le gnome cache un trésor.",
+      "audioWord": "/gn_ph/audio/gnome_word.wav",
+      "audioSentence": "/gn_ph/audio/gnome_sentence.wav",
+      "image": "/gn_ph/images/gnome.png"
+    },
+    {
+      "id": "soigner",
+      "text": "soigner",
+      "sentence": "Je soigne mon nounours.",
+      "audioWord": "/gn_ph/audio/soigner_word.wav",
+      "audioSentence": "/gn_ph/audio/soigner_sentence.wav",
+      "image": "/gn_ph/images/soigner.png"
+    },
+    {
+      "id": "gagner",
+      "text": "gagner",
+      "sentence": "J'aime gagner les jeux.",
+      "audioWord": "/gn_ph/audio/gagner_word.wav",
+      "audioSentence": "/gn_ph/audio/gagner_sentence.wav",
+      "image": "/gn_ph/images/gagner.png"
+    },
+    {
+      "id": "cygne",
+      "text": "cygne",
+      "sentence": "Le cygne glisse sur l'eau.",
+      "audioWord": "/gn_ph/audio/cygne_word.wav",
+      "audioSentence": "/gn_ph/audio/cygne_sentence.wav",
+      "image": "/gn_ph/images/cygne.png"
+    },
+    {
+      "id": "gagné",
+      "text": "gagné",
+      "sentence": "C'est gagné !",
+      "audioWord": "/gn_ph/audio/gagné_word.wav",
+      "audioSentence": "/gn_ph/audio/gagné_sentence.wav",
+      "image": "/gn_ph/images/gagné.png"
+    },
+    {
+      "id": "signale",
+      "text": "signale",
+      "sentence": "Le chien signale la balle.",
+      "audioWord": "/gn_ph/audio/signale_word.wav",
+      "audioSentence": "/gn_ph/audio/signale_sentence.wav",
+      "image": "/gn_ph/images/signale.png"
+    },
+    {
+      "id": "gagne",
+      "text": "gagne",
+      "sentence": "Le lapin gagne la carotte !",
+      "audioWord": "/gn_ph/audio/gagne_word.wav",
+      "audioSentence": "/gn_ph/audio/gagne_sentence.wav",
+      "image": "/gn_ph/images/gagne.png"
+    },
+    {
+      "id": "soigne",
+      "text": "soigne",
+      "sentence": "La fée soigne la fleur.",
+      "audioWord": "/gn_ph/audio/soigne_word.wav",
+      "audioSentence": "/gn_ph/audio/soigne_sentence.wav",
+      "image": "/gn_ph/images/soigne.png"
+    },
+    {
+      "id": "phare",
+      "text": "phare",
+      "sentence": "Le phare brille dans la nuit.",
+      "audioWord": "/gn_ph/audio/phare_word.wav",
+      "audioSentence": "/gn_ph/audio/phare_sentence.wav",
+      "image": "/gn_ph/images/phare.png"
+    },
+    {
+      "id": "phrase",
+      "text": "phrase",
+      "sentence": "Je dis une phrase magique.",
+      "audioWord": "/gn_ph/audio/phrase_word.wav",
+      "audioSentence": "/gn_ph/audio/phrase_sentence.wav",
+      "image": "/gn_ph/images/phrase.png"
+    },
+    {
+      "id": "phoque",
+      "text": "phoque",
+      "sentence": "Un phoque glisse sur la glace.",
+      "audioWord": "/gn_ph/audio/phoque_word.wav",
+      "audioSentence": "/gn_ph/audio/phoque_sentence.wav",
+      "image": "/gn_ph/images/phoque.png"
+    },
+    {
+      "id": "philosophe",
+      "text": "philosophe",
+      "sentence": "Le philosophe pose des questions drôles.",
+      "audioWord": "/gn_ph/audio/philosophe_word.wav",
+      "audioSentence": "/gn_ph/audio/philosophe_sentence.wav",
+      "image": "/gn_ph/images/philosophe.png"
+    },
+    {
+      "id": "philosophie",
+      "text": "philosophie",
+      "sentence": "La philosophie, c'est poser des questions curieuses !",
+      "audioWord": "/gn_ph/audio/philosophie_word.wav",
+      "audioSentence": "/gn_ph/audio/philosophie_sentence.wav",
+      "image": "/gn_ph/images/philosophie.png"
+    },
+    {
+      "id": "phage",
+      "text": "phage",
+      "sentence": "Mon phage est rigolo.",
+      "audioWord": "/gn_ph/audio/phage_word.wav",
+      "audioSentence": "/gn_ph/audio/phage_sentence.wav",
+      "image": "/gn_ph/images/phage.png"
+    },
+    {
+      "id": "téléphone",
+      "text": "téléphone",
+      "sentence": "Le téléphone fait ding-dong !",
+      "audioWord": "/gn_ph/audio/téléphone_word.wav",
+      "audioSentence": "/gn_ph/audio/téléphone_sentence.wav",
+      "image": "/gn_ph/images/téléphone.png"
+    },
+    {
+      "id": "phobie",
+      "text": "phobie",
+      "sentence": "Ma petite sœur a une phobie des brocolis !",
+      "audioWord": "/gn_ph/audio/phobie_word.wav",
+      "audioSentence": "/gn_ph/audio/phobie_sentence.wav",
+      "image": "/gn_ph/images/phobie.png"
+    },
+    {
+      "id": "pharmacie",
+      "text": "pharmacie",
+      "sentence": "À la pharmacie, il y a des pansements rigolos.",
+      "audioWord": "/gn_ph/audio/pharmacie_word.wav",
+      "audioSentence": "/gn_ph/audio/pharmacie_sentence.wav",
+      "image": "/gn_ph/images/pharmacie.png"
+    },
+    {
+      "id": "photo",
+      "text": "photo",
+      "sentence": "La photo est drôle !",
+      "audioWord": "/gn_ph/audio/photo_word.wav",
+      "audioSentence": "/gn_ph/audio/photo_sentence.wav",
+      "image": "/gn_ph/images/photo.png"
+    },
+    {
+      "id": "nénuphar",
+      "text": "nénuphar",
+      "sentence": "La grenouille saute sur le nénuphar.",
+      "audioWord": "/gn_ph/audio/nénuphar_word.wav",
+      "audioSentence": "/gn_ph/audio/nénuphar_sentence.wav",
+      "image": "/gn_ph/images/nénuphar.png"
+    },
+    {
+      "id": "microphone",
+      "text": "microphone",
+      "sentence": "J'aime chanter dans le microphone.",
+      "audioWord": "/gn_ph/audio/microphone_word.wav",
+      "audioSentence": "/gn_ph/audio/microphone_sentence.wav",
+      "image": "/gn_ph/images/microphone.png"
+    },
+    {
+      "id": "aphone",
+      "text": "aphone",
+      "sentence": "Le robot est aphone et fait bip bip.",
+      "audioWord": "/gn_ph/audio/aphone_word.wav",
+      "audioSentence": "/gn_ph/audio/aphone_sentence.wav",
+      "image": "/gn_ph/images/aphone.png"
+    },
+    {
+      "id": "graphe",
+      "text": "graphe",
+      "sentence": "Mon graphe est plein de couleurs.",
+      "audioWord": "/gn_ph/audio/graphe_word.wav",
+      "audioSentence": "/gn_ph/audio/graphe_sentence.wav",
+      "image": "/gn_ph/images/graphe.png"
+    },
+    {
+      "id": "graphique",
+      "text": "graphique",
+      "sentence": "Mon cahier a une couverture graphique.",
+      "audioWord": "/gn_ph/audio/graphique_word.wav",
+      "audioSentence": "/gn_ph/audio/graphique_sentence.wav",
+      "image": "/gn_ph/images/graphique.png"
+    },
+    {
+      "id": "alphabet",
+      "text": "alphabet",
+      "sentence": "L'alphabet est amusant !",
+      "audioWord": "/gn_ph/audio/alphabet_word.wav",
+      "audioSentence": "/gn_ph/audio/alphabet_sentence.wav",
+      "image": "/gn_ph/images/alphabet.png"
+    },
+    {
+      "id": "phonème",
+      "text": "phonème",
+      "sentence": "Un phonème est un son amusant.",
+      "audioWord": "/gn_ph/audio/phonème_word.wav",
+      "audioSentence": "/gn_ph/audio/phonème_sentence.wav",
+      "image": "/gn_ph/images/phonème.png"
+    },
+    {
+      "id": "phonétique",
+      "text": "phonétique",
+      "sentence": "J'adore la phonétique quand je chante !",
+      "audioWord": "/gn_ph/audio/phonétique_word.wav",
+      "audioSentence": "/gn_ph/audio/phonétique_sentence.wav",
+      "image": "/gn_ph/images/phonétique.png"
+    },
+    {
+      "id": "photographe",
+      "text": "photographe",
+      "sentence": "Le photographe fait des photos amusantes.",
+      "audioWord": "/gn_ph/audio/photographe_word.wav",
+      "audioSentence": "/gn_ph/audio/photographe_sentence.wav",
+      "image": "/gn_ph/images/photographe.png"
+    }
+  ]
+}
