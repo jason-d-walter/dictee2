@@ -1,0 +1,389 @@
+{
+  "generatedAt": "2026-03-07T19:48:57.244510",
+  "words": [
+    {
+      "id": "agneaux",
+      "text": "agneaux",
+      "sentence": "Les agneaux sautent.",
+      "audioWord": "/syllables_pluriel/audio/agneaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/agneaux_sentence.wav",
+      "image": "/syllables_pluriel/images/agneaux.png"
+    },
+    {
+      "id": "animaux",
+      "text": "animaux",
+      "sentence": "Les animaux sont rigolos !",
+      "audioWord": "/syllables_pluriel/audio/animaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/animaux_sentence.wav",
+      "image": "/syllables_pluriel/images/animaux.png"
+    },
+    {
+      "id": "arbres",
+      "text": "arbres",
+      "sentence": "Regarde les grands arbres !",
+      "audioWord": "/syllables_pluriel/audio/arbres_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/arbres_sentence.wav",
+      "image": "/syllables_pluriel/images/arbres.png"
+    },
+    {
+      "id": "autobus",
+      "text": "autobus",
+      "sentence": "Un lion conduit l'autobus!",
+      "audioWord": "/syllables_pluriel/audio/autobus_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/autobus_sentence.wav",
+      "image": "/syllables_pluriel/images/autobus.png"
+    },
+    {
+      "id": "bagues",
+      "text": "bagues",
+      "sentence": "J'ai des bagues en chocolat !",
+      "audioWord": "/syllables_pluriel/audio/bagues_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/bagues_sentence.wav",
+      "image": "/syllables_pluriel/images/bagues.png"
+    },
+    {
+      "id": "balado",
+      "text": "balado",
+      "sentence": "Le singe écoute un balado amusant.",
+      "audioWord": "/syllables_pluriel/audio/balado_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/balado_sentence.wav",
+      "image": "/syllables_pluriel/images/balado.png"
+    },
+    {
+      "id": "baleine",
+      "text": "baleine",
+      "sentence": "Regarde, une baleine saute !",
+      "audioWord": "/syllables_pluriel/audio/baleine_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/baleine_sentence.wav",
+      "image": "/syllables_pluriel/images/baleine.png"
+    },
+    {
+      "id": "bibittes",
+      "text": "bibittes",
+      "sentence": "Regarde les bibittes dans le jardin !",
+      "audioWord": "/syllables_pluriel/audio/bibittes_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/bibittes_sentence.wav",
+      "image": "/syllables_pluriel/images/bibittes.png"
+    },
+    {
+      "id": "bicyclette",
+      "text": "bicyclette",
+      "sentence": "Ma bicyclette est rapide !",
+      "audioWord": "/syllables_pluriel/audio/bicyclette_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/bicyclette_sentence.wav",
+      "image": "/syllables_pluriel/images/bicyclette.png"
+    },
+    {
+      "id": "bras",
+      "text": "bras",
+      "sentence": "Mes bras font un grand câlin.",
+      "audioWord": "/syllables_pluriel/audio/bras_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/bras_sentence.wav",
+      "image": "/syllables_pluriel/images/bras.png"
+    },
+    {
+      "id": "cardinal",
+      "text": "cardinal",
+      "sentence": "Le cardinal est un oiseau rouge.",
+      "audioWord": "/syllables_pluriel/audio/cardinal_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/cardinal_sentence.wav",
+      "image": "/syllables_pluriel/images/cardinal.png"
+    },
+    {
+      "id": "castor",
+      "text": "castor",
+      "sentence": "Le castor nage dans l'eau.",
+      "audioWord": "/syllables_pluriel/audio/castor_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/castor_sentence.wav",
+      "image": "/syllables_pluriel/images/castor.png"
+    },
+    {
+      "id": "céleri",
+      "text": "céleri",
+      "sentence": "Le lapin mange du céleri.",
+      "audioWord": "/syllables_pluriel/audio/céleri_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/céleri_sentence.wav",
+      "image": "/syllables_pluriel/images/céleri.png"
+    },
+    {
+      "id": "cercles",
+      "text": "cercles",
+      "sentence": "Les bulles font de jolis cercles.",
+      "audioWord": "/syllables_pluriel/audio/cercles_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/cercles_sentence.wav",
+      "image": "/syllables_pluriel/images/cercles.png"
+    },
+    {
+      "id": "cheval",
+      "text": "cheval",
+      "sentence": "Le cheval mange une pomme.",
+      "audioWord": "/syllables_pluriel/audio/cheval_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/cheval_sentence.wav",
+      "image": "/syllables_pluriel/images/cheval.png"
+    },
+    {
+      "id": "chevaux",
+      "text": "chevaux",
+      "sentence": "Les chevaux aiment courir vite.",
+      "audioWord": "/syllables_pluriel/audio/chevaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/chevaux_sentence.wav",
+      "image": "/syllables_pluriel/images/chevaux.png"
+    },
+    {
+      "id": "choux",
+      "text": "choux",
+      "sentence": "Le lapin mange les choux.",
+      "audioWord": "/syllables_pluriel/audio/choux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/choux_sentence.wav",
+      "image": "/syllables_pluriel/images/choux.png"
+    },
+    {
+      "id": "couteau",
+      "text": "couteau",
+      "sentence": "Un couteau pour couper le gâteau !",
+      "audioWord": "/syllables_pluriel/audio/couteau_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/couteau_sentence.wav",
+      "image": "/syllables_pluriel/images/couteau.png"
+    },
+    {
+      "id": "domino",
+      "text": "domino",
+      "sentence": "J'adore jouer au domino avec toi !",
+      "audioWord": "/syllables_pluriel/audio/domino_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/domino_sentence.wav",
+      "image": "/syllables_pluriel/images/domino.png"
+    },
+    {
+      "id": "égaux",
+      "text": "égaux",
+      "sentence": "Nos points sont égaux au jeu !",
+      "audioWord": "/syllables_pluriel/audio/égaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/égaux_sentence.wav",
+      "image": "/syllables_pluriel/images/égaux.png"
+    },
+    {
+      "id": "épaules",
+      "text": "épaules",
+      "sentence": "Je gigote mes épaules.",
+      "audioWord": "/syllables_pluriel/audio/épaules_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/épaules_sentence.wav",
+      "image": "/syllables_pluriel/images/épaules.png"
+    },
+    {
+      "id": "fatigué",
+      "text": "fatigué",
+      "sentence": "Le petit chien est fatigué et il bâille.",
+      "audioWord": "/syllables_pluriel/audio/fatigué_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/fatigué_sentence.wav",
+      "image": "/syllables_pluriel/images/fatigué.png"
+    },
+    {
+      "id": "fourchettes",
+      "text": "fourchettes",
+      "sentence": "Mes fourchettes ont faim !",
+      "audioWord": "/syllables_pluriel/audio/fourchettes_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/fourchettes_sentence.wav",
+      "image": "/syllables_pluriel/images/fourchettes.png"
+    },
+    {
+      "id": "gagner",
+      "text": "gagner",
+      "sentence": "Je gagne la course !",
+      "audioWord": "/syllables_pluriel/audio/gagner_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/gagner_sentence.wav",
+      "image": "/syllables_pluriel/images/gagner.png"
+    },
+    {
+      "id": "gâteaux",
+      "text": "gâteaux",
+      "sentence": "Miam, les gâteaux sont bons !",
+      "audioWord": "/syllables_pluriel/audio/gâteaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/gâteaux_sentence.wav",
+      "image": "/syllables_pluriel/images/gâteaux.png"
+    },
+    {
+      "id": "géniale",
+      "text": "géniale",
+      "sentence": "La licorne est géniale !",
+      "audioWord": "/syllables_pluriel/audio/géniale_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/géniale_sentence.wav",
+      "image": "/syllables_pluriel/images/géniale.png"
+    },
+    {
+      "id": "genoux",
+      "text": "genoux",
+      "sentence": "Toc toc sur mes genoux !",
+      "audioWord": "/syllables_pluriel/audio/genoux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/genoux_sentence.wav",
+      "image": "/syllables_pluriel/images/genoux.png"
+    },
+    {
+      "id": "imagine",
+      "text": "imagine",
+      "sentence": "Imagine un dragon qui vole !",
+      "audioWord": "/syllables_pluriel/audio/imagine_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/imagine_sentence.wav",
+      "image": "/syllables_pluriel/images/imagine.png"
+    },
+    {
+      "id": "lavabo",
+      "text": "lavabo",
+      "sentence": "Mon petit bateau flotte dans le lavabo.",
+      "audioWord": "/syllables_pluriel/audio/lavabo_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/lavabo_sentence.wav",
+      "image": "/syllables_pluriel/images/lavabo.png"
+    },
+    {
+      "id": "lunettes",
+      "text": "lunettes",
+      "sentence": "Le chat porte des lunettes.",
+      "audioWord": "/syllables_pluriel/audio/lunettes_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/lunettes_sentence.wav",
+      "image": "/syllables_pluriel/images/lunettes.png"
+    },
+    {
+      "id": "macaroni",
+      "text": "macaroni",
+      "sentence": "Le macaroni est drôle !",
+      "audioWord": "/syllables_pluriel/audio/macaroni_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/macaroni_sentence.wav",
+      "image": "/syllables_pluriel/images/macaroni.png"
+    },
+    {
+      "id": "mouchoirs",
+      "text": "mouchoirs",
+      "sentence": "Regarde mes mouchoirs rigolos!",
+      "audioWord": "/syllables_pluriel/audio/mouchoirs_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/mouchoirs_sentence.wav",
+      "image": "/syllables_pluriel/images/mouchoirs.png"
+    },
+    {
+      "id": "nez",
+      "text": "nez",
+      "sentence": "Pinocchio a un long nez !",
+      "audioWord": "/syllables_pluriel/audio/nez_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/nez_sentence.wav",
+      "image": "/syllables_pluriel/images/nez.png"
+    },
+    {
+      "id": "oiseaux",
+      "text": "oiseaux",
+      "sentence": "Les oiseaux font cui-cui.",
+      "audioWord": "/syllables_pluriel/audio/oiseaux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/oiseaux_sentence.wav",
+      "image": "/syllables_pluriel/images/oiseaux.png"
+    },
+    {
+      "id": "otarie",
+      "text": "otarie",
+      "sentence": "L'otarie joue avec un ballon.",
+      "audioWord": "/syllables_pluriel/audio/otarie_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/otarie_sentence.wav",
+      "image": "/syllables_pluriel/images/otarie.png"
+    },
+    {
+      "id": "pandas",
+      "text": "pandas",
+      "sentence": "Les pandas sont mignons.",
+      "audioWord": "/syllables_pluriel/audio/pandas_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/pandas_sentence.wav",
+      "image": "/syllables_pluriel/images/pandas.png"
+    },
+    {
+      "id": "petit",
+      "text": "petit",
+      "sentence": "Regarde le petit poisson !",
+      "audioWord": "/syllables_pluriel/audio/petit_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/petit_sentence.wav",
+      "image": "/syllables_pluriel/images/petit.png"
+    },
+    {
+      "id": "petits",
+      "text": "petits",
+      "sentence": "Regarde les petits poissons !",
+      "audioWord": "/syllables_pluriel/audio/petits_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/petits_sentence.wav",
+      "image": "/syllables_pluriel/images/petits.png"
+    },
+    {
+      "id": "plumes",
+      "text": "plumes",
+      "sentence": "Le poussin a des plumes douces.",
+      "audioWord": "/syllables_pluriel/audio/plumes_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/plumes_sentence.wav",
+      "image": "/syllables_pluriel/images/plumes.png"
+    },
+    {
+      "id": "portable",
+      "text": "portable",
+      "sentence": "Je joue avec mon portable.",
+      "audioWord": "/syllables_pluriel/audio/portable_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/portable_sentence.wav",
+      "image": "/syllables_pluriel/images/portable.png"
+    },
+    {
+      "id": "respirer",
+      "text": "respirer",
+      "sentence": "J'aime respirer l'air pur !",
+      "audioWord": "/syllables_pluriel/audio/respirer_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/respirer_sentence.wav",
+      "image": "/syllables_pluriel/images/respirer.png"
+    },
+    {
+      "id": "safari",
+      "text": "safari",
+      "sentence": "Je vois des animaux en safari.",
+      "audioWord": "/syllables_pluriel/audio/safari_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/safari_sentence.wav",
+      "image": "/syllables_pluriel/images/safari.png"
+    },
+    {
+      "id": "saucisse",
+      "text": "saucisse",
+      "sentence": "Le chien mange une saucisse.",
+      "audioWord": "/syllables_pluriel/audio/saucisse_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/saucisse_sentence.wav",
+      "image": "/syllables_pluriel/images/saucisse.png"
+    },
+    {
+      "id": "super",
+      "text": "super",
+      "sentence": "Le gâteau est super bon !",
+      "audioWord": "/syllables_pluriel/audio/super_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/super_sentence.wav",
+      "image": "/syllables_pluriel/images/super.png"
+    },
+    {
+      "id": "têtes",
+      "text": "têtes",
+      "sentence": "Les monstres ont trois têtes !",
+      "audioWord": "/syllables_pluriel/audio/têtes_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/têtes_sentence.wav",
+      "image": "/syllables_pluriel/images/têtes.png"
+    },
+    {
+      "id": "tigres",
+      "text": "tigres",
+      "sentence": "De gros tigres jouent.",
+      "audioWord": "/syllables_pluriel/audio/tigres_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/tigres_sentence.wav",
+      "image": "/syllables_pluriel/images/tigres.png"
+    },
+    {
+      "id": "tortues",
+      "text": "tortues",
+      "sentence": "Les tortues jouent dans le jardin.",
+      "audioWord": "/syllables_pluriel/audio/tortues_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/tortues_sentence.wav",
+      "image": "/syllables_pluriel/images/tortues.png"
+    },
+    {
+      "id": "yeux",
+      "text": "yeux",
+      "sentence": "Le chat a de grands yeux.",
+      "audioWord": "/syllables_pluriel/audio/yeux_word.wav",
+      "audioSentence": "/syllables_pluriel/audio/yeux_sentence.wav",
+      "image": "/syllables_pluriel/images/yeux.png"
+    }
+  ]
+}
