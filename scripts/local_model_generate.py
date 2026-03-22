@@ -56,9 +56,18 @@ LANGUAGE_CONFIG = {
     },
 }
 
-OLLAMA_SENTENCE_PROMPT = (
+# Used when language=en: word appears directly in the sentence
+OLLAMA_SENTENCE_PROMPT_EN = (
     'Write a single sentence of 5 to 10 words for a 7-year-old. Use present tense. '
     'Use the word "{word}" naturally in the sentence. Return only the sentence, nothing else.'
+)
+
+# Used when language=fr: generate an English sentence capturing the meaning of the French word.
+# NLLB then translates it to French. The English sentence is also used for image generation.
+OLLAMA_SENTENCE_PROMPT_FR = (
+    'Write a single English sentence of 5 to 10 words for a 7-year-old. Use present tense. '
+    'The sentence should clearly illustrate the meaning of the French word "{word}". '
+    'Write in plain English only — do not include the French word. Return only the sentence, nothing else.'
 )
 
 
@@ -81,7 +90,9 @@ class LocalModelClients:
             model_id = self.args.translation_model
             print(f"Loading translation model: {model_id} (first run downloads ~1.2 GB)...")
             self._tokenizer = AutoTokenizer.from_pretrained(model_id)
-            self._translator = AutoModelForSeq2SeqLM.from_pretrained(model_id)
+            self._translator = AutoModelForSeq2SeqLM.from_pretrained(
+                model_id, tie_word_embeddings=False
+            )
             print("Translation model loaded.")
         return self._tokenizer, self._translator
 
@@ -149,11 +160,12 @@ def _best_dtype(device: str):
 # Phase 1: Sentence generation (Ollama + NLLB, sequential)
 # ---------------------------------------------------------------------------
 
-def generate_sentence_ollama(word: str, args) -> str:
-    """Call Ollama to produce an English sentence containing the word."""
+def generate_sentence_ollama(word: str, args, language: str = "en") -> str:
+    """Call Ollama to produce an English sentence for the word."""
     import ollama
 
-    prompt = OLLAMA_SENTENCE_PROMPT.format(word=word)
+    template = OLLAMA_SENTENCE_PROMPT_FR if language == "fr" else OLLAMA_SENTENCE_PROMPT_EN
+    prompt = template.format(word=word)
     response = ollama.chat(
         model=args.ollama_model,
         messages=[{"role": "user", "content": prompt}],
@@ -194,7 +206,7 @@ def generate_all_sentences(
             continue
 
         try:
-            en_sentence = generate_sentence_ollama(word, args)
+            en_sentence = generate_sentence_ollama(word, args, language)
 
             if language == "fr" and not args.no_translate:
                 fr_sentence = clients.translate_en_to_fr(en_sentence)

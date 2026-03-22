@@ -64,8 +64,14 @@ No action required.
 
 ### 4. StorybookRedmond LoRA (optional)
 
-Improves image quality with a children's storybook style. Download the `.safetensors` file
-from CivitAI and pass its path via `--lora-path`.
+Improves image quality with a children's storybook style.
+
+1. Go to **civitai.com** and search for `StorybookRedmond`
+2. Filter by **LoRA** and **SDXL** to find the correct variant
+3. Click the model and hit **Download** — you'll get a `.safetensors` file (~100–300 MB)
+4. Save it somewhere convenient, e.g. `~/models/StorybookRedmond.safetensors`
+
+Then pass it to the script via `--lora-path ~/models/StorybookRedmond.safetensors`.
 
 Without a LoRA the script still generates images using SDXL base.
 
