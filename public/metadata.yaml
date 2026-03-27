@@ -55,3 +55,10 @@ dictee:
   source: words_of_week.txt
   week_end: '2026-03-12'
   week_start: '2026-03-07'
+- date_of_generation: '2026-03-23'
+  language: fr
+  path: an-en
+  sounds: an-en
+  source: words_of_week.txt
+  week_end: '2026-03-28'
+  week_start: '2026-03-21'

@@ -1,0 +1,438 @@
+{
+  "generatedAt": "2026-03-23T03:10:01.254180",
+  "generatedBy": "local_model_generate",
+  "words": [
+    {
+      "id": "agrandir",
+      "text": "agrandir",
+      "sentence": "L'artiste fait le tableau plus grand maintenant.",
+      "sentenceEn": "The artist makes the picture bigger now.",
+      "image": "/an-en/images/agrandir.png",
+      "audioWord": "/an-en/audio/agrandir_word.wav",
+      "audioSentence": "/an-en/audio/agrandir_sentence.wav"
+    },
+    {
+      "id": "attend",
+      "text": "attend",
+      "sentence": "Elle attend patiemment son jouet préféré.",
+      "sentenceEn": "She waits patiently for her favorite toy.",
+      "image": "/an-en/images/attend.png",
+      "audioWord": "/an-en/audio/attend_word.wav",
+      "audioSentence": "/an-en/audio/attend_sentence.wav"
+    },
+    {
+      "id": "autant",
+      "text": "autant",
+      "sentence": "J'aime la pizza autant que le gâteau.",
+      "sentenceEn": "I like pizza as much as I like cake.",
+      "image": "/an-en/images/autant.png",
+      "audioWord": "/an-en/audio/autant_word.wav",
+      "audioSentence": "/an-en/audio/autant_sentence.wav"
+    },
+    {
+      "id": "avant",
+      "text": "avant",
+      "sentence": "Le garçon se tient devant le grand arbre.",
+      "sentenceEn": "The boy stands in front of the big tree.",
+      "image": "/an-en/images/avant.png",
+      "audioWord": "/an-en/audio/avant_word.wav",
+      "audioSentence": "/an-en/audio/avant_sentence.wav"
+    },
+    {
+      "id": "blanche",
+      "text": "blanche",
+      "sentence": "La neige est blanche et jolie.",
+      "sentenceEn": "The fluffy snow is white and pretty.",
+      "image": "/an-en/images/blanche.png",
+      "audioWord": "/an-en/audio/blanche_word.wav",
+      "audioSentence": "/an-en/audio/blanche_sentence.wav"
+    },
+    {
+      "id": "branche",
+      "text": "branche",
+      "sentence": "L'oiseau est assis sur un arbre.",
+      "sentenceEn": "The bird sits on a tree limb now.",
+      "image": "/an-en/images/branche.png",
+      "audioWord": "/an-en/audio/branche_word.wav",
+      "audioSentence": "/an-en/audio/branche_sentence.wav"
+    },
+    {
+      "id": "cent",
+      "text": "cent",
+      "sentence": "Une centaine de jouets remplissent la grande boîte.",
+      "sentenceEn": "One hundred toys fill up the big box.",
+      "image": "/an-en/images/cent.png",
+      "audioWord": "/an-en/audio/cent_word.wav",
+      "audioSentence": "/an-en/audio/cent_sentence.wav"
+    },
+    {
+      "id": "collant",
+      "text": "collant",
+      "sentence": "Les collants s'accrochent bien à ses jambes.",
+      "sentenceEn": "The tights stick to her legs nicely.",
+      "image": "/an-en/images/collant.png",
+      "audioWord": "/an-en/audio/collant_word.wav",
+      "audioSentence": "/an-en/audio/collant_sentence.wav"
+    },
+    {
+      "id": "croissant",
+      "text": "croissant",
+      "sentence": "Les gâteaux en éclats se bouclent comme une bonne corne.",
+      "sentenceEn": "The flaky pastry curls like a tasty horn.",
+      "image": "/an-en/images/croissant.png",
+      "audioWord": "/an-en/audio/croissant_word.wav",
+      "audioSentence": "/an-en/audio/croissant_sentence.wav"
+    },
+    {
+      "id": "dent",
+      "text": "dent",
+      "sentence": "Elle sourit et montre ses petits dents.",
+      "sentenceEn": "She smiles and shows her little teeth.",
+      "image": "/an-en/images/dent.png",
+      "audioWord": "/an-en/audio/dent_word.wav",
+      "audioSentence": "/an-en/audio/dent_sentence.wav"
+    },
+    {
+      "id": "dentifrice",
+      "text": "dentifrice",
+      "sentence": "Le dentifrice vous rend propres et brillants.",
+      "sentenceEn": "Toothpaste makes your teeth clean and sparkly.",
+      "image": "/an-en/images/dentifrice.png",
+      "audioWord": "/an-en/audio/dentifrice_word.wav",
+      "audioSentence": "/an-en/audio/dentifrice_sentence.wav"
+    },
+    {
+      "id": "dentiste",
+      "text": "dentiste",
+      "sentence": "Le médecin vérifie et nettoie vos dents.",
+      "sentenceEn": "The doctor checks and cleans your teeth.",
+      "image": "/an-en/images/dentiste.png",
+      "audioWord": "/an-en/audio/dentiste_word.wav",
+      "audioSentence": "/an-en/audio/dentiste_sentence.wav"
+    },
+    {
+      "id": "devant",
+      "text": "devant",
+      "sentence": "Le jouet est juste devant moi.",
+      "sentenceEn": "The toy sits right in front of me.",
+      "image": "/an-en/images/devant.png",
+      "audioWord": "/an-en/audio/devant_word.wav",
+      "audioSentence": "/an-en/audio/devant_sentence.wav"
+    },
+    {
+      "id": "diamant",
+      "text": "diamant",
+      "sentence": "Les bijoux brillants brillent comme des pierres minuscules et transparentes.",
+      "sentenceEn": "Shiny jewels sparkle like tiny, clear stones.",
+      "image": "/an-en/images/diamant.png",
+      "audioWord": "/an-en/audio/diamant_word.wav",
+      "audioSentence": "/an-en/audio/diamant_sentence.wav"
+    },
+    {
+      "id": "éléphant",
+      "text": "éléphant",
+      "sentence": "Le gros animal a un tronc long.",
+      "sentenceEn": "The big animal has a long trunk.",
+      "image": "/an-en/images/éléphant.png",
+      "audioWord": "/an-en/audio/éléphant_word.wav",
+      "audioSentence": "/an-en/audio/éléphant_sentence.wav"
+    },
+    {
+      "id": "en",
+      "text": "en",
+      "sentence": "Elle a des jouets dans sa boîte de jouets.",
+      "sentenceEn": "She has some toys in her toy box.",
+      "image": "/an-en/images/en.png",
+      "audioWord": "/an-en/audio/en_word.wav",
+      "audioSentence": "/an-en/audio/en_sentence.wav"
+    },
+    {
+      "id": "enfant",
+      "text": "enfant",
+      "sentence": "Le petit garçon joue avec joie avec ses jouets.",
+      "sentenceEn": "The little boy plays happily with his toys.",
+      "image": "/an-en/images/enfant.png",
+      "audioWord": "/an-en/audio/enfant_word.wav",
+      "audioSentence": "/an-en/audio/enfant_sentence.wav"
+    },
+    {
+      "id": "entend",
+      "text": "entend",
+      "sentence": "Elle entend les oiseaux chanter dans les arbres.",
+      "sentenceEn": "She hears the birds singing in the trees.",
+      "image": "/an-en/images/entend.png",
+      "audioWord": "/an-en/audio/entend_word.wav",
+      "audioSentence": "/an-en/audio/entend_sentence.wav"
+    },
+    {
+      "id": "entrer",
+      "text": "entrer",
+      "sentence": "La fille entre dans la pièce chaude et confortable.",
+      "sentenceEn": "The girl walks into the cozy, warm room.",
+      "image": "/an-en/images/entrer.png",
+      "audioWord": "/an-en/audio/entrer_word.wav",
+      "audioSentence": "/an-en/audio/entrer_sentence.wav"
+    },
+    {
+      "id": "gant",
+      "text": "gant",
+      "sentence": "Elle porte un gant chaud à la main.",
+      "sentenceEn": "She wears a warm glove on her hand.",
+      "image": "/an-en/images/gant.png",
+      "audioWord": "/an-en/audio/gant_word.wav",
+      "audioSentence": "/an-en/audio/gant_sentence.wav"
+    },
+    {
+      "id": "géant",
+      "text": "géant",
+      "sentence": "Le géant haut atteint facilement les nuages.",
+      "sentenceEn": "The tall giant easily reaches the clouds.",
+      "image": "/an-en/images/géant.png",
+      "audioWord": "/an-en/audio/géant_word.wav",
+      "audioSentence": "/an-en/audio/géant_sentence.wav"
+    },
+    {
+      "id": "grand",
+      "text": "grand",
+      "sentence": "L'arbre haut atteint haut dans le ciel.",
+      "sentenceEn": "The tall tree reaches high into the sky.",
+      "image": "/an-en/images/grand.png",
+      "audioWord": "/an-en/audio/grand_word.wav",
+      "audioSentence": "/an-en/audio/grand_sentence.wav"
+    },
+    {
+      "id": "grande",
+      "text": "grande",
+      "sentence": "L'arbre haut atteint haut dans le ciel.",
+      "sentenceEn": "The tall tree reaches high into the sky.",
+      "image": "/an-en/images/grande.png",
+      "audioWord": "/an-en/audio/grande_word.wav",
+      "audioSentence": "/an-en/audio/grande_sentence.wav"
+    },
+    {
+      "id": "grange",
+      "text": "grange",
+      "sentence": "Les agriculteurs stockent du foin et des outils dans la grande grange.",
+      "sentenceEn": "Farmers store hay and tools in the big barn.",
+      "image": "/an-en/images/grange.png",
+      "audioWord": "/an-en/audio/grange_word.wav",
+      "audioSentence": "/an-en/audio/grange_sentence.wav"
+    },
+    {
+      "id": "hanche",
+      "text": "hanche",
+      "sentence": "Elle pointe sa jambe vers sa hanche.",
+      "sentenceEn": "She points her leg to her hip.",
+      "image": "/an-en/images/hanche.png",
+      "audioWord": "/an-en/audio/hanche_word.wav",
+      "audioSentence": "/an-en/audio/hanche_sentence.wav"
+    },
+    {
+      "id": "lance",
+      "text": "lance",
+      "sentence": "Le chevalier jette sa lance sur le dragon.",
+      "sentenceEn": "The knight throws his spear at the dragon.",
+      "image": "/an-en/images/lance.png",
+      "audioWord": "/an-en/audio/lance_word.wav",
+      "audioSentence": "/an-en/audio/lance_sentence.wav"
+    },
+    {
+      "id": "lent",
+      "text": "lent",
+      "sentence": "La tortue rampant lentement sur l'herbe.",
+      "sentenceEn": "The turtle slowly crawls across the grass.",
+      "image": "/an-en/images/lent.png",
+      "audioWord": "/an-en/audio/lent_word.wav",
+      "audioSentence": "/an-en/audio/lent_sentence.wav"
+    },
+    {
+      "id": "lente",
+      "text": "lente",
+      "sentence": "L'escargot se déplace lentement sur l'herbe verte.",
+      "sentenceEn": "The snail moves slowly across the green grass.",
+      "image": "/an-en/images/lente.png",
+      "audioWord": "/an-en/audio/lente_word.wav",
+      "audioSentence": "/an-en/audio/lente_sentence.wav"
+    },
+    {
+      "id": "lenteur",
+      "text": "lenteur",
+      "sentence": "La tortue rampant lentement sur l'herbe ensoleillée.",
+      "sentenceEn": "The turtle slowly crawls across the sunny grass.",
+      "image": "/an-en/images/lenteur.png",
+      "audioWord": "/an-en/audio/lenteur_word.wav",
+      "audioSentence": "/an-en/audio/lenteur_sentence.wav"
+    },
+    {
+      "id": "manger",
+      "text": "manger",
+      "sentence": "La petite fille mange une délicieuse pomme rouge.",
+      "sentenceEn": "The little girl eats a yummy, red apple.",
+      "image": "/an-en/images/manger.png",
+      "audioWord": "/an-en/audio/manger_word.wav",
+      "audioSentence": "/an-en/audio/manger_sentence.wav"
+    },
+    {
+      "id": "mentez",
+      "text": "mentez",
+      "sentence": "Il raconte des histoires qui ne sont pas vraiment vraies.",
+      "sentenceEn": "He tells stories that aren't really true.",
+      "image": "/an-en/images/mentez.png",
+      "audioWord": "/an-en/audio/mentez_word.wav",
+      "audioSentence": "/an-en/audio/mentez_sentence.wav"
+    },
+    {
+      "id": "orange",
+      "text": "orange",
+      "sentence": "Le fruit est rond, juteux et sucré.",
+      "sentenceEn": "The fruit is round, juicy, and tastes sweet.",
+      "image": "/an-en/images/orange.png",
+      "audioWord": "/an-en/audio/orange_word.wav",
+      "audioSentence": "/an-en/audio/orange_sentence.wav"
+    },
+    {
+      "id": "pélicans",
+      "text": "pélicans",
+      "sentence": "Les grands oiseaux prennent des poissons avec leurs longs bec.",
+      "sentenceEn": "Big birds scoop fish with their long beaks.",
+      "image": "/an-en/images/pélicans.png",
+      "audioWord": "/an-en/audio/pélicans_word.wav",
+      "audioSentence": "/an-en/audio/pélicans_sentence.wav"
+    },
+    {
+      "id": "piquant",
+      "text": "piquant",
+      "sentence": "Le jus de citron me fait crever la bouche.",
+      "sentenceEn": "The lemon juice makes my mouth tingle.",
+      "image": "/an-en/images/piquant.png",
+      "audioWord": "/an-en/audio/piquant_word.wav",
+      "audioSentence": "/an-en/audio/piquant_sentence.wav"
+    },
+    {
+      "id": "ralentir",
+      "text": "ralentir",
+      "sentence": "La tortue rampant lentement sur l'herbe ensoleillée.",
+      "sentenceEn": "The turtle slowly crawls across the sunny grass.",
+      "image": "/an-en/images/ralentir.png",
+      "audioWord": "/an-en/audio/ralentir_word.wav",
+      "audioSentence": "/an-en/audio/ralentir_sentence.wav"
+    },
+    {
+      "id": "renverse",
+      "text": "renverse",
+      "sentence": "La voiture de jouets est tombée et est tombée à l'envers.",
+      "sentenceEn": "The toy car fell over and landed upside down.",
+      "image": "/an-en/images/renverse.png",
+      "audioWord": "/an-en/audio/renverse_word.wav",
+      "audioSentence": "/an-en/audio/renverse_sentence.wav"
+    },
+    {
+      "id": "roman",
+      "text": "roman",
+      "sentence": "L'histoire a de nombreux personnages et aventures.",
+      "sentenceEn": "The story has many characters and adventures.",
+      "image": "/an-en/images/roman.png",
+      "audioWord": "/an-en/audio/roman_word.wav",
+      "audioSentence": "/an-en/audio/roman_sentence.wav"
+    },
+    {
+      "id": "santé",
+      "text": "santé",
+      "sentence": "Nous vous souhaitons bonne santé et bonheur.",
+      "sentenceEn": "We wish you good health and happiness now.",
+      "image": "/an-en/images/santé.png",
+      "audioWord": "/an-en/audio/santé_word.wav",
+      "audioSentence": "/an-en/audio/santé_sentence.wav"
+    },
+    {
+      "id": "sentir",
+      "text": "sentir",
+      "sentence": "Je sens les délicieux biscuits en train de cuire.",
+      "sentenceEn": "I smell the yummy cookies baking now.",
+      "image": "/an-en/images/sentir.png",
+      "audioWord": "/an-en/audio/sentir_word.wav",
+      "audioSentence": "/an-en/audio/sentir_sentence.wav"
+    },
+    {
+      "id": "serpent",
+      "text": "serpent",
+      "sentence": "Le serpent long glisse tranquillement à travers l'herbe.",
+      "sentenceEn": "The long snake slithers quietly through grass.",
+      "image": "/an-en/images/serpent.png",
+      "audioWord": "/an-en/audio/serpent_word.wav",
+      "audioSentence": "/an-en/audio/serpent_sentence.wav"
+    },
+    {
+      "id": "souvent",
+      "text": "souvent",
+      "sentence": "Je joue souvent avec mes jouets chaque jour.",
+      "sentenceEn": "I often play with my toys each day.",
+      "image": "/an-en/images/souvent.png",
+      "audioWord": "/an-en/audio/souvent_word.wav",
+      "audioSentence": "/an-en/audio/souvent_sentence.wav"
+    },
+    {
+      "id": "talent",
+      "text": "talent",
+      "sentence": "Elle chante magnifiquement, elle a un don spécial.",
+      "sentenceEn": "She sings beautifully; she has a special gift.",
+      "image": "/an-en/images/talent.png",
+      "audioWord": "/an-en/audio/talent_word.wav",
+      "audioSentence": "/an-en/audio/talent_sentence.wav"
+    },
+    {
+      "id": "trente",
+      "text": "trente",
+      "sentence": "Je compte trente blocs de construction lumineux et colorés.",
+      "sentenceEn": "I count thirty bright, colorful building blocks.",
+      "image": "/an-en/images/trente.png",
+      "audioWord": "/an-en/audio/trente_word.wav",
+      "audioSentence": "/an-en/audio/trente_sentence.wav"
+    },
+    {
+      "id": "vendredi",
+      "text": "vendredi",
+      "sentence": "Nous allons au parc tous les vendredis.",
+      "sentenceEn": "We go to the park every Friday.",
+      "image": "/an-en/images/vendredi.png",
+      "audioWord": "/an-en/audio/vendredi_word.wav",
+      "audioSentence": "/an-en/audio/vendredi_sentence.wav"
+    },
+    {
+      "id": "vent",
+      "text": "vent",
+      "sentence": "Le vent souffle des feuilles de l'arbre haut.",
+      "sentenceEn": "The wind blows leaves from the tall tree.",
+      "image": "/an-en/images/vent.png",
+      "audioWord": "/an-en/audio/vent_word.wav",
+      "audioSentence": "/an-en/audio/vent_sentence.wav"
+    },
+    {
+      "id": "venteux",
+      "text": "venteux",
+      "sentence": "Le vent souffle fort et secoue les arbres.",
+      "sentenceEn": "The wind blows strongly and shakes the trees.",
+      "image": "/an-en/images/venteux.png",
+      "audioWord": "/an-en/audio/venteux_word.wav",
+      "audioSentence": "/an-en/audio/venteux_sentence.wav"
+    },
+    {
+      "id": "volcan",
+      "text": "volcan",
+      "sentence": "La montagne éclate parfois de roches chaudes et fondues.",
+      "sentenceEn": "The mountain sometimes bursts with hot, melted rock.",
+      "image": "/an-en/images/volcan.png",
+      "audioWord": "/an-en/audio/volcan_word.wav",
+      "audioSentence": "/an-en/audio/volcan_sentence.wav"
+    },
+    {
+      "id": "vraiment",
+      "text": "vraiment",
+      "sentence": "Le chiot aime vraiment jouer avec des jouets.",
+      "sentenceEn": "The puppy really loves to play with toys.",
+      "image": "/an-en/images/vraiment.png",
+      "audioWord": "/an-en/audio/vraiment_word.wav",
+      "audioSentence": "/an-en/audio/vraiment_sentence.wav"
+    }
+  ]
+}
