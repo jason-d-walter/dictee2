@@ -28,6 +28,7 @@ import json
 import subprocess
 import argparse
 import shutil
+import warnings
 import yaml
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
@@ -129,7 +130,9 @@ class LocalModelClients:
                     print(f"  Warning: LoRA file not found: {lora}. Skipping LoRA.")
                 else:
                     print(f"  Loading LoRA: {lora.name}")
-                    pipe.load_lora_weights(str(lora.parent), weight_name=lora.name)
+                    with warnings.catch_warnings():
+                        warnings.filterwarnings("ignore", message="No LoRA keys associated to CLIP")
+                        pipe.load_lora_weights(str(lora.parent), weight_name=lora.name)
 
             pipe = pipe.to(device)
             self._sdxl_pipe = pipe
