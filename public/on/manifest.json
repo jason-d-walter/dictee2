@@ -1,0 +1,222 @@
+{
+  "generatedAt": "2026-03-28T17:35:37.378440",
+  "generatedBy": "local_model_generate",
+  "words": [
+    {
+      "id": "bon",
+      "text": "bon",
+      "sentence": "Le chien est amicale et bon aujourd'hui.",
+      "sentenceEn": "The dog is friendly and good today.",
+      "image": "/on/images/bon.png",
+      "audioWord": "/on/audio/bon_word.wav",
+      "audioSentence": "/on/audio/bon_sentence.wav"
+    },
+    {
+      "id": "dindon",
+      "text": "dindon",
+      "sentence": "Le gros dinde dévore et se déplace.",
+      "sentenceEn": "The big turkey gobbles and struts around.",
+      "image": "/on/images/dindon.png",
+      "audioWord": "/on/audio/dindon_word.wav",
+      "audioSentence": "/on/audio/dindon_sentence.wav"
+    },
+    {
+      "id": "selon",
+      "text": "selon",
+      "sentence": "Le chien dort là où son lit est placé.",
+      "sentenceEn": "The dog sleeps where his bed is placed.",
+      "image": "/on/images/selon.png",
+      "audioWord": "/on/audio/selon_word.wav",
+      "audioSentence": "/on/audio/selon_sentence.wav"
+    },
+    {
+      "id": "mon",
+      "text": "mon",
+      "sentence": "C'est mon jouet préféré, j'adore.",
+      "sentenceEn": "This is my favorite toy, I love it.",
+      "image": "/on/images/mon.png",
+      "audioWord": "/on/audio/mon_word.wav",
+      "audioSentence": "/on/audio/mon_sentence.wav"
+    },
+    {
+      "id": "lion",
+      "text": "lion",
+      "sentence": "Le gros chat rugit fort dans la jungle.",
+      "sentenceEn": "The big cat roars loudly in the jungle.",
+      "image": "/on/images/lion.png",
+      "audioWord": "/on/audio/lion_word.wav",
+      "audioSentence": "/on/audio/lion_sentence.wav"
+    },
+    {
+      "id": "ton",
+      "text": "ton",
+      "sentence": "Vous tenez votre voiture de jouets dans la main.",
+      "sentenceEn": "You hold your toy car in your hand.",
+      "image": "/on/images/ton.png",
+      "audioWord": "/on/audio/ton_word.wav",
+      "audioSentence": "/on/audio/ton_sentence.wav"
+    },
+    {
+      "id": "montrez",
+      "text": "montrez",
+      "sentence": "S'il vous plaît, montrez-moi votre jouet préféré maintenant.",
+      "sentenceEn": "Please show me your favorite toy now.",
+      "image": "/on/images/montrez.png",
+      "audioWord": "/on/audio/montrez_word.wav",
+      "audioSentence": "/on/audio/montrez_sentence.wav"
+    },
+    {
+      "id": "pantalon",
+      "text": "pantalon",
+      "sentence": "Il porte de longs draps sur les jambes.",
+      "sentenceEn": "He wears long cloth coverings on his legs.",
+      "image": "/on/images/pantalon.png",
+      "audioWord": "/on/audio/pantalon_word.wav",
+      "audioSentence": "/on/audio/pantalon_sentence.wav"
+    },
+    {
+      "id": "carton",
+      "text": "carton",
+      "sentence": "Le jus vient dans une grande boîte carrée.",
+      "sentenceEn": "The juice comes in a big, square box.",
+      "image": "/on/images/carton.png",
+      "audioWord": "/on/audio/carton_word.wav",
+      "audioSentence": "/on/audio/carton_sentence.wav"
+    },
+    {
+      "id": "jeton",
+      "text": "jeton",
+      "sentence": "Vous utilisez un jeton pour jouer à un jeu.",
+      "sentenceEn": "You use a token to play a game.",
+      "image": "/on/images/jeton.png",
+      "audioWord": "/on/audio/jeton_word.wav",
+      "audioSentence": "/on/audio/jeton_sentence.wav"
+    },
+    {
+      "id": "cordon",
+      "text": "cordon",
+      "sentence": "La corde maintient les jouets bien rangés.",
+      "sentenceEn": "The rope keeps the toys neatly in a row.",
+      "image": "/on/images/cordon.png",
+      "audioWord": "/on/audio/cordon_word.wav",
+      "audioSentence": "/on/audio/cordon_sentence.wav"
+    },
+    {
+      "id": "savon",
+      "text": "savon",
+      "sentence": "Le savon aide à nettoyer les mains et le corps.",
+      "sentenceEn": "Soap helps clean your hands and body.",
+      "image": "/on/images/savon.png",
+      "audioWord": "/on/audio/savon_word.wav",
+      "audioSentence": "/on/audio/savon_sentence.wav"
+    },
+    {
+      "id": "fondre",
+      "text": "fondre",
+      "sentence": "Le soleil chaud fait fondre rapidement la crème glacée.",
+      "sentenceEn": "The warm sun makes the ice cream melt quickly.",
+      "image": "/on/images/fondre.png",
+      "audioWord": "/on/audio/fondre_word.wav",
+      "audioSentence": "/on/audio/fondre_sentence.wav"
+    },
+    {
+      "id": "montagne",
+      "text": "montagne",
+      "sentence": "La haute colline atteint haut dans le ciel.",
+      "sentenceEn": "The tall hill reaches high into the sky.",
+      "image": "/on/images/montagne.png",
+      "audioWord": "/on/audio/montagne_word.wav",
+      "audioSentence": "/on/audio/montagne_sentence.wav"
+    },
+    {
+      "id": "ballon",
+      "text": "ballon",
+      "sentence": "La sphère rebondissant flotte haut dans l'air.",
+      "sentenceEn": "The bouncy sphere floats high in the air.",
+      "image": "/on/images/ballon.png",
+      "audioWord": "/on/audio/ballon_word.wav",
+      "audioSentence": "/on/audio/ballon_sentence.wav"
+    },
+    {
+      "id": "cochon",
+      "text": "cochon",
+      "sentence": "Le petit garçon se comporte stupide et ludique maintenant.",
+      "sentenceEn": "The little boy acts silly and playful now.",
+      "image": "/on/images/cochon.png",
+      "audioWord": "/on/audio/cochon_word.wav",
+      "audioSentence": "/on/audio/cochon_sentence.wav"
+    },
+    {
+      "id": "dragon",
+      "text": "dragon",
+      "sentence": "Le monstre effrayant respire le feu et se mouche.",
+      "sentenceEn": "The big, scary monster breathes fire and flies.",
+      "image": "/on/images/dragon.png",
+      "audioWord": "/on/audio/dragon_word.wav",
+      "audioSentence": "/on/audio/dragon_sentence.wav"
+    },
+    {
+      "id": "maison",
+      "text": "maison",
+      "sentence": "Notre famille vit dans une maison confortable.",
+      "sentenceEn": "Our family lives inside a cozy house.",
+      "image": "/on/images/maison.png",
+      "audioWord": "/on/audio/maison_word.wav",
+      "audioSentence": "/on/audio/maison_sentence.wav"
+    },
+    {
+      "id": "tondeuse",
+      "text": "tondeuse",
+      "sentence": "La machine coupe l'herbe courte et bien.",
+      "sentenceEn": "The machine cuts the grass short and neat.",
+      "image": "/on/images/tondeuse.png",
+      "audioWord": "/on/audio/tondeuse_word.wav",
+      "audioSentence": "/on/audio/tondeuse_sentence.wav"
+    },
+    {
+      "id": "accordéon",
+      "text": "accordéon",
+      "sentence": "Il fait de la musique quand on pousse et tire.",
+      "sentenceEn": "It makes music when you push and pull.",
+      "image": "/on/images/accordéon.png",
+      "audioWord": "/on/audio/accordéon_word.wav",
+      "audioSentence": "/on/audio/accordéon_sentence.wav"
+    },
+    {
+      "id": "mouton",
+      "text": "mouton",
+      "sentence": "La mouton poussiéreuse mange de l'herbe dans le champ.",
+      "sentenceEn": "The fluffy sheep eats grass in the field.",
+      "image": "/on/images/mouton.png",
+      "audioWord": "/on/audio/mouton_word.wav",
+      "audioSentence": "/on/audio/mouton_sentence.wav"
+    },
+    {
+      "id": "poisson",
+      "text": "poisson",
+      "sentence": "Le poisson nage rapidement dans l'eau bleue.",
+      "sentenceEn": "The fish swims quickly in the blue water.",
+      "image": "/on/images/poisson.png",
+      "audioWord": "/on/audio/poisson_word.wav",
+      "audioSentence": "/on/audio/poisson_sentence.wav"
+    },
+    {
+      "id": "violon",
+      "text": "violon",
+      "sentence": "Elle joue de belles musiques sur son violon.",
+      "sentenceEn": "She plays beautiful music on her violin.",
+      "image": "/on/images/violon.png",
+      "audioWord": "/on/audio/violon_word.wav",
+      "audioSentence": "/on/audio/violon_sentence.wav"
+    },
+    {
+      "id": "chanson",
+      "text": "chanson",
+      "sentence": "Elle chante une jolie chanson maintenant.",
+      "sentenceEn": "She sings a happy, pretty song now.",
+      "image": "/on/images/chanson.png",
+      "audioWord": "/on/audio/chanson_word.wav",
+      "audioSentence": "/on/audio/chanson_sentence.wav"
+    }
+  ]
+}

@@ -112,14 +112,27 @@ class LocalModelClients:
             import torch
             from diffusers import StableDiffusionXLPipeline
 
+            # Reduce CUDA memory fragmentation — helps when reserved-but-unallocated
+            # memory would otherwise cause OOM on the VAE decode spike.
+            os.environ.setdefault("PYTORCH_CUDA_ALLOC_CONF", "expandable_segments:True")
+
             model_id = self.args.sdxl_model
             print(f"Loading SDXL pipeline: {model_id} (first run downloads ~6.5 GB)...")
 
             device = _best_device()
             dtype = _best_dtype(device)
 
+            vae = None
+            if device == "cuda":
+                from diffusers import AutoencoderKL
+                print("  Loading fp16-fixed VAE (first run downloads ~320 MB)...")
+                vae = AutoencoderKL.from_pretrained(
+                    "madebyollin/sdxl-vae-fp16-fix", torch_dtype=torch.float16
+                )
+
             pipe = StableDiffusionXLPipeline.from_pretrained(
                 model_id,
+                vae=vae,
                 torch_dtype=dtype,
                 use_safetensors=True,
             )
@@ -135,6 +148,11 @@ class LocalModelClients:
                         pipe.load_lora_weights(str(lora.parent), weight_name=lora.name)
 
             pipe = pipe.to(device)
+            pipe.enable_attention_slicing()
+            # VAE decode at 1024x1024 spikes memory; slicing + tiling process it
+            # in chunks to avoid the peak allocation.
+            pipe.vae.enable_slicing()
+            pipe.vae.enable_tiling()
             self._sdxl_pipe = pipe
             print(f"SDXL pipeline ready on {device}.")
         return self._sdxl_pipe
@@ -162,6 +180,17 @@ def _best_dtype(device: str):
 # ---------------------------------------------------------------------------
 # Phase 1: Sentence generation (Ollama + NLLB, sequential)
 # ---------------------------------------------------------------------------
+
+def unload_ollama_model(args) -> None:
+    """Unload the Ollama model from GPU VRAM so SDXL can use the memory."""
+    try:
+        import ollama
+        print(f"  Unloading Ollama model '{args.ollama_model}' from GPU...")
+        ollama.generate(model=args.ollama_model, prompt="", keep_alive=0)
+        print("  Ollama model unloaded.")
+    except Exception as e:
+        print(f"  Warning: Could not unload Ollama model: {e}")
+
 
 def generate_sentence_ollama(word: str, args, language: str = "en") -> str:
     """Call Ollama to produce an English sentence for the word."""
@@ -589,6 +618,10 @@ def main():
 
     # Phase 1: generate all sentences first so you can review before images start
     all_sentences = generate_all_sentences(words, existing_manifest, language, args, clients)
+
+    # Free Ollama's GPU memory before SDXL loads
+    print("\n--- Freeing GPU memory ---")
+    unload_ollama_model(args)
 
     # Phase 2: generate image + audio for each word (GPU + CPU in parallel per word)
     print("\n--- Phase 2: Asset generation ---")
