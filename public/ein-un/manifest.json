@@ -1,0 +1,402 @@
+{
+  "generatedAt": "2026-04-12T19:44:21.809315",
+  "generatedBy": "local_model_generate",
+  "words": [
+    {
+      "id": "brun",
+      "text": "brun",
+      "sentence": "Les cheveux du garçon sont bruns foncés comme du chocolat.",
+      "sentenceEn": "The boy's hair is dark brown like chocolate.",
+      "image": "/ein-un/images/brun.png",
+      "audioWord": "/ein-un/audio/brun_word.wav",
+      "audioSentence": "/ein-un/audio/brun_sentence.wav"
+    },
+    {
+      "id": "un",
+      "text": "un",
+      "sentence": "J'ai une pomme rouge vif en ce moment.",
+      "sentenceEn": "I have one bright red apple right now.",
+      "image": "/ein-un/images/un.png",
+      "audioWord": "/ein-un/audio/un_word.wav",
+      "audioSentence": "/ein-un/audio/un_sentence.wav"
+    },
+    {
+      "id": "jungle",
+      "text": "jungle",
+      "sentence": "Les lions, les singes et les plantes y poussent sauvages.",
+      "sentenceEn": "Lions, monkeys, and plants grow wild there.",
+      "image": "/ein-un/images/jungle.png",
+      "audioWord": "/ein-un/audio/jungle_word.wav",
+      "audioSentence": "/ein-un/audio/jungle_sentence.wav"
+    },
+    {
+      "id": "chacun",
+      "text": "chacun",
+      "sentence": "Tout le monde a sa couleur préférée.",
+      "sentenceEn": "Everyone has their own favorite color, you see.",
+      "image": "/ein-un/images/chacun.png",
+      "audioWord": "/ein-un/audio/chacun_word.wav",
+      "audioSentence": "/ein-un/audio/chacun_sentence.wav"
+    },
+    {
+      "id": "lundi",
+      "text": "lundi",
+      "sentence": "Aujourd'hui est lundi, le début de la semaine scolaire.",
+      "sentenceEn": "Today is Monday, the start of the school week.",
+      "image": "/ein-un/images/lundi.png",
+      "audioWord": "/ein-un/audio/lundi_word.wav",
+      "audioSentence": "/ein-un/audio/lundi_sentence.wav"
+    },
+    {
+      "id": "aucun",
+      "text": "aucun",
+      "sentence": "Il n'y a plus de biscuits dans le pot.",
+      "sentenceEn": "There are no cookies left in the jar.",
+      "image": "/ein-un/images/aucun.png",
+      "audioWord": "/ein-un/audio/aucun_word.wav",
+      "audioSentence": "/ein-un/audio/aucun_sentence.wav"
+    },
+    {
+      "id": "brune",
+      "text": "brune",
+      "sentence": "Ses cheveux sont bruns foncés et beaux.",
+      "sentenceEn": "Her hair is dark brown and beautiful.",
+      "image": "/ein-un/images/brune.png",
+      "audioWord": "/ein-un/audio/brune_word.wav",
+      "audioSentence": "/ein-un/audio/brune_sentence.wav"
+    },
+    {
+      "id": "une",
+      "text": "une",
+      "sentence": "Elle a une voiture de jouets et une balle.",
+      "sentenceEn": "She has a toy car and a ball.",
+      "image": "/ein-un/images/une.png",
+      "audioWord": "/ein-un/audio/une_word.wav",
+      "audioSentence": "/ein-un/audio/une_sentence.wav"
+    },
+    {
+      "id": "communs",
+      "text": "communs",
+      "sentence": "Les enfants partagent des jouets et des jeux dans la salle de jeux.",
+      "sentenceEn": "Kids share toys and games in the playroom.",
+      "image": "/ein-un/images/communs.png",
+      "audioWord": "/ein-un/audio/communs_word.wav",
+      "audioSentence": "/ein-un/audio/communs_sentence.wav"
+    },
+    {
+      "id": "chacune",
+      "text": "chacune",
+      "sentence": "Chaque fille a un joli ballon coloré.",
+      "sentenceEn": "Each girl has a pretty, colorful balloon.",
+      "image": "/ein-un/images/chacune.png",
+      "audioWord": "/ein-un/audio/chacune_word.wav",
+      "audioSentence": "/ein-un/audio/chacune_sentence.wav"
+    },
+    {
+      "id": "commun",
+      "text": "commun",
+      "sentence": "Tout le monde partage les jouets et les jeux ensemble.",
+      "sentenceEn": "Everyone shares the toys and games together.",
+      "image": "/ein-un/images/commun.png",
+      "audioWord": "/ein-un/audio/commun_word.wav",
+      "audioSentence": "/ein-un/audio/commun_sentence.wav"
+    },
+    {
+      "id": "aucune",
+      "text": "aucune",
+      "sentence": "Elle n'a pas de jouets dans sa boîte de jouets.",
+      "sentenceEn": "She has no toys in her toy box.",
+      "image": "/ein-un/images/aucune.png",
+      "audioWord": "/ein-un/audio/aucune_word.wav",
+      "audioSentence": "/ein-un/audio/aucune_sentence.wav"
+    },
+    {
+      "id": "tribun",
+      "text": "tribun",
+      "sentence": "Les gens se rassemblent pour regarder un jeu amusant.",
+      "sentenceEn": "People gather to watch a fun game.",
+      "image": "/ein-un/images/tribun.png",
+      "audioWord": "/ein-un/audio/tribun_word.wav",
+      "audioSentence": "/ein-un/audio/tribun_sentence.wav"
+    },
+    {
+      "id": "quelqu'un",
+      "text": "quelqu'un",
+      "sentence": "Quelqu'un joue à se cacher avec moi maintenant.",
+      "sentenceEn": "Someone is playing hide-and-seek with me now.",
+      "image": "/ein-un/images/quelqu'un.png",
+      "audioWord": "/ein-un/audio/quelqu'un_word.wav",
+      "audioSentence": "/ein-un/audio/quelqu'un_sentence.wav"
+    },
+    {
+      "id": "uns",
+      "text": "uns",
+      "sentence": "Un chien poursuit avec joie une boule rouge vif.",
+      "sentenceEn": "One dog happily chases a bright red ball.",
+      "image": "/ein-un/images/uns.png",
+      "audioWord": "/ein-un/audio/uns_word.wav",
+      "audioSentence": "/ein-un/audio/uns_sentence.wav"
+    },
+    {
+      "id": "bruns",
+      "text": "bruns",
+      "sentence": "La fourrure du chien est brune et douce.",
+      "sentenceEn": "The dog's fur is brown and soft.",
+      "image": "/ein-un/images/bruns.png",
+      "audioWord": "/ein-un/audio/bruns_word.wav",
+      "audioSentence": "/ein-un/audio/bruns_sentence.wav"
+    },
+    {
+      "id": "opportun",
+      "text": "opportun",
+      "sentence": "Elle voit une chance de jouer avec ses jouets.",
+      "sentenceEn": "She sees a chance to play with her toys.",
+      "image": "/ein-un/images/opportun.png",
+      "audioWord": "/ein-un/audio/opportun_word.wav",
+      "audioSentence": "/ein-un/audio/opportun_sentence.wav"
+    },
+    {
+      "id": "aucuns",
+      "text": "aucuns",
+      "sentence": "Certains enfants aiment les pommes, mais pas tous.",
+      "sentenceEn": "Some kids like apples, but not all do.",
+      "image": "/ein-un/images/aucuns.png",
+      "audioWord": "/ein-un/audio/aucuns_word.wav",
+      "audioSentence": "/ein-un/audio/aucuns_sentence.wav"
+    },
+    {
+      "id": "quelqu'une",
+      "text": "quelqu'une",
+      "sentence": "Quelqu'un joue avec la balle rouge vif.",
+      "sentenceEn": "Someone is playing with the bright red ball.",
+      "image": "/ein-un/images/quelqu'une.png",
+      "audioWord": "/ein-un/audio/quelqu'une_word.wav",
+      "audioSentence": "/ein-un/audio/quelqu'une_sentence.wav"
+    },
+    {
+      "id": "unes",
+      "text": "unes",
+      "sentence": "Une fille joue joyeusement avec son chien.",
+      "sentenceEn": "One girl plays happily with her dog.",
+      "image": "/ein-un/images/unes.png",
+      "audioWord": "/ein-un/audio/unes_word.wav",
+      "audioSentence": "/ein-un/audio/unes_sentence.wav"
+    },
+    {
+      "id": "brunes",
+      "text": "brunes",
+      "sentence": "Elle a des cheveux bruns foncés et des yeux.",
+      "sentenceEn": "She has dark brown hair and eyes.",
+      "image": "/ein-un/images/brunes.png",
+      "audioWord": "/ein-un/audio/brunes_word.wav",
+      "audioSentence": "/ein-un/audio/brunes_sentence.wav"
+    },
+    {
+      "id": "opportune",
+      "text": "opportune",
+      "sentence": "Elle arrive juste quand nous avons besoin de son aide.",
+      "sentenceEn": "She arrives just when we need her help.",
+      "image": "/ein-un/images/opportune.png",
+      "audioWord": "/ein-un/audio/opportune_word.wav",
+      "audioSentence": "/ein-un/audio/opportune_sentence.wav"
+    },
+    {
+      "id": "plein",
+      "text": "plein",
+      "sentence": "Le panier est plein de pommes rouges brillantes.",
+      "sentenceEn": "The basket is full of shiny red apples.",
+      "image": "/ein-un/images/plein.png",
+      "audioWord": "/ein-un/audio/plein_word.wav",
+      "audioSentence": "/ein-un/audio/plein_sentence.wav"
+    },
+    {
+      "id": "rein",
+      "text": "rein",
+      "sentence": "Votre corps les utilise pour filtrer votre sang.",
+      "sentenceEn": "Your body uses them to filter your blood.",
+      "image": "/ein-un/images/rein.png",
+      "audioWord": "/ein-un/audio/rein_word.wav",
+      "audioSentence": "/ein-un/audio/rein_sentence.wav"
+    },
+    {
+      "id": "teindre",
+      "text": "teindre",
+      "sentence": "Elle peint le papier en bleu avec une couleur vif.",
+      "sentenceEn": "She paints the paper blue with bright color.",
+      "image": "/ein-un/images/teindre.png",
+      "audioWord": "/ein-un/audio/teindre_word.wav",
+      "audioSentence": "/ein-un/audio/teindre_sentence.wav"
+    },
+    {
+      "id": "serein",
+      "text": "serein",
+      "sentence": "Le ciel semble bleu et paisible aujourd'hui.",
+      "sentenceEn": "The sky looks peaceful and calmly blue today.",
+      "image": "/ein-un/images/serein.png",
+      "audioWord": "/ein-un/audio/serein_word.wav",
+      "audioSentence": "/ein-un/audio/serein_sentence.wav"
+    },
+    {
+      "id": "feinte",
+      "text": "feinte",
+      "sentence": "Elle fait semblant de fuir dans une direction, puis elle va dans une autre.",
+      "sentenceEn": "She pretends to run one way, then goes another.",
+      "image": "/ein-un/images/feinte.png",
+      "audioWord": "/ein-un/audio/feinte_word.wav",
+      "audioSentence": "/ein-un/audio/feinte_sentence.wav"
+    },
+    {
+      "id": "frein",
+      "text": "frein",
+      "sentence": "Le conducteur appuie sur la pédale pour ralentir.",
+      "sentenceEn": "The driver presses the pedal to slow down.",
+      "image": "/ein-un/images/frein.png",
+      "audioWord": "/ein-un/audio/frein_word.wav",
+      "audioSentence": "/ein-un/audio/frein_sentence.wav"
+    },
+    {
+      "id": "pleine",
+      "text": "pleine",
+      "sentence": "La fille se sent heureuse et complètement rassasiée.",
+      "sentenceEn": "The girl feels happy and completely full.",
+      "image": "/ein-un/images/pleine.png",
+      "audioWord": "/ein-un/audio/pleine_word.wav",
+      "audioSentence": "/ein-un/audio/pleine_sentence.wav"
+    },
+    {
+      "id": "reine",
+      "text": "reine",
+      "sentence": "La princesse gouverne le royaume avec bonté.",
+      "sentenceEn": "The princess rules the kingdom with kindness.",
+      "image": "/ein-un/images/reine.png",
+      "audioWord": "/ein-un/audio/reine_word.wav",
+      "audioSentence": "/ein-un/audio/reine_sentence.wav"
+    },
+    {
+      "id": "ceinture",
+      "text": "ceinture",
+      "sentence": "Je me ceint pour tenir mon pantalon.",
+      "sentenceEn": "I fasten my belt to hold up my pants.",
+      "image": "/ein-un/images/ceinture.png",
+      "audioWord": "/ein-un/audio/ceinture_word.wav",
+      "audioSentence": "/ein-un/audio/ceinture_sentence.wav"
+    },
+    {
+      "id": "sereine",
+      "text": "sereine",
+      "sentence": "Elle se sent calme et paisible en regardant les nuages.",
+      "sentenceEn": "She feels calm and peaceful watching the clouds.",
+      "image": "/ein-un/images/sereine.png",
+      "audioWord": "/ein-un/audio/sereine_word.wav",
+      "audioSentence": "/ein-un/audio/sereine_sentence.wav"
+    },
+    {
+      "id": "sein",
+      "text": "sein",
+      "sentence": "La poitrine de maman a des bosses douces où vient le lait.",
+      "sentenceEn": "Mommy's chest has soft bumps where milk comes.",
+      "image": "/ein-un/images/sein.png",
+      "audioWord": "/ein-un/audio/sein_word.wav",
+      "audioSentence": "/ein-un/audio/sein_sentence.wav"
+    },
+    {
+      "id": "freins",
+      "text": "freins",
+      "sentence": "La voiture s'arrête quand je pousse la pédale.",
+      "sentenceEn": "The car stops when I push the pedal.",
+      "image": "/ein-un/images/freins.png",
+      "audioWord": "/ein-un/audio/freins_word.wav",
+      "audioSentence": "/ein-un/audio/freins_sentence.wav"
+    },
+    {
+      "id": "pleins",
+      "text": "pleins",
+      "sentence": "Le panier est plein de jouets colorés et brillants.",
+      "sentenceEn": "The basket is full of colorful, shiny toys.",
+      "image": "/ein-un/images/pleins.png",
+      "audioWord": "/ein-un/audio/pleins_word.wav",
+      "audioSentence": "/ein-un/audio/pleins_sentence.wav"
+    },
+    {
+      "id": "teinte",
+      "text": "teinte",
+      "sentence": "Le ciel est beau, de couleur bleue claire.",
+      "sentenceEn": "The sky has a pretty, light blue color.",
+      "image": "/ein-un/images/teinte.png",
+      "audioWord": "/ein-un/audio/teinte_word.wav",
+      "audioSentence": "/ein-un/audio/teinte_sentence.wav"
+    },
+    {
+      "id": "peint",
+      "text": "peint",
+      "sentence": "Elle peint des images colorées avec sa pinceau.",
+      "sentenceEn": "She paints colorful pictures with her brush.",
+      "image": "/ein-un/images/peint.png",
+      "audioWord": "/ein-un/audio/peint_word.wav",
+      "audioSentence": "/ein-un/audio/peint_sentence.wav"
+    },
+    {
+      "id": "peinture",
+      "text": "peinture",
+      "sentence": "Elle peint des images colorées avec sa pinceau.",
+      "sentenceEn": "She paints colorful pictures with her brush.",
+      "image": "/ein-un/images/peinture.png",
+      "audioWord": "/ein-un/audio/peinture_word.wav",
+      "audioSentence": "/ein-un/audio/peinture_sentence.wav"
+    },
+    {
+      "id": "feint",
+      "text": "feint",
+      "sentence": "Elle fait semblant de fuir dans une direction, puis elle va dans une autre.",
+      "sentenceEn": "She pretends to run one way, then goes another.",
+      "image": "/ein-un/images/feint.png",
+      "audioWord": "/ein-un/audio/feint_word.wav",
+      "audioSentence": "/ein-un/audio/feint_sentence.wav"
+    },
+    {
+      "id": "pleines",
+      "text": "pleines",
+      "sentence": "Les mains des enfants sont pleines de jouets colorés.",
+      "sentenceEn": "The children’s hands are full of colorful toys.",
+      "image": "/ein-un/images/pleines.png",
+      "audioWord": "/ein-un/audio/pleines_word.wav",
+      "audioSentence": "/ein-un/audio/pleines_sentence.wav"
+    },
+    {
+      "id": "feindre",
+      "text": "feindre",
+      "sentence": "Elle fait semblant d'être endormie pour éviter les tâches ménagères.",
+      "sentenceEn": "She pretends to be asleep to avoid chores.",
+      "image": "/ein-un/images/feindre.png",
+      "audioWord": "/ein-un/audio/feindre_word.wav",
+      "audioSentence": "/ein-un/audio/feindre_sentence.wav"
+    },
+    {
+      "id": "peindre",
+      "text": "peindre",
+      "sentence": "Elle peint des images colorées avec sa pinceau.",
+      "sentenceEn": "She paints colorful pictures with her brush.",
+      "image": "/ein-un/images/peindre.png",
+      "audioWord": "/ein-un/audio/peindre_word.wav",
+      "audioSentence": "/ein-un/audio/peindre_sentence.wav"
+    },
+    {
+      "id": "sereines",
+      "text": "sereines",
+      "sentence": "Le lac calme reflète le ciel lumineux et paisible.",
+      "sentenceEn": "The calm lake reflects the bright, peaceful sky.",
+      "image": "/ein-un/images/sereines.png",
+      "audioWord": "/ein-un/audio/sereines_word.wav",
+      "audioSentence": "/ein-un/audio/sereines_sentence.wav"
+    },
+    {
+      "id": "feinteur",
+      "text": "feinteur",
+      "sentence": "Il trompe ses amis avec un geste intelligent.",
+      "sentenceEn": "He tricks his friends with a clever move.",
+      "image": "/ein-un/images/feinteur.png",
+      "audioWord": "/ein-un/audio/feinteur_word.wav",
+      "audioSentence": "/ein-un/audio/feinteur_sentence.wav"
+    }
+  ]
+}

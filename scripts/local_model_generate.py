@@ -332,7 +332,7 @@ def generate_audio_piper(
         piper_bin,
         "--model", str(onnx_path),
         "--config", str(config_path),
-        "--length_scale", "1.4" if slow else "1.0",
+        "--length_scale", "1.5" if slow else "1.0",
         "--output_file", str(output_path),
     ]
 
