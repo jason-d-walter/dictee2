@@ -1,0 +1,267 @@
+{
+  "generatedAt": "2026-04-18T21:12:51.582096",
+  "generatedBy": "local_model_generate",
+  "words": [
+    {
+      "id": "main",
+      "text": "main",
+      "sentence": "Elle tient le jouet avec sa main.",
+      "sentenceEn": "She uses her hand to hold the toy.",
+      "image": "/ain-aim/images/main.png",
+      "audioWord": "/ain-aim/audio/main_word.wav",
+      "audioSentence": "/ain-aim/audio/main_sentence.wav"
+    },
+    {
+      "id": "vilain",
+      "text": "vilain",
+      "sentence": "Il tire les cheveux et fait des visages stupides et méchants.",
+      "sentenceEn": "He pulls hair and makes silly, naughty faces.",
+      "image": "/ain-aim/images/vilain.png",
+      "audioWord": "/ain-aim/audio/vilain_word.wav",
+      "audioSentence": "/ain-aim/audio/vilain_sentence.wav"
+    },
+    {
+      "id": "bain",
+      "text": "bain",
+      "sentence": "Elle prend un bain chaud pour se laver.",
+      "sentenceEn": "She takes a warm bath to get clean.",
+      "image": "/ain-aim/images/bain.png",
+      "audioWord": "/ain-aim/audio/bain_word.wav",
+      "audioSentence": "/ain-aim/audio/bain_sentence.wav"
+    },
+    {
+      "id": "train",
+      "text": "train",
+      "sentence": "La longue voiture métallique voyage sur les voies ferrées.",
+      "sentenceEn": "The long metal car travels on tracks.",
+      "image": "/ain-aim/images/train.png",
+      "audioWord": "/ain-aim/audio/train_word.wav",
+      "audioSentence": "/ain-aim/audio/train_sentence.wav"
+    },
+    {
+      "id": "grain",
+      "text": "grain",
+      "sentence": "Les petites graines font la nourriture des oiseaux et des écureuils.",
+      "sentenceEn": "Tiny seeds make food for birds and squirrels.",
+      "image": "/ain-aim/images/grain.png",
+      "audioWord": "/ain-aim/audio/grain_word.wav",
+      "audioSentence": "/ain-aim/audio/grain_sentence.wav"
+    },
+    {
+      "id": "ainsi",
+      "text": "ainsi",
+      "sentence": "Elle le fait comme ça, et ça marche !",
+      "sentenceEn": "She does it this way, and it works!",
+      "image": "/ain-aim/images/ainsi.png",
+      "audioWord": "/ain-aim/audio/ainsi_word.wav",
+      "audioSentence": "/ain-aim/audio/ainsi_sentence.wav"
+    },
+    {
+      "id": "humain",
+      "text": "humain",
+      "sentence": "Les gens se sentent tristes et heureux, comme nous.",
+      "sentenceEn": "People feel sad and happy, just like us.",
+      "image": "/ain-aim/images/humain.png",
+      "audioWord": "/ain-aim/audio/humain_word.wav",
+      "audioSentence": "/ain-aim/audio/humain_sentence.wav"
+    },
+    {
+      "id": "copain",
+      "text": "copain",
+      "sentence": "Mon ami et moi jouons ensemble maintenant.",
+      "sentenceEn": "My friend and I play games together now.",
+      "image": "/ain-aim/images/copain.png",
+      "audioWord": "/ain-aim/audio/copain_word.wav",
+      "audioSentence": "/ain-aim/audio/copain_sentence.wav"
+    },
+    {
+      "id": "parrain",
+      "text": "parrain",
+      "sentence": "Mon parrain m'aide à jouer et à m'amuser.",
+      "sentenceEn": "My godfather helps me play and have fun.",
+      "image": "/ain-aim/images/parrain.png",
+      "audioWord": "/ain-aim/audio/parrain_word.wav",
+      "audioSentence": "/ain-aim/audio/parrain_sentence.wav"
+    },
+    {
+      "id": "soudain",
+      "text": "soudain",
+      "sentence": "Soudain, un chiot joueur saute dans la cour.",
+      "sentenceEn": "Suddenly, a playful puppy jumps into the yard.",
+      "image": "/ain-aim/images/soudain.png",
+      "audioWord": "/ain-aim/audio/soudain_word.wav",
+      "audioSentence": "/ain-aim/audio/soudain_sentence.wav"
+    },
+    {
+      "id": "nain",
+      "text": "nain",
+      "sentence": "La petite personne travaille dur et est minuscule.",
+      "sentenceEn": "The little person works hard and is tiny.",
+      "image": "/ain-aim/images/nain.png",
+      "audioWord": "/ain-aim/audio/nain_word.wav",
+      "audioSentence": "/ain-aim/audio/nain_sentence.wav"
+    },
+    {
+      "id": "demain",
+      "text": "demain",
+      "sentence": "On jouera dehors demain après-midi.",
+      "sentenceEn": "We will play outside tomorrow afternoon.",
+      "image": "/ain-aim/images/demain.png",
+      "audioWord": "/ain-aim/audio/demain_word.wav",
+      "audioSentence": "/ain-aim/audio/demain_sentence.wav"
+    },
+    {
+      "id": "dédain",
+      "text": "dédain",
+      "sentence": "Elle se comporte comme si elle était meilleure que tout le monde.",
+      "sentenceEn": "She acts like she's better than everyone.",
+      "image": "/ain-aim/images/dédain.png",
+      "audioWord": "/ain-aim/audio/dédain_word.wav",
+      "audioSentence": "/ain-aim/audio/dédain_sentence.wav"
+    },
+    {
+      "id": "sain",
+      "text": "sain",
+      "sentence": "La pomme a l'air saine et a bon goût.",
+      "sentenceEn": "The apple looks healthy and tastes good.",
+      "image": "/ain-aim/images/sain.png",
+      "audioWord": "/ain-aim/audio/sain_word.wav",
+      "audioSentence": "/ain-aim/audio/sain_sentence.wav"
+    },
+    {
+      "id": "plain",
+      "text": "plain",
+      "sentence": "Le terrain est plat et facile à courir.",
+      "sentenceEn": "The field is flat and easy to run on.",
+      "image": "/ain-aim/images/plain.png",
+      "audioWord": "/ain-aim/audio/plain_word.wav",
+      "audioSentence": "/ain-aim/audio/plain_sentence.wav"
+    },
+    {
+      "id": "certain",
+      "text": "certain",
+      "sentence": "Elle sait exactement quel jouet elle veut maintenant.",
+      "sentenceEn": "She knows exactly which toy she wants now.",
+      "image": "/ain-aim/images/certain.png",
+      "audioWord": "/ain-aim/audio/certain_word.wav",
+      "audioSentence": "/ain-aim/audio/certain_sentence.wav"
+    },
+    {
+      "id": "gain",
+      "text": "gain",
+      "sentence": "Elle gagne des autocollants pour finir ses devoirs.",
+      "sentenceEn": "She earns stickers for finishing her chores.",
+      "image": "/ain-aim/images/gain.png",
+      "audioWord": "/ain-aim/audio/gain_word.wav",
+      "audioSentence": "/ain-aim/audio/gain_sentence.wav"
+    },
+    {
+      "id": "drain",
+      "text": "drain",
+      "sentence": "L'eau coule et disparaît rapidement.",
+      "sentenceEn": "Water flows down and disappears quickly.",
+      "image": "/ain-aim/images/drain.png",
+      "audioWord": "/ain-aim/audio/drain_word.wav",
+      "audioSentence": "/ain-aim/audio/drain_sentence.wav"
+    },
+    {
+      "id": "maintenant",
+      "text": "maintenant",
+      "sentence": "Maintenant, mettez vos jouets vite.",
+      "sentenceEn": "Now, please put your toys away quickly.",
+      "image": "/ain-aim/images/maintenant.png",
+      "audioWord": "/ain-aim/audio/maintenant_word.wav",
+      "audioSentence": "/ain-aim/audio/maintenant_sentence.wav"
+    },
+    {
+      "id": "trains",
+      "text": "trains",
+      "sentence": "Les longues voitures se déplacent rapidement sur les rails.",
+      "sentenceEn": "The long cars move quickly on the tracks.",
+      "image": "/ain-aim/images/trains.png",
+      "audioWord": "/ain-aim/audio/trains_word.wav",
+      "audioSentence": "/ain-aim/audio/trains_sentence.wav"
+    },
+    {
+      "id": "mains",
+      "text": "mains",
+      "sentence": "Les petites mains claquent joyeusement quand elles jouent.",
+      "sentenceEn": "Little hands clap happily when they play.",
+      "image": "/ain-aim/images/mains.png",
+      "audioWord": "/ain-aim/audio/mains_word.wav",
+      "audioSentence": "/ain-aim/audio/mains_sentence.wav"
+    },
+    {
+      "id": "vilains",
+      "text": "vilains",
+      "sentence": "Les méchants se moquent de leur petite sœur.",
+      "sentenceEn": "The naughty boys tease their little sister.",
+      "image": "/ain-aim/images/vilains.png",
+      "audioWord": "/ain-aim/audio/vilains_word.wav",
+      "audioSentence": "/ain-aim/audio/vilains_sentence.wav"
+    },
+    {
+      "id": "humains",
+      "text": "humains",
+      "sentence": "Les gens vivent, rient et jouent ensemble maintenant.",
+      "sentenceEn": "People live, laugh, and play together now.",
+      "image": "/ain-aim/images/humains.png",
+      "audioWord": "/ain-aim/audio/humains_word.wav",
+      "audioSentence": "/ain-aim/audio/humains_sentence.wav"
+    },
+    {
+      "id": "grains",
+      "text": "grains",
+      "sentence": "Les graines tombent et forment une pile de sable.",
+      "sentenceEn": "Tiny seeds fall and make a sandy pile.",
+      "image": "/ain-aim/images/grains.png",
+      "audioWord": "/ain-aim/audio/grains_word.wav",
+      "audioSentence": "/ain-aim/audio/grains_sentence.wav"
+    },
+    {
+      "id": "faim",
+      "text": "faim",
+      "sentence": "Mon ventre rugit parce que je me sens affamé maintenant.",
+      "sentenceEn": "My tummy rumbles because I feel hungry now.",
+      "image": "/ain-aim/images/faim.png",
+      "audioWord": "/ain-aim/audio/faim_word.wav",
+      "audioSentence": "/ain-aim/audio/faim_sentence.wav"
+    },
+    {
+      "id": "daim",
+      "text": "daim",
+      "sentence": "Le cerf court rapidement à travers la forêt verte.",
+      "sentenceEn": "The deer runs quickly through the green forest.",
+      "image": "/ain-aim/images/daim.png",
+      "audioWord": "/ain-aim/audio/daim_word.wav",
+      "audioSentence": "/ain-aim/audio/daim_sentence.wav"
+    },
+    {
+      "id": "essaim",
+      "text": "essaim",
+      "sentence": "Beaucoup d'abeilles volent ensemble de l'ortie.",
+      "sentenceEn": "Many bees fly together from the hive.",
+      "image": "/ain-aim/images/essaim.png",
+      "audioWord": "/ain-aim/audio/essaim_word.wav",
+      "audioSentence": "/ain-aim/audio/essaim_sentence.wav"
+    },
+    {
+      "id": "daims",
+      "text": "daims",
+      "sentence": "Les cerfs courent rapidement à travers la forêt verte.",
+      "sentenceEn": "The deer quickly run through the green forest.",
+      "image": "/ain-aim/images/daims.png",
+      "audioWord": "/ain-aim/audio/daims_word.wav",
+      "audioSentence": "/ain-aim/audio/daims_sentence.wav"
+    },
+    {
+      "id": "essaims",
+      "text": "essaims",
+      "sentence": "Beaucoup d'abeilles volent ensemble en un seul grand groupe.",
+      "sentenceEn": "Many bees fly together as one big group.",
+      "image": "/ain-aim/images/essaims.png",
+      "audioWord": "/ain-aim/audio/essaims_word.wav",
+      "audioSentence": "/ain-aim/audio/essaims_sentence.wav"
+    }
+  ]
+}

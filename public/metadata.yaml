@@ -83,3 +83,10 @@ dictee:
   source: words_of_week.txt
   week_end: '2026-04-18'
   week_start: '2026-04-12'
+- date_of_generation: '2026-04-18'
+  language: fr
+  path: ain-aim
+  sounds: ain-aim
+  source: words_of_week.txt
+  week_end: '2026-04-24'
+  week_start: '2026-04-18'
