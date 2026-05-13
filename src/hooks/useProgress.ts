@@ -1,7 +1,7 @@
 import { useState, useEffect, useCallback } from 'react';
 import { Word, WordProgress } from '../types';
 import { loadProgress, saveProgress } from '../utils/storage';
-import { shuffleArray } from '../utils/wordUtils';
+
 
 const MASTERY_THRESHOLD = 3; // Correct streak needed for mastery
 
@@ -52,27 +52,31 @@ export function useProgress(): UseProgressReturn {
     (words: Word[], limit: number): Word[] => {
       if (words.length === 0) return [];
 
-      // Sort words by priority: unmastered first, then by least recently practiced
-      const sortedWords = [...words].sort((a, b) => {
-        const progressA = progress[a.id];
-        const progressB = progress[b.id];
+      const wordWeight = (word: Word): number => {
+        const p = progress[word.id];
+        if (!p) return 10;           // unpracticed
+        if (!p.mastered) return 6;   // practiced but not mastered
+        return 1;                    // mastered
+      };
 
-        // Unpracticed words first
-        if (!progressA && progressB) return -1;
-        if (progressA && !progressB) return 1;
-        if (!progressA && !progressB) return 0;
+      // Weighted random sampling without replacement
+      const pool = words.map(w => ({ word: w, weight: wordWeight(w) }));
+      const selected: Word[] = [];
+      const count = Math.min(limit, words.length);
 
-        // Unmastered before mastered
-        if (!progressA!.mastered && progressB!.mastered) return -1;
-        if (progressA!.mastered && !progressB!.mastered) return 1;
+      for (let i = 0; i < count; i++) {
+        const totalWeight = pool.reduce((sum, item) => sum + item.weight, 0);
+        let r = Math.random() * totalWeight;
+        const idx = pool.findIndex(item => {
+          r -= item.weight;
+          return r <= 0;
+        });
+        const pick = idx === -1 ? pool.length - 1 : idx;
+        selected.push(pool[pick].word);
+        pool.splice(pick, 1);
+      }
 
-        // Within same mastery status, prioritize least recently practiced
-        return (progressA!.lastPracticed || 0) - (progressB!.lastPracticed || 0);
-      });
-
-      // Take up to limit words, shuffle them for variety
-      const selected = sortedWords.slice(0, Math.min(limit, words.length));
-      return shuffleArray(selected);
+      return selected;
     },
     [progress]
   );
