@@ -1,0 +1,429 @@
+{
+  "generatedAt": "2026-05-12T20:21:12.620804",
+  "generatedBy": "local_model_generate",
+  "words": [
+    {
+      "id": "rien",
+      "text": "rien",
+      "sentence": "Elle n'a plus rien entre ses mains.",
+      "sentenceEn": "She has nothing in her hands now.",
+      "image": "/ien-ier/images/rien.png",
+      "audioWord": "/ien-ier/audio/rien_word.wav",
+      "audioSentence": "/ien-ier/audio/rien_sentence.wav"
+    },
+    {
+      "id": "bien",
+      "text": "bien",
+      "sentence": "La fille est très douée pour partager des jouets.",
+      "sentenceEn": "The girl is very good at sharing toys.",
+      "image": "/ien-ier/images/bien.png",
+      "audioWord": "/ien-ier/audio/bien_word.wav",
+      "audioSentence": "/ien-ier/audio/bien_sentence.wav"
+    },
+    {
+      "id": "chien",
+      "text": "chien",
+      "sentence": "Le chien agit avec joie sa queue et aboie.",
+      "sentenceEn": "The dog happily wags its tail and barks.",
+      "image": "/ien-ier/images/chien.png",
+      "audioWord": "/ien-ier/audio/chien_word.wav",
+      "audioSentence": "/ien-ier/audio/chien_sentence.wav"
+    },
+    {
+      "id": "mien",
+      "text": "mien",
+      "sentence": "J'aime beaucoup mes jouets et mes livres.",
+      "sentenceEn": "I love my toys and books very much.",
+      "image": "/ien-ier/images/mien.png",
+      "audioWord": "/ien-ier/audio/mien_word.wav",
+      "audioSentence": "/ien-ier/audio/mien_sentence.wav"
+    },
+    {
+      "id": "tien",
+      "text": "tien",
+      "sentence": "Voici votre phrase: ce jouet est à vous; vous pouvez le tenir.",
+      "sentenceEn": "Here's your sentence:\n\nThis toy is yours; you can hold it.",
+      "image": "/ien-ier/images/tien.png",
+      "audioWord": "/ien-ier/audio/tien_word.wav",
+      "audioSentence": "/ien-ier/audio/tien_sentence.wav"
+    },
+    {
+      "id": "lien",
+      "text": "lien",
+      "sentence": "Les amis ont un lien particulier et se sentent proches.",
+      "sentenceEn": "Friends share a special connection and feel close.",
+      "image": "/ien-ier/images/lien.png",
+      "audioWord": "/ien-ier/audio/lien_word.wav",
+      "audioSentence": "/ien-ier/audio/lien_sentence.wav"
+    },
+    {
+      "id": "combien",
+      "text": "combien",
+      "sentence": "Combien de biscuits voulez-vous manger ?",
+      "sentenceEn": "How many cookies do you want to eat?",
+      "image": "/ien-ier/images/combien.png",
+      "audioWord": "/ien-ier/audio/combien_word.wav",
+      "audioSentence": "/ien-ier/audio/combien_sentence.wav"
+    },
+    {
+      "id": "bientôt",
+      "text": "bientôt",
+      "sentence": "Nous mangerons de délicieux biscuits très bientôt.",
+      "sentenceEn": "We will eat yummy cookies very soon.",
+      "image": "/ien-ier/images/bientôt.png",
+      "audioWord": "/ien-ier/audio/bientôt_word.wav",
+      "audioSentence": "/ien-ier/audio/bientôt_sentence.wav"
+    },
+    {
+      "id": "bienvenue",
+      "text": "bienvenue",
+      "sentence": "Tout le monde est content que vous soyez venu jouer aujourd'hui.",
+      "sentenceEn": "Everyone is happy you came to play today.",
+      "image": "/ien-ier/images/bienvenue.png",
+      "audioWord": "/ien-ier/audio/bienvenue_word.wav",
+      "audioSentence": "/ien-ier/audio/bienvenue_sentence.wav"
+    },
+    {
+      "id": "sien",
+      "text": "sien",
+      "sentence": "Il garde ses jouets dans sa propre boîte.",
+      "sentenceEn": "He keeps his toys in his own box.",
+      "image": "/ien-ier/images/sien.png",
+      "audioWord": "/ien-ier/audio/sien_word.wav",
+      "audioSentence": "/ien-ier/audio/sien_sentence.wav"
+    },
+    {
+      "id": "gardien",
+      "text": "gardien",
+      "sentence": "Il surveille la porte et garde tout le monde en sécurité.",
+      "sentenceEn": "He watches the gate and keeps everyone safe.",
+      "image": "/ien-ier/images/gardien.png",
+      "audioWord": "/ien-ier/audio/gardien_word.wav",
+      "audioSentence": "/ien-ier/audio/gardien_sentence.wav"
+    },
+    {
+      "id": "magicien",
+      "text": "magicien",
+      "sentence": "Il tire un lapin de son chapeau.",
+      "sentenceEn": "He pulls a rabbit from his hat now.",
+      "image": "/ien-ier/images/magicien.png",
+      "audioWord": "/ien-ier/audio/magicien_word.wav",
+      "audioSentence": "/ien-ier/audio/magicien_sentence.wav"
+    },
+    {
+      "id": "canadien",
+      "text": "canadien",
+      "sentence": "Il vit au Canada et aime le sirop d'érable.",
+      "sentenceEn": "He lives in Canada and loves maple syrup.",
+      "image": "/ien-ier/images/canadien.png",
+      "audioWord": "/ien-ier/audio/canadien_word.wav",
+      "audioSentence": "/ien-ier/audio/canadien_sentence.wav"
+    },
+    {
+      "id": "entretien",
+      "text": "entretien",
+      "sentence": "Le jardinier prend soin des fleurs.",
+      "sentenceEn": "The gardener carefully tends to the flowers.",
+      "image": "/ien-ier/images/entretien.png",
+      "audioWord": "/ien-ier/audio/entretien_word.wav",
+      "audioSentence": "/ien-ier/audio/entretien_sentence.wav"
+    },
+    {
+      "id": "musicien",
+      "text": "musicien",
+      "sentence": "Il joue de la guitare et fait de beaux sons.",
+      "sentenceEn": "He plays the guitar and makes beautiful sounds.",
+      "image": "/ien-ier/images/musicien.png",
+      "audioWord": "/ien-ier/audio/musicien_word.wav",
+      "audioSentence": "/ien-ier/audio/musicien_sentence.wav"
+    },
+    {
+      "id": "italien",
+      "text": "italien",
+      "sentence": "Elle mange de délicieuses pâtes et de la pizza maintenant.",
+      "sentenceEn": "She eats yummy pasta and pizza now.",
+      "image": "/ien-ier/images/italien.png",
+      "audioWord": "/ien-ier/audio/italien_word.wav",
+      "audioSentence": "/ien-ier/audio/italien_sentence.wav"
+    },
+    {
+      "id": "mécanicien",
+      "text": "mécanicien",
+      "sentence": "Il répare des voitures et des camions avec des outils.",
+      "sentenceEn": "He fixes cars and trucks with tools.",
+      "image": "/ien-ier/images/mécanicien.png",
+      "audioWord": "/ien-ier/audio/mécanicien_word.wav",
+      "audioSentence": "/ien-ier/audio/mécanicien_sentence.wav"
+    },
+    {
+      "id": "ancien",
+      "text": "ancien",
+      "sentence": "L'ancienne maison se trouve près de la nouvelle école.",
+      "sentenceEn": "The old house stands near the new school.",
+      "image": "/ien-ier/images/ancien.png",
+      "audioWord": "/ien-ier/audio/ancien_word.wav",
+      "audioSentence": "/ien-ier/audio/ancien_sentence.wav"
+    },
+    {
+      "id": "quotidien",
+      "text": "quotidien",
+      "sentence": "Je prends mon petit déjeuner tous les jours sans échec.",
+      "sentenceEn": "I eat breakfast every day without fail.",
+      "image": "/ien-ier/images/quotidien.png",
+      "audioWord": "/ien-ier/audio/quotidien_word.wav",
+      "audioSentence": "/ien-ier/audio/quotidien_sentence.wav"
+    },
+    {
+      "id": "comédien",
+      "text": "comédien",
+      "sentence": "Il se comporte drôle et fait rire les gens.",
+      "sentenceEn": "He acts funny and makes people laugh.",
+      "image": "/ien-ier/images/comédien.png",
+      "audioWord": "/ien-ier/audio/comédien_word.wav",
+      "audioSentence": "/ien-ier/audio/comédien_sentence.wav"
+    },
+    {
+      "id": "politicien",
+      "text": "politicien",
+      "sentence": "Il parle aux gens et aide notre ville.",
+      "sentenceEn": "He talks to people and helps our town.",
+      "image": "/ien-ier/images/politicien.png",
+      "audioWord": "/ien-ier/audio/politicien_word.wav",
+      "audioSentence": "/ien-ier/audio/politicien_sentence.wav"
+    },
+    {
+      "id": "viens",
+      "text": "viens",
+      "sentence": "Viens jouer avec moi.",
+      "sentenceEn": "Please come play with me right now.",
+      "image": "/ien-ier/images/viens.png",
+      "audioWord": "/ien-ier/audio/viens_word.wav",
+      "audioSentence": "/ien-ier/audio/viens_sentence.wav"
+    },
+    {
+      "id": "Lucien",
+      "text": "Lucien",
+      "sentence": "Il aime jouer à des jeux et construire des choses.",
+      "sentenceEn": "He likes to play games and build things.",
+      "image": "/ien-ier/images/Lucien.png",
+      "audioWord": "/ien-ier/audio/Lucien_word.wav",
+      "audioSentence": "/ien-ier/audio/Lucien_sentence.wav"
+    },
+    {
+      "id": "Fabien",
+      "text": "Fabien",
+      "sentence": "Il aime construire des tours avec des blocs colorés.",
+      "sentenceEn": "He loves building towers with colorful blocks.",
+      "image": "/ien-ier/images/Fabien.png",
+      "audioWord": "/ien-ier/audio/Fabien_word.wav",
+      "audioSentence": "/ien-ier/audio/Fabien_sentence.wav"
+    },
+    {
+      "id": "papier",
+      "text": "papier",
+      "sentence": "Je dessine sur du papier coloré.",
+      "sentenceEn": "I draw pictures on colorful paper.",
+      "image": "/ien-ier/images/papier.png",
+      "audioWord": "/ien-ier/audio/papier_word.wav",
+      "audioSentence": "/ien-ier/audio/papier_sentence.wav"
+    },
+    {
+      "id": "premier",
+      "text": "premier",
+      "sentence": "Elle est la première fille à sauter de corde.",
+      "sentenceEn": "She is the first girl to jump rope.",
+      "image": "/ien-ier/images/premier.png",
+      "audioWord": "/ien-ier/audio/premier_word.wav",
+      "audioSentence": "/ien-ier/audio/premier_sentence.wav"
+    },
+    {
+      "id": "évier",
+      "text": "évier",
+      "sentence": "Maman lave les plats dans le lavabo.",
+      "sentenceEn": "Mom washes the dishes in the sink.",
+      "image": "/ien-ier/images/évier.png",
+      "audioWord": "/ien-ier/audio/évier_word.wav",
+      "audioSentence": "/ien-ier/audio/évier_sentence.wav"
+    },
+    {
+      "id": "panier",
+      "text": "panier",
+      "sentence": "La fille met des pommes dans son panier tissé.",
+      "sentenceEn": "The girl puts apples in her woven basket.",
+      "image": "/ien-ier/images/panier.png",
+      "audioWord": "/ien-ier/audio/panier_word.wav",
+      "audioSentence": "/ien-ier/audio/panier_sentence.wav"
+    },
+    {
+      "id": "soulier",
+      "text": "soulier",
+      "sentence": "Elle porte des chaussures brillantes pour jouer dehors.",
+      "sentenceEn": "She wears shiny shoes to play outside.",
+      "image": "/ien-ier/images/soulier.png",
+      "audioWord": "/ien-ier/audio/soulier_word.wav",
+      "audioSentence": "/ien-ier/audio/soulier_sentence.wav"
+    },
+    {
+      "id": "grenier",
+      "text": "grenier",
+      "sentence": "Les jouets et les vieilles couvertures remplissent le magasin d'en haut.",
+      "sentenceEn": "Toys and old blankets fill the upstairs storage room.",
+      "image": "/ien-ier/images/grenier.png",
+      "audioWord": "/ien-ier/audio/grenier_word.wav",
+      "audioSentence": "/ien-ier/audio/grenier_sentence.wav"
+    },
+    {
+      "id": "rosier",
+      "text": "rosier",
+      "sentence": "Le buisson pousse de belles fleurs roses.",
+      "sentenceEn": "The bush grows beautiful pink flowers.",
+      "image": "/ien-ier/images/rosier.png",
+      "audioWord": "/ien-ier/audio/rosier_word.wav",
+      "audioSentence": "/ien-ier/audio/rosier_sentence.wav"
+    },
+    {
+      "id": "sablier",
+      "text": "sablier",
+      "sentence": "Le sable tombe lentement à travers le verre.",
+      "sentenceEn": "The sand slowly falls through the glass.",
+      "image": "/ien-ier/images/sablier.png",
+      "audioWord": "/ien-ier/audio/sablier_word.wav",
+      "audioSentence": "/ien-ier/audio/sablier_sentence.wav"
+    },
+    {
+      "id": "jardinier",
+      "text": "jardinier",
+      "sentence": "Il plante des fleurs et prend soin du jardin.",
+      "sentenceEn": "He plants flowers and cares for the garden.",
+      "image": "/ien-ier/images/jardinier.png",
+      "audioWord": "/ien-ier/audio/jardinier_word.wav",
+      "audioSentence": "/ien-ier/audio/jardinier_sentence.wav"
+    },
+    {
+      "id": "cerisier",
+      "text": "cerisier",
+      "sentence": "Le cerisier pousse désormais des fruits doux et rouges.",
+      "sentenceEn": "The cherry tree grows sweet, red fruit now.",
+      "image": "/ien-ier/images/cerisier.png",
+      "audioWord": "/ien-ier/audio/cerisier_word.wav",
+      "audioSentence": "/ien-ier/audio/cerisier_sentence.wav"
+    },
+    {
+      "id": "casier",
+      "text": "casier",
+      "sentence": "Les jouets restent bien dans la boîte.",
+      "sentenceEn": "Toys stay neatly inside the box.",
+      "image": "/ien-ier/images/casier.png",
+      "audioWord": "/ien-ier/audio/casier_word.wav",
+      "audioSentence": "/ien-ier/audio/casier_sentence.wav"
+    },
+    {
+      "id": "clavier",
+      "text": "clavier",
+      "sentence": "Le clavier a beaucoup de lettres à taper.",
+      "sentenceEn": "The keyboard has many letters for typing.",
+      "image": "/ien-ier/images/clavier.png",
+      "audioWord": "/ien-ier/audio/clavier_word.wav",
+      "audioSentence": "/ien-ier/audio/clavier_sentence.wav"
+    },
+    {
+      "id": "cahier",
+      "text": "cahier",
+      "sentence": "Elle dessine des photos et écrit dans son carnet.",
+      "sentenceEn": "She draws pictures and writes in her notebook.",
+      "image": "/ien-ier/images/cahier.png",
+      "audioWord": "/ien-ier/audio/cahier_word.wav",
+      "audioSentence": "/ien-ier/audio/cahier_sentence.wav"
+    },
+    {
+      "id": "escaliers",
+      "text": "escaliers",
+      "sentence": "Nous montons les marches pour atteindre le sommet.",
+      "sentenceEn": "We climb the steps to reach the top.",
+      "image": "/ien-ier/images/escaliers.png",
+      "audioWord": "/ien-ier/audio/escaliers_word.wav",
+      "audioSentence": "/ien-ier/audio/escaliers_sentence.wav"
+    },
+    {
+      "id": "atelier",
+      "text": "atelier",
+      "sentence": "Les artistes construisent et créent des choses merveilleuses ici.",
+      "sentenceEn": "Artists build and create wonderful things here.",
+      "image": "/ien-ier/images/atelier.png",
+      "audioWord": "/ien-ier/audio/atelier_word.wav",
+      "audioSentence": "/ien-ier/audio/atelier_sentence.wav"
+    },
+    {
+      "id": "métier",
+      "text": "métier",
+      "sentence": "Le boulanger fait du pain délicieux tous les jours.",
+      "sentenceEn": "The baker makes yummy bread every day.",
+      "image": "/ien-ier/images/métier.png",
+      "audioWord": "/ien-ier/audio/métier_word.wav",
+      "audioSentence": "/ien-ier/audio/métier_sentence.wav"
+    },
+    {
+      "id": "sentier",
+      "text": "sentier",
+      "sentence": "Le chemin tourne doucement à travers les arbres verts.",
+      "sentenceEn": "The path winds gently through the green trees.",
+      "image": "/ien-ier/images/sentier.png",
+      "audioWord": "/ien-ier/audio/sentier_word.wav",
+      "audioSentence": "/ien-ier/audio/sentier_sentence.wav"
+    },
+    {
+      "id": "quartier",
+      "text": "quartier",
+      "sentence": "Les enfants jouent ensemble dans leur quartier.",
+      "sentenceEn": "Kids play games together in their neighborhood.",
+      "image": "/ien-ier/images/quartier.png",
+      "audioWord": "/ien-ier/audio/quartier_word.wav",
+      "audioSentence": "/ien-ier/audio/quartier_sentence.wav"
+    },
+    {
+      "id": "glacier",
+      "text": "glacier",
+      "sentence": "La glace froide et grande s'effondre lentement.",
+      "sentenceEn": "The big, cold ice slowly slides downhill.",
+      "image": "/ien-ier/images/glacier.png",
+      "audioWord": "/ien-ier/audio/glacier_word.wav",
+      "audioSentence": "/ien-ier/audio/glacier_sentence.wav"
+    },
+    {
+      "id": "collier",
+      "text": "collier",
+      "sentence": "Le chien porte un collier éblouissant autour du cou.",
+      "sentenceEn": "The dog wears a sparkly necklace around his neck.",
+      "image": "/ien-ier/images/collier.png",
+      "audioWord": "/ien-ier/audio/collier_word.wav",
+      "audioSentence": "/ien-ier/audio/collier_sentence.wav"
+    },
+    {
+      "id": "fichier",
+      "text": "fichier",
+      "sentence": "Le dossier contient des papiers et des photos à l'intérieur.",
+      "sentenceEn": "The folder holds papers and pictures inside.",
+      "image": "/ien-ier/images/fichier.png",
+      "audioWord": "/ien-ier/audio/fichier_word.wav",
+      "audioSentence": "/ien-ier/audio/fichier_sentence.wav"
+    },
+    {
+      "id": "saladier",
+      "text": "saladier",
+      "sentence": "Le bol contient de la laitue et une salade délicieuse.",
+      "sentenceEn": "The bowl holds lettuce and yummy salad.",
+      "image": "/ien-ier/images/saladier.png",
+      "audioWord": "/ien-ier/audio/saladier_word.wav",
+      "audioSentence": "/ien-ier/audio/saladier_sentence.wav"
+    },
+    {
+      "id": "écolier",
+      "text": "écolier",
+      "sentence": "Le garçon va à l'école tous les jours.",
+      "sentenceEn": "The boy goes to school every day.",
+      "image": "/ien-ier/images/écolier.png",
+      "audioWord": "/ien-ier/audio/écolier_word.wav",
+      "audioSentence": "/ien-ier/audio/écolier_sentence.wav"
+    }
+  ]
+}
