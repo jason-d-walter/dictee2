@@ -12,7 +12,7 @@ the audio with faster-whisper.
 
 Usage:
     python scripts/generate_sentences.py --week 2026-10-19-oi
-    python scripts/generate_sentences.py --week 2026-10-19-oi --length-scale 1.3 --force
+    python scripts/generate_sentences.py --week 2026-10-19-oi --length-scale 1.4 --force
 """
 
 import argparse
@@ -208,7 +208,7 @@ def update_index(week: str, source: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate dictée sentence audio and word timings")
     parser.add_argument("--week", required=True, help="folder name under public/weeks")
-    parser.add_argument("--length-scale", type=float, default=1.15, help="> 1 speaks slower and more deliberately")
+    parser.add_argument("--length-scale", type=float, default=1.27, help="> 1 speaks slower and more deliberately")
     parser.add_argument("--force", action="store_true", help="regenerate audio that already exists")
     args = parser.parse_args()
 
