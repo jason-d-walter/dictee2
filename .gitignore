@@ -29,3 +29,7 @@ npm-debug.log*
 
 # Claude Code
 .claude/
+
+# Python
+__pycache__/
+scripts/venv/

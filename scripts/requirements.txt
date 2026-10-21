@@ -1,4 +1,5 @@
 google-genai
+google-cloud-texttospeech
+faster-whisper
 python-dotenv>=1.0.0
-Pillow>=10.0.0
 PyYAML>=6.0
