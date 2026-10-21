@@ -1,5 +1,4 @@
-google-genai
-google-cloud-texttospeech
-faster-whisper
-python-dotenv>=1.0.0
+piper-tts>=1.4
+faster-whisper>=1.0
+numpy
 PyYAML>=6.0

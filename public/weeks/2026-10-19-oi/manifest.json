@@ -1,0 +1,589 @@
+{
+  "focus": "oi",
+  "generatedAt": "2026-10-21T18:50:46",
+  "sentences": [
+    {
+      "id": "s1",
+      "day": 2,
+      "text": "Aujourd'hui, nous sommes tombés de la cheminée en chassant un oiseau jusque sur le toit.",
+      "tokens": [
+        {
+          "text": "Aujourd'hui",
+          "space": false,
+          "segment": 0,
+          "word": true
+        },
+        {
+          "text": ",",
+          "space": true,
+          "segment": 0
+        },
+        {
+          "text": "nous",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "sommes",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "tombés",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "de",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "la",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "cheminée",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "en",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "chassant",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "un",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "oiseau",
+          "space": true,
+          "segment": 2,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": "jusque",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "sur",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "le",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "toit",
+          "space": false,
+          "segment": 3,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ".",
+          "space": false,
+          "segment": 3
+        }
+      ],
+      "voices": {
+        "siwis": {
+          "audio": "audio/s1_siwis.wav",
+          "duration": 4.679,
+          "words": [
+            [
+              0.0,
+              0.8
+            ],
+            [
+              0.8,
+              1.28
+            ],
+            [
+              1.28,
+              1.54
+            ],
+            [
+              1.54,
+              1.94
+            ],
+            [
+              1.94,
+              2.02
+            ],
+            [
+              2.02,
+              2.14
+            ],
+            [
+              2.14,
+              2.6
+            ],
+            [
+              2.6,
+              2.68
+            ],
+            [
+              2.68,
+              3.1
+            ],
+            [
+              3.1,
+              3.18
+            ],
+            [
+              3.18,
+              3.5
+            ],
+            [
+              3.5,
+              3.84
+            ],
+            [
+              3.84,
+              4.04
+            ],
+            [
+              4.04,
+              4.16
+            ],
+            [
+              4.16,
+              4.46
+            ]
+          ]
+        },
+        "jessica": {
+          "audio": "audio/s1_jessica.wav",
+          "duration": 4.714,
+          "words": [
+            [
+              0.0,
+              0.48
+            ],
+            [
+              0.48,
+              0.94
+            ],
+            [
+              0.94,
+              1.14
+            ],
+            [
+              1.14,
+              1.52
+            ],
+            [
+              1.52,
+              1.64
+            ],
+            [
+              1.64,
+              1.76
+            ],
+            [
+              1.76,
+              2.3
+            ],
+            [
+              2.3,
+              2.6
+            ],
+            [
+              2.6,
+              3.04
+            ],
+            [
+              3.04,
+              3.14
+            ],
+            [
+              3.14,
+              3.46
+            ],
+            [
+              3.46,
+              3.82
+            ],
+            [
+              3.82,
+              4.06
+            ],
+            [
+              4.06,
+              4.2
+            ],
+            [
+              4.2,
+              4.52
+            ]
+          ]
+        },
+        "pierre": {
+          "audio": "audio/s1_pierre.wav",
+          "duration": 4.574,
+          "words": [
+            [
+              0.0,
+              0.62
+            ],
+            [
+              0.62,
+              1.24
+            ],
+            [
+              1.24,
+              1.46
+            ],
+            [
+              1.46,
+              1.86
+            ],
+            [
+              1.86,
+              1.96
+            ],
+            [
+              1.96,
+              2.08
+            ],
+            [
+              2.08,
+              2.56
+            ],
+            [
+              2.56,
+              2.66
+            ],
+            [
+              2.66,
+              3.02
+            ],
+            [
+              3.02,
+              3.1
+            ],
+            [
+              3.1,
+              3.46
+            ],
+            [
+              3.46,
+              3.68
+            ],
+            [
+              3.68,
+              3.88
+            ],
+            [
+              3.88,
+              4.06
+            ],
+            [
+              4.06,
+              4.34
+            ]
+          ]
+        }
+      }
+    },
+    {
+      "id": "s2",
+      "day": 3,
+      "text": "Parfois, ils n'ont pas le droit de se promener car ils ont froid.",
+      "tokens": [
+        {
+          "text": "Parfois",
+          "space": false,
+          "segment": 0,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ",",
+          "space": true,
+          "segment": 0
+        },
+        {
+          "text": "ils",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "n'ont",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "pas",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "le",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "droit",
+          "space": true,
+          "segment": 1,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": "de",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "se",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "promener",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "car",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "ils",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "ont",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "froid",
+          "space": false,
+          "segment": 3,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ".",
+          "space": false,
+          "segment": 3
+        }
+      ],
+      "voices": {
+        "siwis": {
+          "audio": "audio/s2_siwis.wav",
+          "duration": 3.204,
+          "words": [
+            [
+              0.0,
+              0.58
+            ],
+            [
+              0.58,
+              0.92
+            ],
+            [
+              0.92,
+              1.1
+            ],
+            [
+              1.1,
+              1.26
+            ],
+            [
+              1.26,
+              1.38
+            ],
+            [
+              1.38,
+              1.58
+            ],
+            [
+              1.58,
+              1.72
+            ],
+            [
+              1.72,
+              1.86
+            ],
+            [
+              1.86,
+              2.24
+            ],
+            [
+              2.24,
+              2.36
+            ],
+            [
+              2.36,
+              2.52
+            ],
+            [
+              2.52,
+              2.66
+            ],
+            [
+              2.66,
+              2.96
+            ]
+          ]
+        },
+        "jessica": {
+          "audio": "audio/s2_jessica.wav",
+          "duration": 3.518,
+          "words": [
+            [
+              0.0,
+              0.52
+            ],
+            [
+              0.52,
+              0.9
+            ],
+            [
+              0.9,
+              1.06
+            ],
+            [
+              1.06,
+              1.26
+            ],
+            [
+              1.26,
+              1.38
+            ],
+            [
+              1.38,
+              1.62
+            ],
+            [
+              1.62,
+              1.78
+            ],
+            [
+              1.78,
+              1.92
+            ],
+            [
+              1.92,
+              2.28
+            ],
+            [
+              2.28,
+              2.5
+            ],
+            [
+              2.5,
+              2.7
+            ],
+            [
+              2.7,
+              2.88
+            ],
+            [
+              2.88,
+              3.22
+            ]
+          ]
+        },
+        "pierre": {
+          "audio": "audio/s2_pierre.wav",
+          "duration": 3.46,
+          "words": [
+            [
+              0.0,
+              0.52
+            ],
+            [
+              0.52,
+              1.08
+            ],
+            [
+              1.08,
+              1.32
+            ],
+            [
+              1.32,
+              1.46
+            ],
+            [
+              1.46,
+              1.58
+            ],
+            [
+              1.58,
+              1.76
+            ],
+            [
+              1.76,
+              1.88
+            ],
+            [
+              1.88,
+              2.0
+            ],
+            [
+              2.0,
+              2.34
+            ],
+            [
+              2.34,
+              2.5
+            ],
+            [
+              2.5,
+              2.72
+            ],
+            [
+              2.72,
+              2.86
+            ],
+            [
+              2.86,
+              3.12
+            ]
+          ]
+        }
+      }
+    }
+  ]
+}

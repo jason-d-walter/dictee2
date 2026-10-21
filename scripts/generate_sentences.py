@@ -1,48 +1,43 @@
 #!/usr/bin/env python3
 """
-Generate audio and word timings for a week of Grade 3 dictée sentences.
+Generate audio and word timings for a week of Grade 3 dictée sentences, fully offline.
 
 Reads  public/weeks/<week>/dictee.yaml
 Writes public/weeks/<week>/audio/<sentence>_<voice>.wav
        public/weeks/<week>/manifest.json
        public/weeks/index.json
 
-Two voices are supported so they can be compared by ear:
-  gemini  Gemini TTS; word timings recovered with faster-whisper alignment
-  cloud   Cloud Text-to-Speech; word timings from SSML <mark> timepoints
+Audio comes from local Piper voices; word timings for highlighting come from aligning
+the audio with faster-whisper. Several voices can be generated to compare by ear.
 
 Usage:
     python scripts/generate_sentences.py --week 2026-10-19-oi
-    python scripts/generate_sentences.py --week 2026-10-19-oi --voices cloud --force
+    python scripts/generate_sentences.py --week 2026-10-19-oi --voices siwis --length-scale 1.3 --force
 """
 
 import argparse
+import dataclasses
 import difflib
-import io
 import json
-import os
 import re
 import unicodedata
 import wave
 from datetime import datetime
-from html import escape
 from pathlib import Path
 
 import yaml
-from dotenv import load_dotenv
 
 PROJECT_DIR = Path(__file__).resolve().parent.parent
 WEEKS_DIR = PROJECT_DIR / "public" / "weeks"
+PIPER_VOICES_DIR = Path.home() / ".local" / "share" / "piper-voices"
 
-GEMINI_TTS_MODEL = "gemini-2.5-flash-tts"
-GEMINI_VOICE = "Aoede"
-GEMINI_PROMPT = (
-    "Lisez lentement et clairement, en articulant chaque mot et en marquant les pauses "
-    "de la ponctuation, comme une enseignante qui fait une dictée : {text}"
-)
-CLOUD_SPEAKING_RATE = 0.9
+# name -> (piper model, speaker id for multi-speaker models)
+VOICES = {
+    "siwis": ("fr_FR-siwis-medium", None),
+    "jessica": ("fr_FR-upmc-medium", 0),
+    "pierre": ("fr_FR-upmc-medium", 1),
+}
 WHISPER_MODEL = "small"
-SAMPLE_RATE = 24000
 
 TOKEN_RE = re.compile(r"([\w'’-]+|[^\w\s])(\s*)")
 
@@ -81,16 +76,20 @@ def normalize(word: str) -> str:
     return "".join(c for c in stripped if c.isalnum() or c == "'")
 
 
-# ---------- audio helpers ----------
+# ---------- audio ----------
 
-def pcm_to_wav(pcm: bytes) -> bytes:
-    buffer = io.BytesIO()
-    with wave.open(buffer, "wb") as wf:
-        wf.setnchannels(1)
-        wf.setsampwidth(2)
-        wf.setframerate(SAMPLE_RATE)
-        wf.writeframes(pcm)
-    return buffer.getvalue()
+_piper_cache = {}
+
+
+def synthesize(text: str, audio_path: Path, voice_name: str, length_scale: float) -> None:
+    from piper import PiperVoice, SynthesisConfig
+
+    model, speaker_id = VOICES[voice_name]
+    if model not in _piper_cache:
+        _piper_cache[model] = PiperVoice.load(PIPER_VOICES_DIR / model / f"{model}.onnx")
+    config = SynthesisConfig(speaker_id=speaker_id, length_scale=length_scale)
+    with wave.open(str(audio_path), "wb") as wf:
+        _piper_cache[model].synthesize_wav(text, wf, syn_config=config)
 
 
 def wav_duration(path: Path) -> float:
@@ -108,6 +107,8 @@ def load_wav_16k(path: Path):
     target = np.arange(0, len(samples) / rate, 1 / 16000)
     return np.interp(target, np.arange(len(samples)) / rate, samples).astype(np.float32)
 
+
+# ---------- word timings ----------
 
 def fill_missing(timings: list, duration: float) -> list[list[float]]:
     """Give unmatched words a slot between their matched neighbours."""
@@ -129,24 +130,16 @@ def fill_missing(timings: list, duration: float) -> list[list[float]]:
     return [[round(float(s), 3), round(float(e), 3)] for s, e in filled]
 
 
-# ---------- gemini voice ----------
-
-def synthesize_gemini(text: str, locale: str) -> bytes:
-    from google import genai
-
-    client = genai.Client(vertexai=True, project=os.environ["GOOGLE_PROJECT_NAME"], location="us-central1")
-    response = client.models.generate_content(
-        model=GEMINI_TTS_MODEL,
-        contents=GEMINI_PROMPT.format(text=text),
-        config={
-            "response_modalities": ["AUDIO"],
-            "speech_config": {
-                "language_code": locale,
-                "voice_config": {"prebuilt_voice_config": {"voice_name": GEMINI_VOICE}},
-            },
-        },
-    )
-    return pcm_to_wav(response.candidates[0].content.parts[0].inline_data.data)
+def merge_elisions(heard: list) -> list:
+    """Whisper sometimes splits elisions ("n'ont" -> "n", "'ont"); rejoin them to match our tokens."""
+    merged = []
+    for w in heard:
+        if merged and w.word.strip().startswith(("'", "’")):
+            prev = merged[-1]
+            merged[-1] = dataclasses.replace(prev, word=prev.word + w.word.strip(), end=w.end)
+        else:
+            merged.append(w)
+    return merged
 
 
 _whisper = None
@@ -161,7 +154,7 @@ def align_with_whisper(audio_path: Path, words: list[str]) -> list[list[float]]:
     segments, _ = _whisper.transcribe(
         load_wav_16k(audio_path), language="fr", word_timestamps=True, initial_prompt=" ".join(words)
     )
-    heard = [w for seg in segments for w in seg.words]
+    heard = merge_elisions([w for seg in segments for w in seg.words])
     heard_norm = [normalize(w.word) for w in heard]
     expected_norm = [normalize(w) for w in words]
 
@@ -182,63 +175,6 @@ def align_with_whisper(audio_path: Path, words: list[str]) -> list[list[float]]:
     return fill_missing(timings, wav_duration(audio_path))
 
 
-def generate_gemini(tokens: list[dict], audio_path: Path, locale: str) -> list[list[float]]:
-    audio_path.write_bytes(synthesize_gemini(display_text(tokens), locale))
-    return align_with_whisper(audio_path, words_of(tokens))
-
-
-# ---------- cloud voice ----------
-
-def build_ssml(tokens: list[dict]) -> str:
-    parts = []
-    word_index = 0
-    for token in tokens:
-        if token.get("word"):
-            parts.append(f'<mark name="{word_index}"/>')
-            word_index += 1
-        parts.append(escape(token["text"], quote=False) + (" " if token["space"] else ""))
-    return f"<speak>{''.join(parts)}</speak>"
-
-
-def generate_cloud(tokens: list[dict], audio_path: Path, locale: str, voice: str) -> list[list[float]]:
-    from google.cloud import texttospeech_v1beta1 as tts
-
-    client = tts.TextToSpeechClient(client_options={"quota_project_id": os.environ["GOOGLE_PROJECT_NAME"]})
-    response = client.synthesize_speech(
-        request=tts.SynthesizeSpeechRequest(
-            input=tts.SynthesisInput(ssml=build_ssml(tokens)),
-            voice=tts.VoiceSelectionParams(language_code=locale, name=voice),
-            audio_config=tts.AudioConfig(
-                audio_encoding=tts.AudioEncoding.LINEAR16,
-                sample_rate_hertz=SAMPLE_RATE,
-                speaking_rate=CLOUD_SPEAKING_RATE,
-            ),
-            enable_time_pointing=[tts.SynthesizeSpeechRequest.TimepointType.SSML_MARK],
-        )
-    )
-    audio_path.write_bytes(response.audio_content)
-    if not response.timepoints:
-        raise RuntimeError(f"voice {voice} returned no timepoints; it may not support SSML marks")
-
-    starts = {int(tp.mark_name): tp.time_seconds for tp in response.timepoints}
-    word_count = len(words_of(tokens))
-    duration = wav_duration(audio_path)
-    timings = [None] * word_count
-    for i in range(word_count):
-        if i in starts:
-            end = starts.get(i + 1, duration)
-            timings[i] = [starts[i], end]
-    return fill_missing(timings, duration)
-
-
-def list_cloud_voices(locale: str) -> None:
-    from google.cloud import texttospeech_v1beta1 as tts
-
-    client = tts.TextToSpeechClient(client_options={"quota_project_id": os.environ["GOOGLE_PROJECT_NAME"]})
-    for v in client.list_voices(language_code=locale).voices:
-        print(f"{v.name:32} {tts.SsmlVoiceGender(v.ssml_gender).name}")
-
-
 # ---------- manifest ----------
 
 def load_json(path: Path) -> dict:
@@ -253,8 +189,7 @@ def build_sentence(index: int, source: dict, focus: str, previous: dict, args, w
     sentence_id = f"s{index + 1}"
     parsed = parse_sentence(source["text"], focus)
     old = previous.get(sentence_id, {})
-    unchanged = old.get("tokens") == parsed["tokens"]
-    voices = dict(old.get("voices", {})) if unchanged else {}
+    voices = dict(old.get("voices", {})) if old.get("tokens") == parsed["tokens"] else {}
 
     print(f"  {sentence_id}: {parsed['text']}")
     for voice in args.voices:
@@ -262,14 +197,8 @@ def build_sentence(index: int, source: dict, focus: str, previous: dict, args, w
         if voice in voices and audio_path.exists() and not args.force:
             print(f"    {voice}: up to date")
             continue
-        try:
-            if voice == "gemini":
-                words = generate_gemini(parsed["tokens"], audio_path, args.locale)
-            else:
-                words = generate_cloud(parsed["tokens"], audio_path, args.locale, args.cloud_voice)
-        except Exception as e:
-            print(f"    {voice}: FAILED — {e}")
-            continue
+        synthesize(parsed["text"], audio_path, voice, args.length_scale)
+        words = align_with_whisper(audio_path, words_of(parsed["tokens"]))
         voices[voice] = {"audio": f"audio/{audio_path.name}", "duration": round(wav_duration(audio_path), 3), "words": words}
         print(f"    {voice}: {voices[voice]['duration']}s")
 
@@ -285,23 +214,12 @@ def update_index(week: str, source: dict) -> None:
 
 
 def main() -> None:
-    load_dotenv(PROJECT_DIR / ".env")
     parser = argparse.ArgumentParser(description="Generate dictée sentence audio and word timings")
-    parser.add_argument("--week", help="folder name under public/weeks")
-    parser.add_argument("--voices", nargs="+", choices=["gemini", "cloud"], default=["gemini", "cloud"])
-    parser.add_argument("--locale", default="fr-FR", help="e.g. fr-FR or fr-CA")
-    parser.add_argument("--cloud-voice", default="fr-FR-Neural2-F")
+    parser.add_argument("--week", required=True, help="folder name under public/weeks")
+    parser.add_argument("--voices", nargs="+", choices=list(VOICES), default=list(VOICES))
+    parser.add_argument("--length-scale", type=float, default=1.15, help="> 1 speaks slower and more deliberately")
     parser.add_argument("--force", action="store_true", help="regenerate audio that already exists")
-    parser.add_argument("--list-cloud-voices", action="store_true")
     args = parser.parse_args()
-
-    if "GOOGLE_PROJECT_NAME" not in os.environ:
-        parser.error("GOOGLE_PROJECT_NAME must be set (in .env or the environment)")
-    if args.list_cloud_voices:
-        list_cloud_voices(args.locale)
-        return
-    if not args.week:
-        parser.error("--week is required")
 
     week_dir = WEEKS_DIR / args.week
     source = yaml.safe_load((week_dir / "dictee.yaml").read_text(encoding="utf-8"))
