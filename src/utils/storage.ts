@@ -1,23 +1,18 @@
-import { WordProgress } from '../types';
+// Storage can be unavailable (private browsing), so every access degrades to defaults.
 
-const STORAGE_KEYS = {
-  PROGRESS: 'dictee_progress',
-} as const;
-
-export function saveProgress(progress: Record<string, WordProgress>): void {
-  localStorage.setItem(STORAGE_KEYS.PROGRESS, JSON.stringify(progress));
-}
-
-export function loadProgress(): Record<string, WordProgress> {
+export function loadJson<T>(key: string, fallback: T): T {
   try {
-    const data = localStorage.getItem(STORAGE_KEYS.PROGRESS);
-    if (!data) return {};
-    return JSON.parse(data);
+    const data = localStorage.getItem(key);
+    return data ? (JSON.parse(data) as T) : fallback;
   } catch {
-    return {};
+    return fallback;
   }
 }
 
-export function clearProgress(): void {
-  localStorage.removeItem(STORAGE_KEYS.PROGRESS);
+export function saveJson(key: string, value: unknown): void {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Progress just won't persist this session.
+  }
 }

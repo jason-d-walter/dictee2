@@ -1,0 +1,333 @@
+{
+  "focus": "oi",
+  "generatedAt": "2026-10-21T19:11:47",
+  "sentences": [
+    {
+      "id": "s1",
+      "day": 2,
+      "text": "Aujourd'hui, nous sommes tombés de la cheminée en chassant un oiseau jusque sur le toit.",
+      "tokens": [
+        {
+          "text": "Aujourd'hui",
+          "space": false,
+          "segment": 0,
+          "word": true
+        },
+        {
+          "text": ",",
+          "space": true,
+          "segment": 0
+        },
+        {
+          "text": "nous",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "sommes",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "tombés",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "de",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "la",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "cheminée",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "en",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "chassant",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "un",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "oiseau",
+          "space": true,
+          "segment": 2,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": "jusque",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "sur",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "le",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "toit",
+          "space": false,
+          "segment": 3,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ".",
+          "space": false,
+          "segment": 3
+        }
+      ],
+      "audio": "audio/s1.wav",
+      "duration": 5.062,
+      "words": [
+        [
+          0.0,
+          0.72
+        ],
+        [
+          0.72,
+          1.28
+        ],
+        [
+          1.28,
+          1.6
+        ],
+        [
+          1.6,
+          2.04
+        ],
+        [
+          2.04,
+          2.12
+        ],
+        [
+          2.12,
+          2.24
+        ],
+        [
+          2.24,
+          2.74
+        ],
+        [
+          2.74,
+          2.82
+        ],
+        [
+          2.82,
+          3.28
+        ],
+        [
+          3.28,
+          3.38
+        ],
+        [
+          3.38,
+          3.72
+        ],
+        [
+          3.72,
+          4.18
+        ],
+        [
+          4.18,
+          4.4
+        ],
+        [
+          4.4,
+          4.52
+        ],
+        [
+          4.52,
+          4.88
+        ]
+      ]
+    },
+    {
+      "id": "s2",
+      "day": 3,
+      "text": "Parfois, ils n'ont pas le droit de se promener car ils ont froid.",
+      "tokens": [
+        {
+          "text": "Parfois",
+          "space": false,
+          "segment": 0,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ",",
+          "space": true,
+          "segment": 0
+        },
+        {
+          "text": "ils",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "n'ont",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "pas",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "le",
+          "space": true,
+          "segment": 1,
+          "word": true
+        },
+        {
+          "text": "droit",
+          "space": true,
+          "segment": 1,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": "de",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "se",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "promener",
+          "space": true,
+          "segment": 2,
+          "word": true
+        },
+        {
+          "text": "car",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "ils",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "ont",
+          "space": true,
+          "segment": 3,
+          "word": true
+        },
+        {
+          "text": "froid",
+          "space": false,
+          "segment": 3,
+          "word": true,
+          "focus": true
+        },
+        {
+          "text": ".",
+          "space": false,
+          "segment": 3
+        }
+      ],
+      "audio": "audio/s2.wav",
+      "duration": 3.634,
+      "words": [
+        [
+          0.7,
+          1.0
+        ],
+        [
+          1.0,
+          1.3
+        ],
+        [
+          1.3,
+          1.46
+        ],
+        [
+          1.46,
+          1.64
+        ],
+        [
+          1.64,
+          1.76
+        ],
+        [
+          1.76,
+          1.94
+        ],
+        [
+          1.94,
+          2.08
+        ],
+        [
+          2.08,
+          2.22
+        ],
+        [
+          2.22,
+          2.58
+        ],
+        [
+          2.58,
+          2.72
+        ],
+        [
+          2.72,
+          2.88
+        ],
+        [
+          2.88,
+          3.02
+        ],
+        [
+          3.02,
+          3.34
+        ]
+      ]
+    }
+  ]
+}

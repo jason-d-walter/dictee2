@@ -1,168 +1,94 @@
-import { useState, useEffect } from 'react';
-import { GameMode, GameSession, SupportedLanguage } from './types';
-import { useWordList } from './hooks/useWordList';
-import { useProgress } from './hooks/useProgress';
-import { useMetadata } from './hooks/useMetadata';
-import { LanguageProvider } from './i18n/LanguageContext';
-import ModeSelector from './components/layout/ModeSelector';
-import GameSummary from './components/layout/GameSummary';
-import AudioMatch from './components/modes/AudioMatch';
-import LettresPerdues from './components/modes/LettresPerdues';
-import DicteeFantome from './components/modes/DicteeFantome';
-import Exploration from './components/modes/Exploration';
-import WordListView from './components/admin/WordListView';
+import { useState } from 'react';
+import { BlankStep, Level, SentenceResult } from './types';
+import { useWeeks } from './hooks/useWeeks';
+import { progressKey, useProgress } from './hooks/useProgress';
+import { useSpeed } from './hooks/useSpeed';
+import Home from './components/layout/Home';
+import LevelScreen from './components/layout/LevelScreen';
+import Summary from './components/layout/Summary';
+import Explorer from './components/levels/Explorer';
+import MotsManquants from './components/levels/MotsManquants';
+import Dictee from './components/levels/Dictee';
 
-const SESSION_SIZE = 10;
+interface Session {
+  level: Level;
+  step: BlankStep;
+  index: number;
+  results: SentenceResult[];
+}
+
+const LEVEL_SCREENS: Record<Level, { title: string; gradient: string }> = {
+  explorer: { title: "🔍 J'explore", gradient: 'from-amber-400 via-orange-400 to-pink-500' },
+  'mots-manquants': { title: '🧩 Les mots manquants', gradient: 'from-teal-400 via-emerald-500 to-cyan-600' },
+  dictee: { title: '✏️ La dictée', gradient: 'from-indigo-500 via-purple-500 to-violet-600' },
+};
 
 function App() {
-  const [showWordList, setShowWordList] = useState(false);
-  const [session, setSession] = useState<GameSession | null>(null);
-  const [selectedLanguage, setSelectedLanguage] = useState<SupportedLanguage>('fr');
-  const { weeks, selectedWeek, selectWeek, loading: metadataLoading } = useMetadata();
-  const weekPath = selectedWeek ? (selectedWeek.path ?? selectedWeek.sounds) : undefined;
-  const { words, loading: wordsLoading, error, refetch } = useWordList(weekPath);
-  const { progress, recordAttempt, getWordsForPractice } = useProgress();
+  const { weeks, selectedWeek, selectWeek, manifest, loading, error } = useWeeks();
+  const { getProgress, markExplored, recordBlanks, recordDictee } = useProgress();
+  const { rate, setRate } = useSpeed();
+  const [session, setSession] = useState<Session | null>(null);
 
-  const filteredWeeks = weeks.filter(w => (w.language ?? 'fr') === selectedLanguage);
+  const weekPath = selectedWeek?.path ?? '';
+  const sentences = manifest?.sentences ?? [];
 
-  const handleSelectLanguage = (lang: SupportedLanguage) => {
-    setSelectedLanguage(lang);
-    const firstWeek = weeks.find(w => (w.language ?? 'fr') === lang);
-    if (firstWeek) {
-      selectWeek(firstWeek);
-    }
-  };
+  const startLevel = (level: Level, step: BlankStep) => setSession({ level, step, index: 0, results: [] });
 
-  const language: SupportedLanguage = selectedWeek?.language ?? 'fr';
-
-  useEffect(() => {
-    document.documentElement.lang = language;
-  }, [language]);
-
-  const loading = metadataLoading || wordsLoading;
-
-  const startGame = (mode: GameMode) => {
-    const practiceWords = getWordsForPractice(words, SESSION_SIZE);
-    if (practiceWords.length === 0) return;
-
-    setSession({
-      mode,
-      words: practiceWords,
-      currentIndex: 0,
-      stars: 0,
-      completed: false,
-      results: [],
-    });
-  };
-
-  const handleWordComplete = (correct: boolean) => {
-    if (!session) return;
-
-    const currentWord = session.words[session.currentIndex];
-
-    // Don't record progress for exploration mode
-    if (session.mode !== 'exploration') {
-      recordAttempt(currentWord.id, correct);
-    }
-
-    const newResults = [...session.results, { wordId: currentWord.id, correct, attempts: 1 }];
-    const newStars = correct ? session.stars + 1 : session.stars;
-    const nextIndex = session.currentIndex + 1;
-    const completed = nextIndex >= session.words.length;
-
-    setSession({
-      ...session,
-      currentIndex: nextIndex,
-      stars: newStars,
-      completed,
-      results: newResults,
-    });
-  };
-
-  const handlePlayAgain = () => {
-    setSession(null);
-  };
-
-  const handleBackToMenu = () => {
-    setSession(null);
-  };
-
-  // Determine content to render
-  let content: React.ReactNode;
-
-  if (showWordList) {
-    content = (
-      <WordListView
-        words={words}
-        progress={progress}
-        loading={loading}
-        error={error}
-        onRefetch={refetch}
-        onClose={() => setShowWordList(false)}
-      />
-    );
-  } else if (session?.completed) {
-    content = (
-      <GameSummary
-        stars={session.stars}
-        totalWords={session.words.length}
-        results={session.results}
-        words={session.words}
-        onPlayAgain={handlePlayAgain}
-        onBackToMenu={handleBackToMenu}
-      />
-    );
-  } else if (session && !session.completed) {
-    const currentWord = session.words[session.currentIndex];
-    const allWords = session.words;
-
-    const gameProps = {
-      word: currentWord,
-      allWords,
-      stars: session.stars,
-      currentIndex: session.currentIndex,
-      totalWords: session.words.length,
-      onComplete: handleWordComplete,
-      onBack: handleBackToMenu,
-    };
-
-    switch (session.mode) {
-      case 'audio-match':
-        content = <AudioMatch {...gameProps} />;
-        break;
-      case 'lettres-perdues':
-        content = <LettresPerdues {...gameProps} />;
-        break;
-      case 'dictee-fantome':
-        content = <DicteeFantome {...gameProps} />;
-        break;
-      case 'exploration':
-        content = <Exploration {...gameProps} />;
-        break;
-    }
-  } else {
-    content = (
-      <ModeSelector
-        onSelectMode={startGame}
-        onOpenWordList={() => setShowWordList(true)}
-        hasWords={words.length > 0}
-        loading={loading}
-        error={error}
-        progress={progress}
-        words={words}
-        weeks={filteredWeeks}
+  if (!session || !manifest) {
+    return (
+      <Home
+        weeks={weeks}
         selectedWeek={selectedWeek}
         onSelectWeek={selectWeek}
-        selectedLanguage={selectedLanguage}
-        onSelectLanguage={handleSelectLanguage}
+        manifest={manifest}
+        loading={loading}
+        error={error}
+        progressOf={id => getProgress(progressKey(weekPath, id))}
+        onStart={startLevel}
       />
     );
   }
 
+  if (session.index >= sentences.length) {
+    return (
+      <Summary
+        results={session.results}
+        sentences={sentences}
+        onPlayAgain={() => startLevel(session.level, session.step)}
+        onBackToMenu={() => setSession(null)}
+      />
+    );
+  }
+
+  const sentence = sentences[session.index];
+
+  const handleDone = (score: number) => {
+    const key = progressKey(weekPath, sentence.id);
+    if (session.level === 'explorer') markExplored(key);
+    if (session.level === 'mots-manquants' && score === 1) recordBlanks(key, session.step);
+    if (session.level === 'dictee') recordDictee(key, score);
+    setSession({ ...session, index: session.index + 1, results: [...session.results, { sentenceId: sentence.id, score }] });
+  };
+
+  const levelProps = { sentence, focus: manifest.focus, rate, onDone: handleDone };
+  const screen = LEVEL_SCREENS[session.level];
+
   return (
-    <LanguageProvider language={language}>
-      {content}
-    </LanguageProvider>
+    <LevelScreen
+      title={screen.title}
+      gradient={screen.gradient}
+      sentenceNumber={session.index + 1}
+      sentenceCount={sentences.length}
+      day={sentence.day}
+      stars={session.results.filter(r => r.score === 1).length}
+      rate={rate}
+      onRateChange={setRate}
+      onBack={() => setSession(null)}
+    >
+      {session.level === 'explorer' && <Explorer key={sentence.id} {...levelProps} />}
+      {session.level === 'mots-manquants' && <MotsManquants key={sentence.id} {...levelProps} step={session.step} />}
+      {session.level === 'dictee' && <Dictee key={sentence.id} {...levelProps} />}
+    </LevelScreen>
   );
 }
 

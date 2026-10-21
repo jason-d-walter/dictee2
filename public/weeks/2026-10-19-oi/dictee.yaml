@@ -1,0 +1,10 @@
+# Source for this week's dictée. "/" marks the pauses a teacher makes while dictating;
+# it is stripped from the displayed sentence.
+focus: oi
+week_start: '2026-10-19'
+week_end: '2026-10-23'
+sentences:
+  - day: 2
+    text: "Aujourd'hui, / nous sommes tombés de la cheminée / en chassant un oiseau / jusque sur le toit."
+  - day: 3
+    text: "Parfois, / ils n'ont pas le droit / de se promener / car ils ont froid."
