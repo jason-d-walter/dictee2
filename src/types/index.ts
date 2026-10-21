@@ -1,55 +1,44 @@
-export interface Word {
-  id: string;
+export interface Token {
   text: string;
-  sentence?: string;
-  audioWord?: string;    // Path to word audio file
-  audioSentence?: string; // Path to sentence audio file
-  image?: string;         // Path to image file
+  space: boolean;     // whitespace follows this token
+  segment: number;    // dictation group the token belongs to
+  word?: boolean;     // false/absent for punctuation
+  focus?: boolean;    // contains the week's sound
 }
 
-export interface WordProgress {
-  wordId: string;
-  correctStreak: number;
-  totalAttempts: number;
-  totalCorrect: number;
-  lastPracticed: number;
-  mastered: boolean;
+export interface Sentence {
+  id: string;
+  day?: number;
+  text: string;
+  tokens: Token[];
+  audio: string;              // absolute URL once loaded
+  duration: number;
+  words: [number, number][];  // [start, end] seconds for each word token, in order
 }
 
-export interface GameSession {
-  mode: GameMode;
-  words: Word[];
-  currentIndex: number;
-  stars: number;
-  completed: boolean;
-  results: WordResult[];
-}
-
-export interface WordResult {
-  wordId: string;
-  correct: boolean;
-  attempts: number;
-}
-
-export type GameMode = 'audio-match' | 'lettres-perdues' | 'dictee-fantome' | 'exploration';
-
-export type SupportedLanguage = 'fr' | 'en';
-
-export interface WordManifest {
-  generatedAt: string;
-  words: Word[];
+export interface WeekManifest {
+  focus: string;
+  sentences: Sentence[];
 }
 
 export interface WeekEntry {
-  sounds: string;
-  path?: string;
+  path: string;
+  focus: string;
   week_start: string;
   week_end: string;
-  date_of_generation: string;
-  source: string;
-  language?: SupportedLanguage;
 }
 
-export interface DicteeMetadata {
-  dictee: WeekEntry[];
+export type Level = 'explorer' | 'mots-manquants' | 'dictee';
+
+export type BlankStep = 1 | 2 | 3;
+
+export interface SentenceProgress {
+  explored: boolean;
+  blanksStep: number;   // highest Mots manquants step passed (0 = none)
+  dicteeBest: number;   // best Dictée score, 0..1
+}
+
+export interface SentenceResult {
+  sentenceId: string;
+  score: number;        // 0..1
 }

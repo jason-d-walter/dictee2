@@ -3,16 +3,16 @@
 Generate audio and word timings for a week of Grade 3 dictée sentences, fully offline.
 
 Reads  public/weeks/<week>/dictee.yaml
-Writes public/weeks/<week>/audio/<sentence>_<voice>.wav
+Writes public/weeks/<week>/audio/<sentence>.wav
        public/weeks/<week>/manifest.json
        public/weeks/index.json
 
-Audio comes from local Piper voices; word timings for highlighting come from aligning
-the audio with faster-whisper. Several voices can be generated to compare by ear.
+Audio comes from a local Piper voice; word timings for highlighting come from aligning
+the audio with faster-whisper.
 
 Usage:
     python scripts/generate_sentences.py --week 2026-10-19-oi
-    python scripts/generate_sentences.py --week 2026-10-19-oi --voices siwis --length-scale 1.3 --force
+    python scripts/generate_sentences.py --week 2026-10-19-oi --length-scale 1.3 --force
 """
 
 import argparse
@@ -31,12 +31,7 @@ PROJECT_DIR = Path(__file__).resolve().parent.parent
 WEEKS_DIR = PROJECT_DIR / "public" / "weeks"
 PIPER_VOICES_DIR = Path.home() / ".local" / "share" / "piper-voices"
 
-# name -> (piper model, speaker id for multi-speaker models)
-VOICES = {
-    "siwis": ("fr_FR-siwis-medium", None),
-    "jessica": ("fr_FR-upmc-medium", 0),
-    "pierre": ("fr_FR-upmc-medium", 1),
-}
+PIPER_VOICE = "fr_FR-siwis-medium"
 WHISPER_MODEL = "small"
 
 TOKEN_RE = re.compile(r"([\w'’-]+|[^\w\s])(\s*)")
@@ -78,18 +73,17 @@ def normalize(word: str) -> str:
 
 # ---------- audio ----------
 
-_piper_cache = {}
+_piper = None
 
 
-def synthesize(text: str, audio_path: Path, voice_name: str, length_scale: float) -> None:
+def synthesize(text: str, audio_path: Path, length_scale: float) -> None:
+    global _piper
     from piper import PiperVoice, SynthesisConfig
 
-    model, speaker_id = VOICES[voice_name]
-    if model not in _piper_cache:
-        _piper_cache[model] = PiperVoice.load(PIPER_VOICES_DIR / model / f"{model}.onnx")
-    config = SynthesisConfig(speaker_id=speaker_id, length_scale=length_scale)
+    if _piper is None:
+        _piper = PiperVoice.load(PIPER_VOICES_DIR / PIPER_VOICE / f"{PIPER_VOICE}.onnx")
     with wave.open(str(audio_path), "wb") as wf:
-        _piper_cache[model].synthesize_wav(text, wf, syn_config=config)
+        _piper.synthesize_wav(text, wf, syn_config=SynthesisConfig(length_scale=length_scale))
 
 
 def wav_duration(path: Path) -> float:
@@ -189,20 +183,18 @@ def build_sentence(index: int, source: dict, focus: str, previous: dict, args, w
     sentence_id = f"s{index + 1}"
     parsed = parse_sentence(source["text"], focus)
     old = previous.get(sentence_id, {})
-    voices = dict(old.get("voices", {})) if old.get("tokens") == parsed["tokens"] else {}
+    audio_path = week_dir / "audio" / f"{sentence_id}.wav"
 
     print(f"  {sentence_id}: {parsed['text']}")
-    for voice in args.voices:
-        audio_path = week_dir / "audio" / f"{sentence_id}_{voice}.wav"
-        if voice in voices and audio_path.exists() and not args.force:
-            print(f"    {voice}: up to date")
-            continue
-        synthesize(parsed["text"], audio_path, voice, args.length_scale)
-        words = align_with_whisper(audio_path, words_of(parsed["tokens"]))
-        voices[voice] = {"audio": f"audio/{audio_path.name}", "duration": round(wav_duration(audio_path), 3), "words": words}
-        print(f"    {voice}: {voices[voice]['duration']}s")
+    if old.get("tokens") == parsed["tokens"] and audio_path.exists() and not args.force:
+        print("    up to date")
+        return old
 
-    return {"id": sentence_id, "day": source.get("day"), **parsed, "voices": voices}
+    synthesize(parsed["text"], audio_path, args.length_scale)
+    duration = round(wav_duration(audio_path), 3)
+    words = align_with_whisper(audio_path, words_of(parsed["tokens"]))
+    print(f"    {duration}s")
+    return {"id": sentence_id, "day": source.get("day"), **parsed, "audio": f"audio/{audio_path.name}", "duration": duration, "words": words}
 
 
 def update_index(week: str, source: dict) -> None:
@@ -216,7 +208,6 @@ def update_index(week: str, source: dict) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser(description="Generate dictée sentence audio and word timings")
     parser.add_argument("--week", required=True, help="folder name under public/weeks")
-    parser.add_argument("--voices", nargs="+", choices=list(VOICES), default=list(VOICES))
     parser.add_argument("--length-scale", type=float, default=1.15, help="> 1 speaks slower and more deliberately")
     parser.add_argument("--force", action="store_true", help="regenerate audio that already exists")
     args = parser.parse_args()

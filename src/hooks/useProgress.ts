@@ -1,97 +1,40 @@
-import { useState, useEffect, useCallback } from 'react';
-import { Word, WordProgress } from '../types';
-import { loadProgress, saveProgress } from '../utils/storage';
+import { useCallback, useState } from 'react';
+import { SentenceProgress } from '../types';
+import { loadJson, saveJson } from '../utils/storage';
 
+const STORAGE_KEY = 'dictee3_progress';
+const EMPTY: SentenceProgress = { explored: false, blanksStep: 0, dicteeBest: 0 };
 
-const MASTERY_THRESHOLD = 3; // Correct streak needed for mastery
+type ProgressMap = Record<string, SentenceProgress>;
 
-interface UseProgressReturn {
-  progress: Record<string, WordProgress>;
-  recordAttempt: (wordId: string, correct: boolean) => void;
-  getWordsForPractice: (words: Word[], limit: number) => Word[];
-  resetProgress: () => void;
-  getMasteryCount: (words: Word[]) => number;
+export function progressKey(weekPath: string, sentenceId: string): string {
+  return `${weekPath}/${sentenceId}`;
 }
 
-export function useProgress(): UseProgressReturn {
-  const [progress, setProgress] = useState<Record<string, WordProgress>>({});
+export function useProgress() {
+  const [progress, setProgress] = useState<ProgressMap>(() => loadJson<ProgressMap>(STORAGE_KEY, {}));
 
-  useEffect(() => {
-    const loaded = loadProgress();
-    setProgress(loaded);
-  }, []);
-
-  const recordAttempt = useCallback((wordId: string, correct: boolean) => {
+  const update = useCallback((key: string, change: (current: SentenceProgress) => SentenceProgress) => {
     setProgress(prev => {
-      const existing = prev[wordId] || {
-        wordId,
-        correctStreak: 0,
-        totalAttempts: 0,
-        totalCorrect: 0,
-        lastPracticed: 0,
-        mastered: false,
-      };
-
-      const newStreak = correct ? existing.correctStreak + 1 : 0;
-      const updated: WordProgress = {
-        ...existing,
-        correctStreak: newStreak,
-        totalAttempts: existing.totalAttempts + 1,
-        totalCorrect: existing.totalCorrect + (correct ? 1 : 0),
-        lastPracticed: Date.now(),
-        mastered: newStreak >= MASTERY_THRESHOLD,
-      };
-
-      const newProgress = { ...prev, [wordId]: updated };
-      saveProgress(newProgress);
-      return newProgress;
+      const next = { ...prev, [key]: change(prev[key] ?? EMPTY) };
+      saveJson(STORAGE_KEY, next);
+      return next;
     });
   }, []);
 
-  const getWordsForPractice = useCallback(
-    (words: Word[], limit: number): Word[] => {
-      if (words.length === 0) return [];
+  const getProgress = useCallback((key: string) => progress[key] ?? EMPTY, [progress]);
 
-      const wordWeight = (word: Word): number => {
-        const p = progress[word.id];
-        if (!p) return 10;           // unpracticed
-        if (!p.mastered) return 6;   // practiced but not mastered
-        return 1;                    // mastered
-      };
+  const markExplored = useCallback((key: string) => update(key, p => ({ ...p, explored: true })), [update]);
 
-      // Weighted random sampling without replacement
-      const pool = words.map(w => ({ word: w, weight: wordWeight(w) }));
-      const selected: Word[] = [];
-      const count = Math.min(limit, words.length);
-
-      for (let i = 0; i < count; i++) {
-        const totalWeight = pool.reduce((sum, item) => sum + item.weight, 0);
-        let r = Math.random() * totalWeight;
-        const idx = pool.findIndex(item => {
-          r -= item.weight;
-          return r <= 0;
-        });
-        const pick = idx === -1 ? pool.length - 1 : idx;
-        selected.push(pool[pick].word);
-        pool.splice(pick, 1);
-      }
-
-      return selected;
-    },
-    [progress]
+  const recordBlanks = useCallback(
+    (key: string, step: number) => update(key, p => ({ ...p, blanksStep: Math.max(p.blanksStep, step) })),
+    [update],
   );
 
-  const resetProgress = useCallback(() => {
-    setProgress({});
-    saveProgress({});
-  }, []);
-
-  const getMasteryCount = useCallback(
-    (words: Word[]): number => {
-      return words.filter(w => progress[w.id]?.mastered).length;
-    },
-    [progress]
+  const recordDictee = useCallback(
+    (key: string, score: number) => update(key, p => ({ ...p, dicteeBest: Math.max(p.dicteeBest, score) })),
+    [update],
   );
 
-  return { progress, recordAttempt, getWordsForPractice, resetProgress, getMasteryCount };
+  return { getProgress, markExplored, recordBlanks, recordDictee };
 }

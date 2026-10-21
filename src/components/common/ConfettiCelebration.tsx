@@ -12,6 +12,7 @@ export default function ConfettiCelebration({ trigger }: ConfettiCelebrationProp
     const duration = 3000;
     const end = Date.now() + duration;
 
+    let cancelled = false;
     const colors = ['#FFD93D', '#FF6B6B', '#4ECDC4', '#A78BFA', '#6EE7B7', '#F472B6'];
 
     const frame = () => {
@@ -31,7 +32,7 @@ export default function ConfettiCelebration({ trigger }: ConfettiCelebrationProp
         colors,
       });
 
-      if (Date.now() < end) {
+      if (!cancelled && Date.now() < end) {
         requestAnimationFrame(frame);
       }
     };
@@ -45,6 +46,10 @@ export default function ConfettiCelebration({ trigger }: ConfettiCelebrationProp
     });
 
     frame();
+    return () => {
+      cancelled = true;
+      confetti.reset();
+    };
   }, [trigger]);
 
   return null;

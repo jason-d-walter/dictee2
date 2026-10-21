@@ -1,150 +1,62 @@
-# Dictée
+# Ma dictée
 
-A French spelling practice app for Grade 2 students. Built with React + TypeScript + Vite.
+A French dictée practice app for Grade 3: understanding and writing whole sentences, built
+around the week's sound (e.g. « oi »). React + TypeScript + Vite + Tailwind, deployed on Vercel.
 
-## Quick Start
+The Grade 2 word-based version is archived at the `grade2-words-archive` tag.
 
-### Run the App
+## Levels
+
+1. **J'explore** — listen with word-by-word highlighting, tap a word to hear it, show the
+   week's sound and the word groups, then rebuild the sentence from shuffled groups.
+2. **Les mots manquants** — put missing words back from a word bank that includes
+   sound-alike traps (toi / toit). Step 1 hides the focus-sound words, step 2 a few more,
+   step 3 half the sentence.
+3. **La dictée** — hear the whole sentence or one group at a time and type it. Marking is
+   word by word: missing accents or capitals count as « presque ».
+
+Playback speed (🐢 0.6× to 🐇 1×) applies everywhere and is remembered on the device.
+
+## Run the app
 
 ```bash
-# Install dependencies
 npm install
-
-# Start development server
-npm run dev
-```
-
-The app will be available at **http://localhost:5173**
-
-### Build for Production
-
-```bash
+npm run dev     # http://localhost:5173
+npm test        # unit tests for marking and blanks
 npm run build
-npm run preview  # Preview the production build
 ```
 
-## Project Structure
+## Adding a week
 
-Each week's assets live in a subdirectory under `public/` named by sound theme:
-
-```
-public/
-├── metadata.yaml              # Registry of all weeks
-├── ez/                        # Sound theme "ez"
-│   ├── manifest.json          # Word metadata (sentences, file paths)
-│   ├── words_of_week.txt      # Source word list
-│   ├── audio/                 # Word and sentence audio files
-│   └── images/                # Word illustrations
-├── er-oi/                     # Sound theme "er-oi"
-│   ├── manifest.json
-│   ├── words_of_week.txt
-│   ├── audio/
-│   └── images/
-```
-
-The `metadata.yaml` file registers all available weeks:
+Each week lives in `public/weeks/<week>/`. Write the teacher's sentences in `dictee.yaml`;
+`/` marks where the teacher pauses when dictating (it isn't shown in the app):
 
 ```yaml
-dictee:
-  - sounds: ez
-    path: ez
-    week_start: '2026-02-09'
-    week_end: '2026-02-12'
-    date_of_generation: '2026-02-08'
-    source: words_of_week.txt
-  - sounds: er-oi
-    path: er-oi
-    week_start: '2026-02-02'
-    week_end: '2026-02-07'
-    date_of_generation: '2026-02-01'
-    source: words_of_week.txt
+focus: oi
+week_start: '2026-10-19'
+week_end: '2026-10-23'
+sentences:
+  - day: 2
+    text: "Parfois, / ils n'ont pas le droit / de se promener / car ils ont froid."
 ```
 
-The app auto-selects the most recent week and provides a dropdown to switch between weeks.
-
-## Asset Generation
-
-The app uses pre-generated audio and images. To generate assets for a new week:
-
-### 1. Create the Word List
-
-Create `public/<sound>/words_of_week.txt` with one word per line:
+Then generate audio and word timings, all offline:
 
 ```bash
-mkdir -p public/ou/audio public/ou/images
-cat > public/ou/words_of_week.txt << 'EOF'
-cou
-fou
-loup
-EOF
+python -m venv scripts/venv
+scripts/venv/bin/pip install -r scripts/requirements.txt
+scripts/venv/bin/python scripts/generate_sentences.py --week 2026-10-19-oi
 ```
 
-### 2. Set Up Python Environment
+This needs the Piper voice `fr_FR-siwis-medium` in `~/.local/share/piper-voices/`:
 
 ```bash
-cd scripts
-
-# Create virtual environment (first time only)
-python -m venv venv
-source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
+mkdir -p ~/.local/share/piper-voices/fr_FR-siwis-medium && cd $_
+curl -LO https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx
+curl -LO https://huggingface.co/rhasspy/piper-voices/resolve/main/fr/fr_FR/siwis/medium/fr_FR-siwis-medium.onnx.json
 ```
 
-### 3. Configure Google Cloud
-
-Create a `.env` file in the project root:
-
-```
-GOOGLE_PROJECT_NAME=your-gcp-project-id
-```
-
-Make sure you have:
-- Google Cloud CLI installed and authenticated (`gcloud auth application-default login`)
-- Vertex AI API enabled in your project
-- Appropriate permissions for Gemini and Imagen APIs
-
-### 4. Generate Assets
-
-```bash
-# From project root, with venv activated
-python scripts/generate_assets.py --sounds ou --week-start 2026-02-16 --week-end 2026-02-19
-```
-
-**Options:**
-
-```bash
-# Custom subdirectory name (defaults to --sounds value)
-python scripts/generate_assets.py --sounds ou --week-start 2026-02-16 --week-end 2026-02-19 --path ou-week2
-
-# Custom rate limit for image generation (default: 60 seconds)
-python scripts/generate_assets.py --sounds ou --week-start 2026-02-16 --week-end 2026-02-19 --image-rate-limit 90
-
-# Disable rate limiting
-python scripts/generate_assets.py --sounds ou --week-start 2026-02-16 --week-end 2026-02-19 --image-rate-limit 0
-```
-
-The script is **incremental** - it only generates missing assets. Re-running for the same week will skip already-generated files.
-
-**Generated files per week:**
-- `public/<sound>/manifest.json` - Word metadata (sentences, file paths)
-- `public/<sound>/audio/{word}_word.wav` - Word pronunciation
-- `public/<sound>/audio/{word}_sentence.wav` - Sentence pronunciation
-- `public/<sound>/images/{word}.png` - Illustration for the word
-
-The script also appends/updates the week entry in `public/metadata.yaml`.
-
-## Game Modes
-
-1. **Exploration** - Browse words with images and sentences
-2. **Audio Match** - Hear a word, tap the matching bubble
-3. **Lettres Perdues** - Fill in missing letters by dragging
-4. **Dictée Fantôme** - Type the word from audio only
-
-## Tech Stack
-
-- React 18 + TypeScript
-- Vite
-- Tailwind CSS
-- Google Vertex AI (Gemini for text/TTS, Imagen for images)
+The script writes `audio/s<n>.wav` and `manifest.json` for the week and registers it in
+`public/weeks/index.json`. Word timings come from aligning the audio with faster-whisper
+(the `small` model downloads on first run). It only regenerates sentences whose text
+changed; use `--force` to redo everything and `--length-scale 1.3` for a slower voice.

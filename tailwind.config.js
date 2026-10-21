@@ -15,6 +15,16 @@ export default {
         mint: '#6EE7B7',
         bubblegum: '#F472B6',
       },
+      keyframes: {
+        shake: {
+          '0%, 100%': { transform: 'translateX(0)' },
+          '25%': { transform: 'translateX(-8px)' },
+          '75%': { transform: 'translateX(8px)' },
+        },
+      },
+      animation: {
+        shake: 'shake 0.25s ease-in-out 2',
+      },
       fontFamily: {
         fun: ['Comic Neue', 'Comic Sans MS', 'cursive'],
       },
